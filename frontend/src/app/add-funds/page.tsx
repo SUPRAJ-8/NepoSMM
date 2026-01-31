@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Sidebar } from "@/components/dashboard/Sidebar"
 import { WelcomeTour } from "@/components/dashboard/welcome-tour"

@@ -1,5 +1,7 @@
+"use client";
+
 import { API_URL } from '@/lib/api-config'
-'use client';
+
 
 import { useState, useEffect } from 'react';
 import { Mail, Send, Eye, Loader2, CheckCircle2, XCircle, Maximize2, X, ExternalLink } from 'lucide-react';

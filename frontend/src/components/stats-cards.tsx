@@ -1,5 +1,7 @@
+"use client";
+
 import { API_URL } from '@/lib/api-config'
-"use client"
+
 
 import { Wallet, ShoppingBag, Star, Crown } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"

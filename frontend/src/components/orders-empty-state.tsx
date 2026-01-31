@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Smile } from "lucide-react"
 import Link from "next/link"

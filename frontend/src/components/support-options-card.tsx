@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { CreditCard, Bitcoin, DollarSign, Building2, Globe, Banknote, Plus, ChevronDown } from "lucide-react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"

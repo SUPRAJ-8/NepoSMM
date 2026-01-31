@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react"
 import { Bitcoin, CreditCard, ChevronDown, Check, Sparkles, Upload, Image, Loader2 } from "lucide-react"

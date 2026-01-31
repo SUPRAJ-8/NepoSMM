@@ -1,5 +1,7 @@
+"use client";
+
 import { API_URL } from '@/lib/api-config'
-"use client"
+
 
 import { useState, useEffect } from "react"
 import { Bell, ChevronDown, Gift, Wallet, TrendingUp, Sun, Moon } from "lucide-react"

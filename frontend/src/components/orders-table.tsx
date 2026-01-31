@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react"
 import { ExternalLink, MoreHorizontal, RefreshCw, XCircle } from "lucide-react"

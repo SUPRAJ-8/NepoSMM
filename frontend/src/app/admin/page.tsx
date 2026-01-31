@@ -1,5 +1,7 @@
-import { API_URL } from '@/lib/api-config'
 "use client";
+
+import { API_URL } from '@/lib/api-config'
+
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -485,4 +487,3 @@ function ProviderBalance({ name, balance, status }: any) {
 }
 
 export default DashboardContent;
-

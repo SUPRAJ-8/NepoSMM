@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Gift, Bell, Star, ArrowRight, X } from "lucide-react"
 import { Button } from "@/components/ui/button"

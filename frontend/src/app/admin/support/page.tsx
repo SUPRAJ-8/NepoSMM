@@ -1,5 +1,7 @@
+"use client";
+
 import { API_URL } from '@/lib/api-config'
-"use client"
+
 
 import { useState, useEffect, Suspense } from "react"
 import { AdminSidebar } from "@/components/admin/AdminSidebar"

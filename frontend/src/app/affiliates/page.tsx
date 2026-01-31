@@ -1,5 +1,7 @@
+"use client";
+
 import { API_URL } from '@/lib/api-config'
-"use client"
+
 
 import { useState, Suspense, useEffect } from "react"
 import { Sidebar } from "@/components/dashboard/Sidebar"
