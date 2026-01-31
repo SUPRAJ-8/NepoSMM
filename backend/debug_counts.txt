@@ -1,0 +1,1278 @@
+[
+  {
+    "category": "Cheapest Of All Time MoreThanPanel Services",
+    "count": "123"
+  },
+  {
+    "category": "🔵 Spotify Discover Weekly Plays | Country Targeted | MTP Exclusive |",
+    "count": "90"
+  },
+  {
+    "category": "🔵 Spotify Search Plays | Country Targeted | MTP Exclusive |",
+    "count": "89"
+  },
+  {
+    "category": "Spotify Editorial Playlist Plays | Country Targeted",
+    "count": "89"
+  },
+  {
+    "category": "🔵 Spotify  Release Radar Plays | Country Targeted | MTP Exclusive |",
+    "count": "88"
+  },
+  {
+    "category": "🔵 YouTube RAV-GS™ Views | GEO Targeted | MTP Exclusive |",
+    "count": "87"
+  },
+  {
+    "category": "Spotify Plays | Country Targeted",
+    "count": "86"
+  },
+  {
+    "category": "Spotify Podcast Plays | Country Targeted",
+    "count": "85"
+  },
+  {
+    "category": "Spotify Playlist Plays | Country Targeted",
+    "count": "85"
+  },
+  {
+    "category": "Spotify Followers | Country Targeted",
+    "count": "83"
+  },
+  {
+    "category": "🔵 YouTube Referrer Likes | MTP Exclusive |",
+    "count": "79"
+  },
+  {
+    "category": "Youtube Social Shares | Country Targeted",
+    "count": "65"
+  },
+  {
+    "category": "🔵 Spotify Web2.0 Plays | Country Targeted | Algorithmic Source |",
+    "count": "46"
+  },
+  {
+    "category": "🔵 Spotify Radio Plays | Country Targeted | MTP Exclusive |",
+    "count": "43"
+  },
+  {
+    "category": "YouTube Live Stream Views | With Views | Different Pause Time |",
+    "count": "40"
+  },
+  {
+    "category": "Spotify Monthly Listeners | Country/Language Targeted",
+    "count": "38"
+  },
+  {
+    "category": "YouTube Views | Best For SEO | Search by Keywords | Country Targeted |",
+    "count": "36"
+  },
+  {
+    "category": "🔵 Spotify Power Plays | Country Targeted | Best For Algorithm |",
+    "count": "34"
+  },
+  {
+    "category": "Facebook Comment | Country Targeted |",
+    "count": "34"
+  },
+  {
+    "category": "🔵 Services For Instagram Influencers | Real People | Real Engagement",
+    "count": "34"
+  },
+  {
+    "category": "Youtube Likes | Country Targeted |",
+    "count": "32"
+  },
+  {
+    "category": "Telegram 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 Reactions",
+    "count": "29"
+  },
+  {
+    "category": "🔵 Youtube Elite Services | Always Stable, Real Services |",
+    "count": "27"
+  },
+  {
+    "category": "Instagram Followers | Country Targeted",
+    "count": "27"
+  },
+  {
+    "category": "Twitch Viewers (% Userlist - With Views - 5 Min. Retention) (MTP Exclusive)",
+    "count": "26"
+  },
+  {
+    "category": "🔵 YouTube High Retention Views | MTP Exclusive |",
+    "count": "25"
+  },
+  {
+    "category": "Kick.com | Live Stream Viewers",
+    "count": "24"
+  },
+  {
+    "category": "Instagram Likes | Country Targeted",
+    "count": "24"
+  },
+  {
+    "category": "Telegram Channel/Group Members",
+    "count": "24"
+  },
+  {
+    "category": "🔵 Facebook Post Reactions | Country Targeted | MTP Exclusive |",
+    "count": "24"
+  },
+  {
+    "category": "Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable]",
+    "count": "23"
+  },
+  {
+    "category": "🔵 Instagram Exclusive Targeted Comments | MTP Exclusive",
+    "count": "21"
+  },
+  {
+    "category": "Telegram Post Views &amp; Votelikes",
+    "count": "21"
+  },
+  {
+    "category": "Twitch Live Stream Auto Chat | Country Targeted",
+    "count": "21"
+  },
+  {
+    "category": "Twitch Viewers (%100 Userlist - With Views - Different Retentions) (MTP Exclusive)",
+    "count": "20"
+  },
+  {
+    "category": "Youtube Short Views | Country Targeted |",
+    "count": "20"
+  },
+  {
+    "category": "🔵 YouTube Niche Likes | MTP Exclusive |",
+    "count": "20"
+  },
+  {
+    "category": "Youtube Comments | Country Targeted",
+    "count": "18"
+  },
+  {
+    "category": "TikTok Comments | Country Targeted |",
+    "count": "18"
+  },
+  {
+    "category": "Facebook Post Likes/Emotions/Share",
+    "count": "17"
+  },
+  {
+    "category": "Discord Server Boosts",
+    "count": "16"
+  },
+  {
+    "category": "Instagram Comments/Comment Likes",
+    "count": "16"
+  },
+  {
+    "category": "🔵 Services For Tiktok Influencers",
+    "count": "15"
+  },
+  {
+    "category": "YouTube Live Stream Views",
+    "count": "15"
+  },
+  {
+    "category": "Youtube Watch Time | 4000 Hours Service",
+    "count": "15"
+  },
+  {
+    "category": "Telegram Views | Future Post | Last Post |",
+    "count": "15"
+  },
+  {
+    "category": "Telegram Post Reactions/Shares",
+    "count": "15"
+  },
+  {
+    "category": "Facebook Comments",
+    "count": "14"
+  },
+  {
+    "category": "Private Testing Services (Not For Use)",
+    "count": "14"
+  },
+  {
+    "category": "🔵 TikTok Elite Services | MTP Best Seller, Stable |",
+    "count": "14"
+  },
+  {
+    "category": "🔵 Facebook Elite Services | MTP Best Seller, Stable",
+    "count": "14"
+  },
+  {
+    "category": "🔵 Instagram Exclusive Targeted Likes | MTP Exclusive",
+    "count": "14"
+  },
+  {
+    "category": "Youtube Live Stream [Concurrent]",
+    "count": "14"
+  },
+  {
+    "category": "🔵 Instagram Elite Services | Always Stable, Real Services",
+    "count": "14"
+  },
+  {
+    "category": "Morethan Best Selling and Qualified Mix Services",
+    "count": "13"
+  },
+  {
+    "category": "NepoSMM Promotions",
+    "count": "13"
+  },
+  {
+    "category": "Instagram Auto Comments/Saves/Share/Reaches",
+    "count": "13"
+  },
+  {
+    "category": "Facebook Share | Comment | Reviews |",
+    "count": "13"
+  },
+  {
+    "category": "🔵 Instagram Exclusive Targeted Followers | MTP Exclusive",
+    "count": "13"
+  },
+  {
+    "category": "Telegram Reactions",
+    "count": "13"
+  },
+  {
+    "category": "Instagram Followers",
+    "count": "13"
+  },
+  {
+    "category": "Instagram Story Services",
+    "count": "13"
+  },
+  {
+    "category": "Facebook Post Likes | Country Targeted |",
+    "count": "13"
+  },
+  {
+    "category": "Twitch Viewers (No Userlist - No Views) (MTP Exclusive)",
+    "count": "13"
+  },
+  {
+    "category": "Facebook Live Stream ᵁᴾᴰᴬᵀᴱᴰ⭐",
+    "count": "12"
+  },
+  {
+    "category": "TikTok Live Stream Views",
+    "count": "12"
+  },
+  {
+    "category": "Facebook Followers | Page/Profile |",
+    "count": "12"
+  },
+  {
+    "category": "Instagram Indian Services 🇮🇳",
+    "count": "12"
+  },
+  {
+    "category": "Facebook Followers | Page/Profile | Country Targeted |",
+    "count": "12"
+  },
+  {
+    "category": "YouTube Comments | Comments Reply | Comments Likes |",
+    "count": "12"
+  },
+  {
+    "category": "Youtube Native Ads Views 🔥",
+    "count": "12"
+  },
+  {
+    "category": "TikTok - Likes | Country Targeted",
+    "count": "12"
+  },
+  {
+    "category": "Spotify Plays | Best Sellers",
+    "count": "12"
+  },
+  {
+    "category": "Facebook Video Views",
+    "count": "12"
+  },
+  {
+    "category": "Facebook Likes | Page/Post/Reels/Comment |",
+    "count": "12"
+  },
+  {
+    "category": "Facebook Watch Time - Offline [60k-120k-600k]",
+    "count": "12"
+  },
+  {
+    "category": "TikTok - Likes",
+    "count": "12"
+  },
+  {
+    "category": "Facebook WatchTime Views Services | Offline |",
+    "count": "12"
+  },
+  {
+    "category": "🔵 Spotify Elite Services (MTP Best Seller, Stable)",
+    "count": "12"
+  },
+  {
+    "category": "X/Twitter Views | Tweet/Post/Video | Impressions + Engagements + Details + Profile Visits |",
+    "count": "11"
+  },
+  {
+    "category": "Youtube Adword Views | Instream - Skipable |",
+    "count": "11"
+  },
+  {
+    "category": "Facebook Live Stream",
+    "count": "11"
+  },
+  {
+    "category": "Facebook Profile/Page Followers",
+    "count": "11"
+  },
+  {
+    "category": "🔵 Instagram Repost | Country Targeted | MTP Exclusive |",
+    "count": "11"
+  },
+  {
+    "category": "Tiktok Live Stream Views - Cheapest",
+    "count": "11"
+  },
+  {
+    "category": "Instagram Followers [Working] ⭐",
+    "count": "11"
+  },
+  {
+    "category": "Twitter",
+    "count": "11"
+  },
+  {
+    "category": "Telegram Post Shares/Comments",
+    "count": "11"
+  },
+  {
+    "category": "🔵 Services For Youtubers",
+    "count": "11"
+  },
+  {
+    "category": "🔵 YouTube CTR Views | MTP Exclusive |",
+    "count": "11"
+  },
+  {
+    "category": "Instagram | Members Channel",
+    "count": "11"
+  },
+  {
+    "category": "Youtube Shares",
+    "count": "11"
+  },
+  {
+    "category": "🔵 TikTok Verified Services | NEW!",
+    "count": "10"
+  },
+  {
+    "category": "TikTok Followers",
+    "count": "10"
+  },
+  {
+    "category": "🔵 X/Twitter Exclusive Services | Gender/Country Targeted",
+    "count": "10"
+  },
+  {
+    "category": "YouTube Subscribers",
+    "count": "10"
+  },
+  {
+    "category": "Youtube Likes /  Dislikes",
+    "count": "10"
+  },
+  {
+    "category": "Facebook Page Likes",
+    "count": "10"
+  },
+  {
+    "category": "Facebook Group Members",
+    "count": "10"
+  },
+  {
+    "category": "Facebook  World-Wide Services | 100% Real",
+    "count": "10"
+  },
+  {
+    "category": "Youtube Live Stream 𝗖𝗵𝗲𝗮𝗽𝗲𝘀𝘁",
+    "count": "10"
+  },
+  {
+    "category": "Facebook Friends Requests | Country Targeted |",
+    "count": "10"
+  },
+  {
+    "category": "Instagram Views",
+    "count": "9"
+  },
+  {
+    "category": "🔥Promotional Services🔥",
+    "count": "9"
+  },
+  {
+    "category": "Instagram Views | Country Targeted",
+    "count": "9"
+  },
+  {
+    "category": "X/Twitter Followers",
+    "count": "9"
+  },
+  {
+    "category": "Twitch Viewers | 100% Concurrent | MTP Exclusive | NEW!",
+    "count": "9"
+  },
+  {
+    "category": "Instagram [Save/Shares/Profile Visits]",
+    "count": "9"
+  },
+  {
+    "category": "🔵 TikTok %100 Real Comment Services  | Foreign Language | MTP Exclusive |",
+    "count": "9"
+  },
+  {
+    "category": "X/Twitter Video Views | Country Targeted",
+    "count": "9"
+  },
+  {
+    "category": "♖ Website Traffic",
+    "count": "9"
+  },
+  {
+    "category": "🔵 TikTok Split Services | MTP Exclusive |",
+    "count": "9"
+  },
+  {
+    "category": "Twitter Followers",
+    "count": "9"
+  },
+  {
+    "category": "Facebook Group Members | Country Targeted |",
+    "count": "9"
+  },
+  {
+    "category": "YouTube Live Stream Rank Viewers | Country Targeted |",
+    "count": "9"
+  },
+  {
+    "category": "🔵 Facebook Split Services | MTP Exclusive |",
+    "count": "9"
+  },
+  {
+    "category": "🔵 TikTok Exclusive Services | Gender/Country Targeted",
+    "count": "9"
+  },
+  {
+    "category": "🔵 Instagram Verified Comments | MTP Exclusive",
+    "count": "9"
+  },
+  {
+    "category": "Instagram Likes",
+    "count": "8"
+  },
+  {
+    "category": "TikTok Followers | Country Targeted",
+    "count": "8"
+  },
+  {
+    "category": "Instagram Live Stream Services",
+    "count": "8"
+  },
+  {
+    "category": "🔵 Discord Account Sales | NEW!",
+    "count": "8"
+  },
+  {
+    "category": "X/Twitter Gradual Tweet Views",
+    "count": "8"
+  },
+  {
+    "category": "🔵 Instagram Power Followers/Likes/Comments | MTP Exclusive",
+    "count": "8"
+  },
+  {
+    "category": "🔵 Telegram Premium Members",
+    "count": "8"
+  },
+  {
+    "category": "YouTube Live Stream Views | With Views | Different Retention |",
+    "count": "8"
+  },
+  {
+    "category": "♖ Website Traffic from USA",
+    "count": "8"
+  },
+  {
+    "category": "Facebook Page Likes | Country Targeted |",
+    "count": "8"
+  },
+  {
+    "category": "Youtube Short Views",
+    "count": "8"
+  },
+  {
+    "category": "Tiktok Comments",
+    "count": "8"
+  },
+  {
+    "category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "count": "8"
+  },
+  {
+    "category": "🔵 Facebook Video/Reels Views | Good For Monetization | MTP Exclusive |",
+    "count": "8"
+  },
+  {
+    "category": "Instagram Indian Likes 🇮🇳",
+    "count": "8"
+  },
+  {
+    "category": "Instagram Random Comments",
+    "count": "8"
+  },
+  {
+    "category": "♖ Website Traffic from India",
+    "count": "8"
+  },
+  {
+    "category": "YouTube Views",
+    "count": "8"
+  },
+  {
+    "category": "Tiktok Auto Likes | Future Posts",
+    "count": "8"
+  },
+  {
+    "category": "♖SoundCloud",
+    "count": "8"
+  },
+  {
+    "category": "Youtube Auto Likes",
+    "count": "8"
+  },
+  {
+    "category": "Facebook Live Stream Views",
+    "count": "8"
+  },
+  {
+    "category": "Twitch Live Stream Auto Chat | Custom | Emoji",
+    "count": "8"
+  },
+  {
+    "category": "Whatsapp Services",
+    "count": "7"
+  },
+  {
+    "category": "🔵 X/Twitter Account Sales | 2016-2025 Date Range Accounts | NEW!",
+    "count": "7"
+  },
+  {
+    "category": "Facebook Post Reacts S1",
+    "count": "7"
+  },
+  {
+    "category": "YouTube Live Stream Custom Comment Services",
+    "count": "7"
+  },
+  {
+    "category": "🔵 YouTube Real Live Stream Views | MTP Exclusive |",
+    "count": "7"
+  },
+  {
+    "category": "Facebook Post Reactions",
+    "count": "7"
+  },
+  {
+    "category": "Tiktok",
+    "count": "7"
+  },
+  {
+    "category": "Instagram Direct Message",
+    "count": "7"
+  },
+  {
+    "category": "Telegram Comments &amp; Vote",
+    "count": "7"
+  },
+  {
+    "category": "Spotify Plays/Save/Listeners",
+    "count": "7"
+  },
+  {
+    "category": "🔵 X/Twitter Elite Services (MTP Best Seller, Stable)",
+    "count": "7"
+  },
+  {
+    "category": "Telegram Views | Country Targeted |",
+    "count": "7"
+  },
+  {
+    "category": "Facebook Post Reacts - 𝗖𝗵𝗲𝗮𝗽𝗲𝘀𝘁 💥",
+    "count": "7"
+  },
+  {
+    "category": "🔵 X/Twitter Trend Topic Services | MTP Exclusive |",
+    "count": "7"
+  },
+  {
+    "category": "Instagram Power Comments",
+    "count": "7"
+  },
+  {
+    "category": "🔵 Tiktok Account Sales | 2016-2025 Date Range Accounts | NEW!",
+    "count": "7"
+  },
+  {
+    "category": "Facebook Reels",
+    "count": "7"
+  },
+  {
+    "category": "X/Twitter Space Listeners",
+    "count": "6"
+  },
+  {
+    "category": "🔵 Instagram Account Sales | 2010-2024 Date Range Accounts | NEW!",
+    "count": "6"
+  },
+  {
+    "category": "🔵 YouTube RAV-GS™ Views | Language Targeted | MTP Exclusive |",
+    "count": "6"
+  },
+  {
+    "category": "Youtube Live Stream Views | Real Time AI Chat | Country Targeted |",
+    "count": "6"
+  },
+  {
+    "category": "Tiktok Live Stream Views - Stable 🆕",
+    "count": "6"
+  },
+  {
+    "category": "🔵 TikTok Views | Best For SEO | 100% Real | MTP Exclusive |",
+    "count": "6"
+  },
+  {
+    "category": "🔵 Instagram Verified Followers | MTP Exclusive",
+    "count": "6"
+  },
+  {
+    "category": "Telegram Group Post Reply | Random | Country Targeted |",
+    "count": "6"
+  },
+  {
+    "category": "Kick.com | Followers",
+    "count": "6"
+  },
+  {
+    "category": "Quora",
+    "count": "6"
+  },
+  {
+    "category": "Twitch Live Stream Views | Country Targeted",
+    "count": "6"
+  },
+  {
+    "category": "♖ Twitch",
+    "count": "6"
+  },
+  {
+    "category": "Youtube Social Shares",
+    "count": "6"
+  },
+  {
+    "category": "🔵 Telegram Old Year Group | MTP Exclusive |",
+    "count": "6"
+  },
+  {
+    "category": "YouTube Live Stream Reactions",
+    "count": "6"
+  },
+  {
+    "category": "🔵 Facebook Special DripFeed Services | MTP Exclusive",
+    "count": "6"
+  },
+  {
+    "category": "Telegram Post Reactions | For Private Channels | NEW! |",
+    "count": "6"
+  },
+  {
+    "category": "🔵 Telegram Old Year Channel | MTP Exclusive |",
+    "count": "6"
+  },
+  {
+    "category": "Youtube Views",
+    "count": "5"
+  },
+  {
+    "category": "🔵 Instagram Special DripFeed Services | MTP Exclusive",
+    "count": "5"
+  },
+  {
+    "category": "🔵 Facebook Page Reviews | MTP Exclusive |",
+    "count": "5"
+  },
+  {
+    "category": "🔵 YouTube Native Adword Views | MTP Exclusive |",
+    "count": "5"
+  },
+  {
+    "category": "Telegram Premium Services",
+    "count": "5"
+  },
+  {
+    "category": "🔵 Telegram Premium Members [For Search Optimization]",
+    "count": "5"
+  },
+  {
+    "category": "Tiktok Followers",
+    "count": "5"
+  },
+  {
+    "category": "Tiktok Live Stream Views/Likes",
+    "count": "5"
+  },
+  {
+    "category": "TikTok Share &amp; Save Services",
+    "count": "5"
+  },
+  {
+    "category": "🔵 Tiktok Special DripFeed Services | MTP Exclusive",
+    "count": "5"
+  },
+  {
+    "category": "Facebook Page Likes + Followers",
+    "count": "5"
+  },
+  {
+    "category": "Instagram Video Views",
+    "count": "5"
+  },
+  {
+    "category": "Telegram Members [Refill]",
+    "count": "5"
+  },
+  {
+    "category": "YouTube Likes | Dislikes |",
+    "count": "5"
+  },
+  {
+    "category": "Facebook Post Shares",
+    "count": "5"
+  },
+  {
+    "category": "Twitch Followers",
+    "count": "5"
+  },
+  {
+    "category": "X/Twitter Followers | Country Targeted",
+    "count": "5"
+  },
+  {
+    "category": "Instagram Likes [Refill]",
+    "count": "5"
+  },
+  {
+    "category": "X/Twitter Likes",
+    "count": "5"
+  },
+  {
+    "category": "Facebook Views | Video/Reel/IGTV/Story |",
+    "count": "5"
+  },
+  {
+    "category": "Telegram Channel/Group Members | Country Targeted |",
+    "count": "5"
+  },
+  {
+    "category": "Instagram Comments | Country Targeted",
+    "count": "5"
+  },
+  {
+    "category": "🔵 Instagram Verified Likes | MTP Exclusive",
+    "count": "5"
+  },
+  {
+    "category": "🔵 Instagram Subscription Services | MTP Exclusive |",
+    "count": "5"
+  },
+  {
+    "category": "🔵 Facebook Growth Packages | GPT4 Powered | MTP Exclusive |",
+    "count": "4"
+  },
+  {
+    "category": "🔵 TikTok Likes + Views | Gender Targeted | MTP Exclusive |",
+    "count": "4"
+  },
+  {
+    "category": "🔵 Youtube Growth Packages | GPT4 Powered | MTP Exclusive |",
+    "count": "4"
+  },
+  {
+    "category": "YouTube Short Likes",
+    "count": "4"
+  },
+  {
+    "category": "🔵 Bluesky %100 Real Services | MTP Exclusive |",
+    "count": "4"
+  },
+  {
+    "category": "Instagram Custom Comments",
+    "count": "4"
+  },
+  {
+    "category": "Instagram Auto Views",
+    "count": "4"
+  },
+  {
+    "category": "TikTok Auto Comments | Future Posts",
+    "count": "4"
+  },
+  {
+    "category": "Telegram Reactions S2",
+    "count": "4"
+  },
+  {
+    "category": "♖ Kwai Services",
+    "count": "4"
+  },
+  {
+    "category": "Instagram Reaches/Impressions",
+    "count": "4"
+  },
+  {
+    "category": "Threads Likes",
+    "count": "4"
+  },
+  {
+    "category": "🔵 Telegram Boost Channel | MTP Exclusive |",
+    "count": "4"
+  },
+  {
+    "category": "Youtube Comments",
+    "count": "4"
+  },
+  {
+    "category": "Instagram Auto Likes / Views / Comments",
+    "count": "4"
+  },
+  {
+    "category": "YouTube Views | Country Targeted |",
+    "count": "4"
+  },
+  {
+    "category": "YouTube Adword Views",
+    "count": "4"
+  },
+  {
+    "category": "Twitter Likes/ Retweets",
+    "count": "4"
+  },
+  {
+    "category": "🔵 YouTube Ranking Views | MTP Exclusive |",
+    "count": "4"
+  },
+  {
+    "category": "🔵 Telegram Premium Stars/Subscription | MTP Exclusive |",
+    "count": "4"
+  },
+  {
+    "category": "Instagram Reels",
+    "count": "4"
+  },
+  {
+    "category": "Tiktok Views",
+    "count": "4"
+  },
+  {
+    "category": "Tiktok Likes",
+    "count": "4"
+  },
+  {
+    "category": "🔵 X/Twitter Growth Packages | GPT4 Powered | MTP Exclusive |",
+    "count": "4"
+  },
+  {
+    "category": "Telegram Auto Post Views",
+    "count": "4"
+  },
+  {
+    "category": "TikTok Interactions",
+    "count": "4"
+  },
+  {
+    "category": "🔵 TikTok Growth Packages | GPT4 Powered | MTP Exclusive |",
+    "count": "4"
+  },
+  {
+    "category": "🔵 Instagram Growth Packages | GPT4 Powered | MTP Exclusive",
+    "count": "4"
+  },
+  {
+    "category": "Tiktok Monetizable Views [Non Drop] 🆕",
+    "count": "4"
+  },
+  {
+    "category": "🔵 Telegram Premium Members | Country Targeted |",
+    "count": "4"
+  },
+  {
+    "category": "♖ Pinterest",
+    "count": "4"
+  },
+  {
+    "category": "Instagram VIP Likes💎",
+    "count": "4"
+  },
+  {
+    "category": "🔵 Facebook Report | MTP Exclusive |",
+    "count": "3"
+  },
+  {
+    "category": "Facebook Bangladesh Services 🇧🇩",
+    "count": "3"
+  },
+  {
+    "category": "Twitch Video/Clip Views",
+    "count": "3"
+  },
+  {
+    "category": "X/Twitter Targeted Retweets",
+    "count": "3"
+  },
+  {
+    "category": "Instagram Likes [ Targeted ]",
+    "count": "3"
+  },
+  {
+    "category": "Youtube Adwords Views 🆕🔥",
+    "count": "3"
+  },
+  {
+    "category": "Instagram Shares",
+    "count": "3"
+  },
+  {
+    "category": "X/Twitter - Engagement Services",
+    "count": "3"
+  },
+  {
+    "category": "Spotify Followers",
+    "count": "3"
+  },
+  {
+    "category": "🔵 Facebook Account Sales | 2007-2025 Date Range Accounts | NEW!",
+    "count": "3"
+  },
+  {
+    "category": "Instagram Followers [ No Refill ]",
+    "count": "3"
+  },
+  {
+    "category": "Instagram Story",
+    "count": "3"
+  },
+  {
+    "category": "Website SEO Packages ⭐",
+    "count": "3"
+  },
+  {
+    "category": "🔵 Facebook Video Views | MTP Exclusive |",
+    "count": "3"
+  },
+  {
+    "category": "Youtube Community",
+    "count": "3"
+  },
+  {
+    "category": "Instagram Mentions | NepoSMM Exclusive",
+    "count": "3"
+  },
+  {
+    "category": "♖ Snapchat",
+    "count": "3"
+  },
+  {
+    "category": "YouTube High Retention Views | Country Targeted |",
+    "count": "3"
+  },
+  {
+    "category": "Kick.com | Video | Clip | Votes | Views",
+    "count": "3"
+  },
+  {
+    "category": "Instagram Followers [Country Targeted]",
+    "count": "3"
+  },
+  {
+    "category": "X/Twitter Retweets",
+    "count": "3"
+  },
+  {
+    "category": "Facebook Friend Requests | Membership Invitation |",
+    "count": "3"
+  },
+  {
+    "category": "X/Twitter Impressions | Bookmarks",
+    "count": "3"
+  },
+  {
+    "category": "Discord Members (Offline/Online)",
+    "count": "2"
+  },
+  {
+    "category": "Facebook Page Reviews",
+    "count": "2"
+  },
+  {
+    "category": "TikTok Comments | Comment Likes |",
+    "count": "2"
+  },
+  {
+    "category": "🔵 Telegram Ads Views + Click Services",
+    "count": "2"
+  },
+  {
+    "category": "🔵 Spotify %100 Premium Mobile Plays | Royalties Eligible | NEW! |",
+    "count": "2"
+  },
+  {
+    "category": "Facebook Indian Post Reacts 🇮🇳🆕",
+    "count": "2"
+  },
+  {
+    "category": "🔵 Instagram Repost | MTP Exclusive  |",
+    "count": "2"
+  },
+  {
+    "category": "♖ Mobile App Installs &amp; Reviews",
+    "count": "2"
+  },
+  {
+    "category": "TikTok Download Services",
+    "count": "2"
+  },
+  {
+    "category": "🔵 Facebook Event | MTP Exclusive |",
+    "count": "2"
+  },
+  {
+    "category": "♖ Discord",
+    "count": "2"
+  },
+  {
+    "category": "YouTube Live Stream Likes",
+    "count": "2"
+  },
+  {
+    "category": "Facebook Story Views",
+    "count": "2"
+  },
+  {
+    "category": "X/Twitter NFT Exclusive Services (NEW!)",
+    "count": "2"
+  },
+  {
+    "category": "Youtube Comment Likes",
+    "count": "2"
+  },
+  {
+    "category": "♖ SEO - Social Signals (Facebook &amp; Pinterest)",
+    "count": "2"
+  },
+  {
+    "category": "X/Twitter Poll Vote",
+    "count": "2"
+  },
+  {
+    "category": "YouTube Crypto &amp; NFT Likes",
+    "count": "2"
+  },
+  {
+    "category": "YouTube Live Stream/Premiere",
+    "count": "2"
+  },
+  {
+    "category": "Youtube Subscribers",
+    "count": "2"
+  },
+  {
+    "category": "🔵 Facebook Likes | Page/Post | MTP Exclusive |",
+    "count": "2"
+  },
+  {
+    "category": "🔵 Facebook Real Followers | Page/Profile | MTP Exclusive |",
+    "count": "2"
+  },
+  {
+    "category": "X/Twitter Comments",
+    "count": "2"
+  },
+  {
+    "category": "🔵 YouTube Boost Service | Top Search Results Ranking 🔥",
+    "count": "2"
+  },
+  {
+    "category": "Spotify Monthly Listeners",
+    "count": "2"
+  },
+  {
+    "category": "TikTok Live Stream Likes",
+    "count": "2"
+  },
+  {
+    "category": "Instagram Live Video",
+    "count": "2"
+  },
+  {
+    "category": "🔵 Telegram Bot Start + Activity | MTP Exclusive |",
+    "count": "2"
+  },
+  {
+    "category": "Threads Followers",
+    "count": "2"
+  },
+  {
+    "category": "Instagram Saves",
+    "count": "2"
+  },
+  {
+    "category": "Telegram Members [Targeted]",
+    "count": "2"
+  },
+  {
+    "category": "Youtube Shorts",
+    "count": "2"
+  },
+  {
+    "category": "X/Twitter Targeted Likes",
+    "count": "2"
+  },
+  {
+    "category": "🔵 Discord Chat Members",
+    "count": "1"
+  },
+  {
+    "category": "Telegram Post Views [Targeted]",
+    "count": "1"
+  },
+  {
+    "category": "🔵 TikTok Coins | MTP Exclusive |",
+    "count": "1"
+  },
+  {
+    "category": "🔵 YouTube Premium | NEW!",
+    "count": "1"
+  },
+  {
+    "category": "♖ Twitch Live Views",
+    "count": "1"
+  },
+  {
+    "category": "Instagram Comment Likes",
+    "count": "1"
+  },
+  {
+    "category": "♖ Reddit",
+    "count": "1"
+  },
+  {
+    "category": "🔵 Discord Nitro Services",
+    "count": "1"
+  },
+  {
+    "category": "Youtube Views [GEO - Targeted]",
+    "count": "1"
+  },
+  {
+    "category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐f",
+    "count": "1"
+  },
+  {
+    "category": "Youtube Watch Time [ Hours ] 🆕",
+    "count": "1"
+  },
+  {
+    "category": "Discord Cloning Servers",
+    "count": "1"
+  },
+  {
+    "category": "TikTok PK Battle Points",
+    "count": "1"
+  },
+  {
+    "category": "♖ Clubhouse",
+    "count": "1"
+  },
+  {
+    "category": "♖ Tiktok Auto Views/Likes/Shares",
+    "count": "1"
+  },
+  {
+    "category": "Instagram Reels Services",
+    "count": "1"
+  },
+  {
+    "category": "Youtube Likes (Country Targeted)",
+    "count": "1"
+  },
+  {
+    "category": "YouTube Auto Views",
+    "count": "1"
+  },
+  {
+    "category": "TikTok Story Services",
+    "count": "1"
+  },
+  {
+    "category": "Instagram Bulk Reels",
+    "count": "1"
+  },
+  {
+    "category": "♖ Dailymotion",
+    "count": "1"
+  },
+  {
+    "category": "Instagram Followers [365 Days Refill]",
+    "count": "1"
+  },
+  {
+    "category": "Instagram Channel Members",
+    "count": "1"
+  },
+  {
+    "category": "TikTok Repost Services",
+    "count": "1"
+  },
+  {
+    "category": "YouTube Adword Views | Country Targeted |",
+    "count": "1"
+  },
+  {
+    "category": "Spotify Plays",
+    "count": "1"
+  },
+  {
+    "category": "Spotify Saves",
+    "count": "1"
+  },
+  {
+    "category": "🔵 Instagram Exclusive Targeted Views | MTP Exclusive",
+    "count": "1"
+  },
+  {
+    "category": "Youtube Views [No Refill]",
+    "count": "1"
+  },
+  {
+    "category": "Youtube Views [Targeted]",
+    "count": "1"
+  },
+  {
+    "category": "Facebook Page Likes + Followers | Country Targeted |",
+    "count": "1"
+  }
+]

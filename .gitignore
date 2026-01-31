@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.local
+.next/
+dist/
+build/
+*.log
+.vscode/
+frontend/node_modules/
+backend/node_modules/
+frontend/.next/
+backend/dist/
+.DS_Store
+replace_urls.js
+gitpush.bat

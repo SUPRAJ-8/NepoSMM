@@ -1,0 +1,163 @@
+﻿[dotenv@17.2.3] injecting env (4) from .env -- tip: ΓÜÖ∩╕Å  enable debug logging with { debug: true }
+[
+  {
+    "category": "≡ƒö╡ TikTok Elite Services | MTP Best Seller, Stable |",
+    "display_category": "≡ƒö╡ TikTok Elite Services | Best Seller, Stable |"
+  },
+  {
+    "category": "Tiktok Services - ≡¥ù¿≡¥ù╜≡¥ù▒≡¥ù«≡¥ÿü≡¥ù▓≡¥ù▒ Γ¡É",
+    "display_category": "Tiktok Services - ≡¥ù¿≡¥ù╜≡¥ù▒≡¥ù«≡¥ÿü≡¥ù▓≡¥ù▒ Γ¡É"
+  },
+  {
+    "category": "≡ƒö╡ TikTok Verified Services | NEW!",
+    "display_category": "≡ƒö╡ TikTok Verified Services | NEW!"
+  },
+  {
+    "category": "Tiktok",
+    "display_category": "Tiktok"
+  },
+  {
+    "category": "≡ƒö╡ TikTok %100 Real Comment Services  | Foreign Language | MTP Exclusive |",
+    "display_category": "≡ƒö╡ TikTok %100 Real Comment Services | Foreign Language | Exclusive |"
+  },
+  {
+    "category": "≡ƒö╡ TikTok Exclusive Services | Gender/Country Targeted",
+    "display_category": "≡ƒö╡ TikTok Exclusive Services | Gender/Country Targeted"
+  },
+  {
+    "category": "TikTok Repost Services",
+    "display_category": "TikTok Repost Services"
+  },
+  {
+    "category": "TikTok PK Battle Points",
+    "display_category": "TikTok PK Battle Points"
+  },
+  {
+    "category": "Tiktok Services - ≡¥ù¿≡¥ù╜≡¥ù▒≡¥ù«≡¥ÿü≡¥ù▓≡¥ù▒ Γ¡Éf",
+    "display_category": "Tiktok Services - ≡¥ù¿≡¥ù╜≡¥ù▒≡¥ù«≡¥ÿü≡¥ù▓≡¥ù▒ Γ¡Éf"
+  },
+  {
+    "category": "TikTok Followers",
+    "display_category": "TikTok Followers"
+  },
+  {
+    "category": "≡ƒö╡ Tiktok Special DripFeed Services | MTP Exclusive",
+    "display_category": "≡ƒö╡ Tiktok Special DripFeed Services | Exclusive"
+  },
+  {
+    "category": "TikTok Story Services",
+    "display_category": "TikTok Story Services"
+  },
+  {
+    "category": "Tiktok Monetizable Views [Non Drop] ≡ƒåò",
+    "display_category": "Tiktok Monetizable Views [Non Drop] ≡ƒåò"
+  },
+  {
+    "category": "TikTok Live Stream Likes",
+    "display_category": "TikTok Live Stream Likes"
+  },
+  {
+    "category": "Tiktok Views",
+    "display_category": "Tiktok Views"
+  },
+  {
+    "category": "TikTok Interactions",
+    "display_category": "TikTok Interactions"
+  },
+  {
+    "category": "TikTok Live Stream Views",
+    "display_category": "TikTok Live Stream Views"
+  },
+  {
+    "category": "≡ƒö╡ Services For Tiktok Influencers",
+    "display_category": "≡ƒö╡ Services For Tiktok Influencers"
+  },
+  {
+    "category": "TikTok Share &amp; Save Services",
+    "display_category": "TikTok Share &amp; Save Services"
+  },
+  {
+    "category": "≡ƒö╡ TikTok Growth Packages | GPT4 Powered | MTP Exclusive |",
+    "display_category": "≡ƒö╡ TikTok Growth Packages | GPT4 Powered | Exclusive |"
+  },
+  {
+    "category": "TikTok Followers | Country Targeted",
+    "display_category": "TikTok Followers | Country Targeted"
+  },
+  {
+    "category": "TikTok Comments | Country Targeted |",
+    "display_category": "TikTok Comments | Country Targeted |"
+  },
+  {
+    "category": "Tiktok Followers",
+    "display_category": "Tiktok Followers"
+  },
+  {
+    "category": "Tiktok Comments",
+    "display_category": "Tiktok Comments"
+  },
+  {
+    "category": "Tiktok Auto Likes | Future Posts",
+    "display_category": "Tiktok Auto Likes | Future Posts"
+  },
+  {
+    "category": "≡ƒö╡ Tiktok Account Sales | 2016-2025 Date Range Accounts | NEW!",
+    "display_category": "≡ƒö╡ Tiktok Account Sales | 2016-2025 Date Range Accounts | NEW!"
+  },
+  {
+    "category": "ΓÖû Tiktok Auto Views/Likes/Shares",
+    "display_category": "ΓÖû Tiktok Auto Views/Likes/Shares"
+  },
+  {
+    "category": "TikTok Comments | Comment Likes |",
+    "display_category": "TikTok Comments | Comment Likes |"
+  },
+  {
+    "category": "Tiktok Likes",
+    "display_category": "Tiktok Likes"
+  },
+  {
+    "category": "Tiktok Live Stream Views - Cheapest",
+    "display_category": "Tiktok Live Stream Views - Cheapest"
+  },
+  {
+    "category": "≡ƒö╡ TikTok Coins | MTP Exclusive |",
+    "display_category": "≡ƒö╡ TikTok Coins | Exclusive |"
+  },
+  {
+    "category": "TikTok - Likes",
+    "display_category": "TikTok - Likes"
+  },
+  {
+    "category": "≡ƒö╡ TikTok Views | Best For SEO | 100% Real | MTP Exclusive |",
+    "display_category": "≡ƒö╡ TikTok Views | Best For SEO | 100% Real | Exclusive |"
+  },
+  {
+    "category": "≡ƒö╡ TikTok Split Services | MTP Exclusive |",
+    "display_category": "≡ƒö╡ TikTok Split Services | Exclusive |"
+  },
+  {
+    "category": "≡ƒö╡ TikTok Likes + Views | Gender Targeted | MTP Exclusive |",
+    "display_category": "≡ƒö╡ TikTok Likes + Views | Gender Targeted | Exclusive |"
+  },
+  {
+    "category": "Tiktok Live Stream Views - Stable ≡ƒåò",
+    "display_category": "Tiktok Live Stream Views - Stable ≡ƒåò"
+  },
+  {
+    "category": "TikTok - Likes | Country Targeted",
+    "display_category": "TikTok - Likes | Country Targeted"
+  },
+  {
+    "category": "TikTok Download Services",
+    "display_category": "TikTok Download Services"
+  },
+  {
+    "category": "TikTok Auto Comments | Future Posts",
+    "display_category": "TikTok Auto Comments | Future Posts"
+  },
+  {
+    "category": "Tiktok Live Stream Views/Likes",
+    "display_category": "Tiktok Live Stream Views/Likes"
+  }
+]

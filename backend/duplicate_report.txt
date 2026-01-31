@@ -1,0 +1,10 @@
+--- Checking for Duplicate Categories (display_category) ---
+Found 388 category names that are shared by multiple services.
+
+--- Checking for Potential Duplicate Services (same name and category) ---
+Service: "~~~~~~~~~~~~~~~~~~~~~~~" in Category: "Facebook Watch Time - Offline [60k-120k-600k]" - Count: 2 - Providers: 8,8 - IDs: 7963,7958
+Service: "🔵 TikTok Live Stream Views | 15 Minutes | Max 5K | UHQ | NEW! |" in Category: "TikTok Live Stream Views" - Count: 2 - Providers: 7,7 - IDs: 4063,4064
+Service: "🟢 X/Twitter Space Listeners | 60 Minutes | Max 50K | NEW!" in Category: "X/Twitter Space Listeners" - Count: 2 - Providers: 7,7 - IDs: 6016,6014
+
+--- Checking for exact Duplicate external_service_id for same provider ---
+Found 0 duplicate external_service_ids for the same provider.

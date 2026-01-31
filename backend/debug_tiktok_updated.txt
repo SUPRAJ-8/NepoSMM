@@ -1,0 +1,60 @@
+
+Tiktok Updated Details:
+[
+  {
+    "id": 7806,
+    "name": "Tiktok Followers [High Quality] [30 Days Refill ♻] [Non Drop] [20k/day] ⭐",
+    "category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "display_category": "Tiktok Services 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ",
+    "status": "active"
+  },
+  {
+    "id": 7800,
+    "name": "Tiktok Views [Max - Unlimited] [No Refill] [Start: Instant]",
+    "category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "display_category": "Tiktok Services 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ",
+    "status": "active"
+  },
+  {
+    "id": 7802,
+    "name": "Tiktok Views [Refill: 30 Days ♻️] [Superfast] [Start: Instant] ⚡🔥",
+    "category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "display_category": "Tiktok Services 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ",
+    "status": "active"
+  },
+  {
+    "id": 7803,
+    "name": "Tiktok Followers [HQ] [365 Days Refill ♻] [Non Drop] [20k+/Day] [Start: 0-15 Mins] ⭐🆕",
+    "category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "display_category": "Tiktok Services 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ",
+    "status": "active"
+  },
+  {
+    "id": 8523,
+    "name": "Tiktok Followers [Indian Mix 🇮🇳] [Refill: 365 Days] [15-20% Drop] [50k/Day] [Start: 0-30 Mins]",
+    "category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "display_category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "status": "active"
+  },
+  {
+    "id": 7804,
+    "name": "Tiktok Followers [HQ] [Less Drop] [R30 ♻] [10k/Day] [Start: 0-5 Mins] ⭐",
+    "category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "display_category": "Tiktok Services 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ",
+    "status": "active"
+  },
+  {
+    "id": 7805,
+    "name": "Tiktok Followers [High Quality] [R30 ♻] [Less Drop] [50k/day] [Start: 0-15 Mins]🔥",
+    "category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "display_category": "Tiktok Services 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ",
+    "status": "active"
+  },
+  {
+    "id": 8522,
+    "name": "Tiktok Followers [Indian Mix 🇮🇳] [Refill: 30 Days] [15-20% Drop] [50k/Day] [Start: 0-30 Mins]",
+    "category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "display_category": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "status": "active"
+  }
+]

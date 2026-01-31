@@ -1,0 +1,12 @@
+--- Services under "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐" ---
+ID: 7803, Name: "Tiktok Followers [HQ] [365 Days Refill ♻] [Non Drop] [20k+ Day] [Start: 0 15 Mins] ", Rate: 206.09440000, ExtID: 2662
+ID: 7804, Name: "Tiktok Followers [HQ] [Less Drop] [R30 ♻] [10k Day] [Start: 0 5 Mins] ", Rate: 174.55840000, ExtID: 2026
+ID: 7806, Name: "Tiktok Followers [High Quality] [30 Days Refill ♻] [Non Drop] [20k day] ", Rate: 682.42240000, ExtID: 2779
+ID: 7805, Name: "Tiktok Followers [High Quality] [R30 ♻] [Less Drop] [50k day] [Start: 0 15 Mins", Rate: 329.51200000, ExtID: 2382
+ID: 8522, Name: "Tiktok Followers [Indian Mix 🇮🇳] [Refill: 30 Days] [15-20% Drop] [50k/Day] [Start: 0-30 Mins]", Rate: 514.85120000, ExtID: 2669
+ID: 8523, Name: "Tiktok Followers [Indian Mix 🇮🇳] [Refill: 365 Days] [15-20% Drop] [50k/Day] [Start: 0-30 Mins]", Rate: 722.77120000, ExtID: 2837
+ID: 7800, Name: "Tiktok Views [Max Unlimited] [No Refill] [Start: Instant", Rate: 2.08480000, ExtID: 2601
+ID: 7802, Name: "Tiktok Views [Refill: 30 Days ♻️] [Superfast] [Start: Instant] ", Rate: 1.50880000, ExtID: 2564
+
+--- Services under "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐f" ---
+ID: 8448, Name: "Tiktok Likes [HQ] [R30] [Less Drop] [100k+ day] [Superfast] [Start: Instant] ", Rate: 22.24000000, ExtID: 116

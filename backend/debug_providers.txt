@@ -1,0 +1,14 @@
+
+Providers:
+[
+  {
+    "id": 7,
+    "name": "MoreThenPanel",
+    "status": "inactive"
+  },
+  {
+    "id": 8,
+    "name": "EliteSMM",
+    "status": "active"
+  }
+]

@@ -1,0 +1,5 @@
+Analyzing 428 unique categories...
+Case-insensitive match: "Youtube Views" and "YouTube Views"
+Case-insensitive match: "Tiktok Followers" and "TikTok Followers"
+Extension match: "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐f" is "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐" plus "f"
+Case-insensitive match: "Youtube Subscribers" and "YouTube Subscribers"

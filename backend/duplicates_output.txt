@@ -1,0 +1,35 @@
+﻿[dotenv@17.2.3] injecting env (4) from .env -- tip: ≡ƒöÉ prevent committing .env to code: https://dotenvx.com/precommit
+--- Checking for Duplicate Categories (display_category) ---
+Found 391 category names that are shared by multiple services.
+Category: "Cheapest Of All Time Services" - Services: 123
+Category: "≡ƒö╡ Spotify Discover Weekly Plays | Country Targeted | Exclusive |" - Services: 90
+Category: "≡ƒö╡ Spotify Release Radar Plays | Country Targeted | Exclusive |" - Services: 89
+Category: "≡ƒö╡ Spotify Search Plays | Country Targeted | Exclusive |" - Services: 89
+Category: "Spotify Editorial Playlist Plays | Country Targeted" - Services: 89
+Category: "≡ƒö╡ YouTube RAV-GSΓäó Views | GEO Targeted | Exclusive |" - Services: 87
+Category: "Spotify Plays | Country Targeted" - Services: 86
+Category: "Spotify Podcast Plays | Country Targeted" - Services: 85
+Category: "Spotify Followers | Country Targeted" - Services: 85
+Category: "Spotify Playlist Plays | Country Targeted" - Services: 85
+
+--- Checking for Potential Duplicate Services (same name and category) ---
+Service: " Telegram Random Comments ≡ƒÆ¼ + View" | Category: "Telegram Post Shares/Comments" | Count: 8 | IDs: 8320,8324,8326,8321,8500,8327,8323,8325 | Providers: 8,8,8,8,8,8,8,8
+Service: "---------------------------------" | Category: "Facebook Comments" | Count: 2 | IDs: 8471,8033 | Providers: 8,8
+Service: "---------------------------------" | Category: "Instagram Random Comments" | Count: 2 | IDs: 8454,7870 | Providers: 8,8
+Service: "~~~~~~~~~~~~~~~~~~~~~~~" | Category: "Facebook Watch Time - Offline [60k-120k-600k]" | Count: 2 | IDs: 7963,7958 | Providers: 8,8
+Service: "≡ƒö╡  YouTube Social Shares |  Iraq | Lifetime Guaranteed| 50 /Day | Max 10K | NEW! |" | Category: "Youtube Social Shares | Country Targeted" | Count: 2 | IDs: 4734,4755 | Providers: 7,7
+Service: "≡ƒö╡ Facebook Followers | Profile | 30 Day Refill | Speed 10-20K/Day | Max 5M | NEW!" | Category: "Facebook Followers | Page/Profile |" | Count: 2 | IDs: 5749,5751 | Providers: 7,7
+Service: "≡ƒö╡ TikTok Live Stream Views | 15 Minutes | Max 5K | UHQ | NEW! |" | Category: "TikTok Live Stream Views" | Count: 2 | IDs: 4063,4064 | Providers: 7,7
+Service: "≡ƒö╡ TikTok Split Views | Latest 10 Videos | Lifetime Guaranteed Γîë Speed 10-100K/Day | Max 10M |" | Category: "≡ƒö╡ TikTok Split Services | Exclusive |" | Count: 2 | IDs: 3997,3993 | Providers: 7,7
+Service: "≡ƒö╡ YouTube Niche Likes | ≡¥ùí≡¥ù▓≡¥ÿä≡¥ÿÇ | 30 Day Refill | Speed: 20K/Daily  Γîè  Max 50K | NEW! |" | Category: "≡ƒö╡ YouTube Niche Likes | Exclusive |" | Count: 2 | IDs: 4385,4384 | Providers: 7,7
+Service: "≡ƒö╡ ≡ƒç¿≡ƒç╖ Spotify Plays [COSTA RICA] [Speed: 30-100K/Day] [Max: 1M] [Lifetime Guaranteed] [Drip-Feed ON]" | Category: "Spotify Plays | Country Targeted" | Count: 2 | IDs: 5205,5190 | Providers: 7,7
+Service: "≡ƒö╡≡ƒç¿≡ƒç¡ Spotify Podcast Listeners | Lifetime Guarantee | Non-Drop | Speed 30-100K/Day | Max 1M |" | Category: "Spotify Podcast Plays | Country Targeted" | Count: 2 | IDs: 5598,5581 | Providers: 7,7
+Service: "≡ƒö╡≡ƒç│≡ƒç┤ Spotify Podcast Listeners | Lifetime Guarantee | Non-Drop | Speed 30-100K/Day | Max 1M |" | Category: "Spotify Podcast Plays | Country Targeted" | Count: 2 | IDs: 5594,5580 | Providers: 7,7
+Service: "≡ƒƒó Twitch Viewers | %25 Userlist | With Views | 5 Min. Retention | 1 Day |" | Category: "Twitch Viewers (% Userlist - With Views - 5 Min. Retention) ( Exclusive)" | Count: 2 | IDs: 6180,6182 | Providers: 7,7
+Service: "≡ƒƒó Twitch Viewers | %50 Userlist | With Views | 5 Min. Retention | 1 Day |" | Category: "Twitch Viewers (% Userlist - With Views - 5 Min. Retention) ( Exclusive)" | Count: 2 | IDs: 6184,6188 | Providers: 7,7
+Service: "≡ƒƒó X/Twitter Space Listeners | 60 Minutes | Max 50K | NEW!" | Category: "X/Twitter Space Listeners" | Count: 2 | IDs: 6014,6016 | Providers: 7,7
+Service: "≡ƒƒóFacebook Comments | Custom | Speed 200 Day | Start 0-6/Hours | Max 250 |" | Category: "Facebook Share | Comment | Reviews |" | Count: 2 | IDs: 5858,5859 | Providers: 7,7
+Service: "≡ƒƒóFacebook Comments | Random | Speed 200 Day | Start 0-6/Hours | Max 250 |" | Category: "Facebook Share | Comment | Reviews |" | Count: 2 | IDs: 6453,5860 | Providers: 7,7
+
+--- Checking for exact Duplicate external_service_id for same provider ---
+No duplicate external_service_ids for the same provider found.

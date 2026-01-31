@@ -1,0 +1,34 @@
+
+Service Counts by Status:
+[
+  {
+    "status": "active",
+    "count": "3542"
+  },
+  {
+    "status": "inactive",
+    "count": "1165"
+  }
+]
+
+Sample Services:
+8356 | active | Telegram Members [Refill] | Telegram Members [30 Days Refill] [Non Drop] [10k-20k/day]
+7806 | active | Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐ | Tiktok Followers [High Quality] [30 Days Refill ♻] [Non Drop] [20k/day] ⭐
+8348 | active | Telegram Members [Refill] | Telegram Members [Max - 100k] [60 Days Refill] [Non Drop] [10k-20k/day]
+3419 | active | NepoSMM Promotions | 🟡 Instagram Video Views | No Refill | Speed 50-100K/Day | Max 100M | NEW! |
+3431 | active | NepoSMM Promotions | 🟢 Telegram Post Reactions + Views | Positive | 👍🤩🎉🔥❤️🥰👏🏻🥳😍❤️‍🔥💯 |  Instant Start | Max 300K | NEW! |
+3429 | active | NepoSMM Promotions | 🟢 X/Twitter Tweet Views | Speed 500-1M/Day | Max 100M | NEW!
+8363 | active | ♖ Twitch | Twitch Followers - [ Max 5K ] [ 30 Day Refill ]
+8303 | active | Telegram 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 Reactions | TG 🍓 Reaction + Free Views [𝗣𝗿𝗲𝗺𝗶𝘂𝗺]
+3433 | active | Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable] | 🟡 Youtube Subscribers | No Refill | 10-50K/Day | Max 1M | Instant Start | NEW |
+3435 | active | Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable] | 🟡 Youtube Views | Global | No Refill | Speed 250-2K/Day | Max 100K | NEW |
+3437 | active | Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable] | 🟢 X/Twitter Followers | 7 Day Refill | Speed: 1-5K/Day | Max 5K | Instant Start |
+3446 | active | Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable] | 🔵 🇩🇪 Google 1 Star Negative | Germany | Max 1K | UHQ | Provided by US Profiles |
+3452 | active | Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable] | 🔵 🇺🇸 TrustPilot Custom Reviews | 30 Day Refill | 5 Stars | Max 1K | Provided By US! |
+8317 | active | Telegram Post Shares/Comments | ~~~~~~~~~~~~~~~~~~~~~~~
+3440 | active | Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable] | 🟢 Spotify Plays | USA | Lifetime Guaranteed | Speed 20-30K/Day | Max 5M |
+3447 | active | Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable] | 🔵 🇩🇪 Google 5 Star Ratings | Germany | Max 1K | UHQ | SEO Boost | Provided by US Profiles |
+3449 | active | Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable] | 🔵 🇬🇧 Google Custom Reviews | United Kingdom | 5 Stars | Max 1K | UHQ | Provided By US! |
+3450 | active | Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable] | 🔵 🇺🇸 Google Custom Reviews | USA | 30 Day Refill | Max 1K | UHQ | Provided By US! |
+7813 | active | Instagram Video Views | Instagram Video + Reels Views [Superfast] [Start Time: Instant] ⚡
+3451 | active | Provided By NepoSMM  [Cheapest in the Market &amp; Always Stable] | 🔵 🌎 TrustPilot Custom Reviews | Global | 30 Day Refill | 5 Stars | Max 1K | Provided By US! |

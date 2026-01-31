@@ -1,0 +1,1714 @@
+[
+  {
+    "category_name": "Cheapest Of All Time Services",
+    "count": "123"
+  },
+  {
+    "category_name": "🔵 Spotify Discover Weekly Plays | Country Targeted | Exclusive |",
+    "count": "90"
+  },
+  {
+    "category_name": "Spotify Editorial Playlist Plays | Country Targeted",
+    "count": "89"
+  },
+  {
+    "category_name": "🔵 Spotify Search Plays | Country Targeted | Exclusive |",
+    "count": "89"
+  },
+  {
+    "category_name": "🔵 Spotify Release Radar Plays | Country Targeted | Exclusive |",
+    "count": "89"
+  },
+  {
+    "category_name": "🔵 YouTube RAV-GS™ Views | GEO Targeted | Exclusive |",
+    "count": "87"
+  },
+  {
+    "category_name": "Spotify Plays | Country Targeted",
+    "count": "86"
+  },
+  {
+    "category_name": "Spotify Followers | Country Targeted",
+    "count": "85"
+  },
+  {
+    "category_name": "Spotify Playlist Plays | Country Targeted",
+    "count": "85"
+  },
+  {
+    "category_name": "Spotify Podcast Plays | Country Targeted",
+    "count": "85"
+  },
+  {
+    "category_name": "🔵 YouTube Referrer Likes | Exclusive |",
+    "count": "79"
+  },
+  {
+    "category_name": "Turkish Services",
+    "count": "74"
+  },
+  {
+    "category_name": "Nigerian Services",
+    "count": "70"
+  },
+  {
+    "category_name": "USA Services",
+    "count": "70"
+  },
+  {
+    "category_name": "Youtube Social Shares | Country Targeted",
+    "count": "65"
+  },
+  {
+    "category_name": "🔵 Services For Streamers",
+    "count": "59"
+  },
+  {
+    "category_name": "🔵 Spotify Web2.0 Plays | Country Targeted | Algorithmic Source |",
+    "count": "46"
+  },
+  {
+    "category_name": "🔵 Spotify Radio Plays | Country Targeted | Exclusive |",
+    "count": "43"
+  },
+  {
+    "category_name": "Services For Gamers",
+    "count": "43"
+  },
+  {
+    "category_name": "YouTube Live Stream Views | With Views | Different Pause Time |",
+    "count": "40"
+  },
+  {
+    "category_name": "Spotify Monthly Listeners | Country/Language Targeted",
+    "count": "38"
+  },
+  {
+    "category_name": "YouTube Views | Best For SEO | Search by Keywords | Country Targeted |",
+    "count": "36"
+  },
+  {
+    "category_name": "🔵 Services For Instagram Influencers | Real People | Real Engagement",
+    "count": "34"
+  },
+  {
+    "category_name": "Facebook Comment | Country Targeted |",
+    "count": "34"
+  },
+  {
+    "category_name": "🔵 Spotify Power Plays | Country Targeted | Best For Algorithm |",
+    "count": "34"
+  },
+  {
+    "category_name": "Youtube Likes | Country Targeted |",
+    "count": "32"
+  },
+  {
+    "category_name": "🔵 Services For Small Business Owners",
+    "count": "30"
+  },
+  {
+    "category_name": "Telegram 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 Reactions",
+    "count": "29"
+  },
+  {
+    "category_name": "Morethan Best Selling and Qualified Mix Services",
+    "count": "28"
+  },
+  {
+    "category_name": "Instagram Followers | Country Targeted",
+    "count": "27"
+  },
+  {
+    "category_name": "Brazil Services",
+    "count": "27"
+  },
+  {
+    "category_name": "Arab Services",
+    "count": "27"
+  },
+  {
+    "category_name": "🔵 Youtube Elite Services | Always Stable, Real Services |",
+    "count": "27"
+  },
+  {
+    "category_name": "Twitch Viewers (% Userlist - With Views - 5 Min. Retention) ( Exclusive)",
+    "count": "26"
+  },
+  {
+    "category_name": "🔵 YouTube High Retention Views | Exclusive |",
+    "count": "25"
+  },
+  {
+    "category_name": "Telegram Channel/Group Members",
+    "count": "24"
+  },
+  {
+    "category_name": "🔵 Facebook Post Reactions | Country Targeted | Exclusive |",
+    "count": "24"
+  },
+  {
+    "category_name": "Kick.com | Live Stream Viewers",
+    "count": "24"
+  },
+  {
+    "category_name": "Italy Services",
+    "count": "24"
+  },
+  {
+    "category_name": "Instagram Likes | Country Targeted",
+    "count": "24"
+  },
+  {
+    "category_name": "Germany Services",
+    "count": "23"
+  },
+  {
+    "category_name": "Provided By NepoSMM [Cheapest in the Market &amp; Always Stable]",
+    "count": "23"
+  },
+  {
+    "category_name": "Google Map Services | Country Targeted | NEW! |",
+    "count": "22"
+  },
+  {
+    "category_name": "🔵 Instagram Exclusive Targeted Comments | Exclusive",
+    "count": "21"
+  },
+  {
+    "category_name": "Telegram Post Views &amp; Votelikes",
+    "count": "21"
+  },
+  {
+    "category_name": "Google Review Services | Custom | Country Targeted | NEW! |",
+    "count": "21"
+  },
+  {
+    "category_name": "Steam | Profile Comments | Group Member | Game Boost | Points | NEW!",
+    "count": "21"
+  },
+  {
+    "category_name": "Xbox Game Accounts | NEW!",
+    "count": "21"
+  },
+  {
+    "category_name": "Twitch Live Stream Auto Chat | Country Targeted",
+    "count": "21"
+  },
+  {
+    "category_name": "🔵 YouTube Niche Likes | Exclusive |",
+    "count": "20"
+  },
+  {
+    "category_name": "VK Play Live",
+    "count": "20"
+  },
+  {
+    "category_name": "🔵 Services For Musicians",
+    "count": "20"
+  },
+  {
+    "category_name": "MoreThanDesign | Canva | Freepik | Envato | iStock | CapCut | NEW!",
+    "count": "20"
+  },
+  {
+    "category_name": "Twitch Viewers (%100 Userlist - With Views - Different Retentions) ( Exclusive)",
+    "count": "20"
+  },
+  {
+    "category_name": "Youtube Short Views | Country Targeted |",
+    "count": "20"
+  },
+  {
+    "category_name": "Google Map Services | Country Targeted | Real Female Users | NEW! |",
+    "count": "19"
+  },
+  {
+    "category_name": "Google Review Services | Custom | Country Targeted | 👨 Male Users | NEW! |",
+    "count": "19"
+  },
+  {
+    "category_name": "Google Map Services | Country Targeted | Real Male Users | NEW! |",
+    "count": "18"
+  },
+  {
+    "category_name": "Youtube Comments | Country Targeted",
+    "count": "18"
+  },
+  {
+    "category_name": "Google Review Services | Custom | Country Targeted | 👩 Female Users | NEW! |",
+    "count": "18"
+  },
+  {
+    "category_name": "Google Review Likes Services | Country Targeted | NEW! |",
+    "count": "18"
+  },
+  {
+    "category_name": "TikTok Comments | Country Targeted |",
+    "count": "18"
+  },
+  {
+    "category_name": "Facebook Post Likes/Emotions/Share",
+    "count": "17"
+  },
+  {
+    "category_name": "VK | Followers | Members | Likes | Comment | NEW!",
+    "count": "17"
+  },
+  {
+    "category_name": "Google 1-5 Star Rating Services | Country Targeted | NEW! |",
+    "count": "17"
+  },
+  {
+    "category_name": "Instagram Comments/Comment Likes",
+    "count": "16"
+  },
+  {
+    "category_name": "Discord Server Boosts",
+    "count": "16"
+  },
+  {
+    "category_name": "Private 2",
+    "count": "15"
+  },
+  {
+    "category_name": "Telegram Post Reactions/Shares",
+    "count": "15"
+  },
+  {
+    "category_name": "Youtube Watch Time | 4000 Hours Service",
+    "count": "15"
+  },
+  {
+    "category_name": "🔵 Services For Tiktok Influencers",
+    "count": "15"
+  },
+  {
+    "category_name": "Facebook Comments",
+    "count": "15"
+  },
+  {
+    "category_name": "Telegram Views | Future Post | Last Post |",
+    "count": "15"
+  },
+  {
+    "category_name": "YouTube Live Stream Views",
+    "count": "15"
+  },
+  {
+    "category_name": "🔵 Instagram Elite Services | Always Stable, Real Services",
+    "count": "14"
+  },
+  {
+    "category_name": "Private Testing Services (Not For Use)",
+    "count": "14"
+  },
+  {
+    "category_name": "UK Services",
+    "count": "14"
+  },
+  {
+    "category_name": "🔵 TikTok Elite Services | Best Seller, Stable |",
+    "count": "14"
+  },
+  {
+    "category_name": "Youtube Live Stream [Concurrent]",
+    "count": "14"
+  },
+  {
+    "category_name": "🔵 Facebook Elite Services | Best Seller, Stable",
+    "count": "14"
+  },
+  {
+    "category_name": "🔵 Instagram Exclusive Targeted Likes | Exclusive",
+    "count": "14"
+  },
+  {
+    "category_name": "Facebook Share | Comment | Reviews |",
+    "count": "13"
+  },
+  {
+    "category_name": "🔵 Instagram Exclusive Targeted Followers | Exclusive",
+    "count": "13"
+  },
+  {
+    "category_name": "Facebook Post Likes | Country Targeted |",
+    "count": "13"
+  },
+  {
+    "category_name": "Instagram Story Services",
+    "count": "13"
+  },
+  {
+    "category_name": "Instagram Followers",
+    "count": "13"
+  },
+  {
+    "category_name": "Instagram Auto Comments/Saves/Share/Reaches",
+    "count": "13"
+  },
+  {
+    "category_name": "Telegram Reactions",
+    "count": "13"
+  },
+  {
+    "category_name": "India Services",
+    "count": "13"
+  },
+  {
+    "category_name": "Twitch Viewers (No Userlist - No Views) ( Exclusive)",
+    "count": "13"
+  },
+  {
+    "category_name": "NepoSMM Promotions",
+    "count": "13"
+  },
+  {
+    "category_name": "Facebook Followers | Page/Profile | Country Targeted |",
+    "count": "12"
+  },
+  {
+    "category_name": "YouTube Comments | Comments Reply | Comments Likes |",
+    "count": "12"
+  },
+  {
+    "category_name": "TikTok Live Stream Views",
+    "count": "12"
+  },
+  {
+    "category_name": "TikTok - Likes | Country Targeted",
+    "count": "12"
+  },
+  {
+    "category_name": "Youtube Native Ads Views 🔥",
+    "count": "12"
+  },
+  {
+    "category_name": "Quora.com",
+    "count": "12"
+  },
+  {
+    "category_name": "Facebook Live Stream ᵁᴾᴰᴬᵀᴱᴰ⭐",
+    "count": "12"
+  },
+  {
+    "category_name": "Facebook Likes | Page/Post/Reels/Comment |",
+    "count": "12"
+  },
+  {
+    "category_name": "Asia Services",
+    "count": "12"
+  },
+  {
+    "category_name": "Facebook Video Views",
+    "count": "12"
+  },
+  {
+    "category_name": "🔵 Spotify Elite Services ( Best Seller, Stable)",
+    "count": "12"
+  },
+  {
+    "category_name": "TikTok - Likes",
+    "count": "12"
+  },
+  {
+    "category_name": "Facebook Watch Time - Offline [60k-120k-600k]",
+    "count": "12"
+  },
+  {
+    "category_name": "Spotify Plays | Best Sellers",
+    "count": "12"
+  },
+  {
+    "category_name": "Instagram Indian Services 🇮🇳",
+    "count": "12"
+  },
+  {
+    "category_name": "Facebook Followers | Page/Profile |",
+    "count": "12"
+  },
+  {
+    "category_name": "Facebook WatchTime Views Services | Offline |",
+    "count": "12"
+  },
+  {
+    "category_name": "🔵 Instagram Repost | Country Targeted | Exclusive |",
+    "count": "11"
+  },
+  {
+    "category_name": "🦆 Real Website Traffic [RPA™] [Country Targeted]",
+    "count": "11"
+  },
+  {
+    "category_name": "Tiktok Likes",
+    "count": "11"
+  },
+  {
+    "category_name": "Youtube Shares",
+    "count": "11"
+  },
+  {
+    "category_name": "Instagram Followers [Working] ⭐",
+    "count": "11"
+  },
+  {
+    "category_name": "X/Twitter Views | Tweet/Post/Video | Impressions + Engagements + Details + Profile Visits |",
+    "count": "11"
+  },
+  {
+    "category_name": "Facebook Live Stream",
+    "count": "11"
+  },
+  {
+    "category_name": "Twitter",
+    "count": "11"
+  },
+  {
+    "category_name": "Audiomack Streams Country Targeted",
+    "count": "11"
+  },
+  {
+    "category_name": "Tiktok Live Stream Views - Cheapest",
+    "count": "11"
+  },
+  {
+    "category_name": "🔵 YouTube CTR Views | Exclusive |",
+    "count": "11"
+  },
+  {
+    "category_name": "Telegram Post Shares/Comments",
+    "count": "11"
+  },
+  {
+    "category_name": "Reddit Views | Shares | Comment |",
+    "count": "11"
+  },
+  {
+    "category_name": "Facebook Profile/Page Followers",
+    "count": "11"
+  },
+  {
+    "category_name": "Instagram | Members Channel",
+    "count": "11"
+  },
+  {
+    "category_name": "Youtube Adword Views | Instream - Skipable |",
+    "count": "11"
+  },
+  {
+    "category_name": "🔵 Services For Youtubers",
+    "count": "11"
+  },
+  {
+    "category_name": "YouTube Subscribers",
+    "count": "10"
+  },
+  {
+    "category_name": "Facebook World-Wide Services | 100% Real",
+    "count": "10"
+  },
+  {
+    "category_name": "Bangladesh Services",
+    "count": "10"
+  },
+  {
+    "category_name": "Youtube Live Stream 𝗖𝗵𝗲𝗮𝗽𝗲𝘀𝘁",
+    "count": "10"
+  },
+  {
+    "category_name": "TikTok Followers",
+    "count": "10"
+  },
+  {
+    "category_name": "🔵 TikTok Verified Services | NEW!",
+    "count": "10"
+  },
+  {
+    "category_name": "🔵 X/Twitter Exclusive Services | Gender/Country Targeted",
+    "count": "10"
+  },
+  {
+    "category_name": "Facebook Page Likes",
+    "count": "10"
+  },
+  {
+    "category_name": "MoreThanMovies | Netflix | Disney+ | HBO Max | Amazon Prime | NEW!",
+    "count": "10"
+  },
+  {
+    "category_name": "Facebook Group Members",
+    "count": "10"
+  },
+  {
+    "category_name": "Facebook Friends Requests | Country Targeted |",
+    "count": "10"
+  },
+  {
+    "category_name": "Youtube Likes / Dislikes",
+    "count": "10"
+  },
+  {
+    "category_name": "🔵 TikTok Exclusive Services | Gender/Country Targeted",
+    "count": "9"
+  },
+  {
+    "category_name": "Instagram Views",
+    "count": "9"
+  },
+  {
+    "category_name": "Instagram Views | Country Targeted",
+    "count": "9"
+  },
+  {
+    "category_name": "🔵 TikTok Split Services | Exclusive |",
+    "count": "9"
+  },
+  {
+    "category_name": "🔵 TikTok %100 Real Comment Services | Foreign Language | Exclusive |",
+    "count": "9"
+  },
+  {
+    "category_name": "🔵 Facebook Split Services | Exclusive |",
+    "count": "9"
+  },
+  {
+    "category_name": "Twitter Followers",
+    "count": "9"
+  },
+  {
+    "category_name": "Instagram [Save/Shares/Profile Visits]",
+    "count": "9"
+  },
+  {
+    "category_name": "Facebook Group Members | Country Targeted |",
+    "count": "9"
+  },
+  {
+    "category_name": "X/Twitter Followers",
+    "count": "9"
+  },
+  {
+    "category_name": "🔥Promotional Services🔥",
+    "count": "9"
+  },
+  {
+    "category_name": "🔵 Instagram Verified Comments | Exclusive",
+    "count": "9"
+  },
+  {
+    "category_name": "♖ Website Traffic",
+    "count": "9"
+  },
+  {
+    "category_name": "OpenRec.TV",
+    "count": "9"
+  },
+  {
+    "category_name": "Twitch Viewers | 100% Concurrent | Exclusive | NEW!",
+    "count": "9"
+  },
+  {
+    "category_name": "X/Twitter Video Views | Country Targeted",
+    "count": "9"
+  },
+  {
+    "category_name": "YouTube Live Stream Rank Viewers | Country Targeted |",
+    "count": "9"
+  },
+  {
+    "category_name": "Pinterest",
+    "count": "8"
+  },
+  {
+    "category_name": "🔵 Telegram Premium Members",
+    "count": "8"
+  },
+  {
+    "category_name": "TikTok Followers | Country Targeted",
+    "count": "8"
+  },
+  {
+    "category_name": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐",
+    "count": "8"
+  },
+  {
+    "category_name": "Whatsapp Services",
+    "count": "8"
+  },
+  {
+    "category_name": "Rumble",
+    "count": "8"
+  },
+  {
+    "category_name": "♖ Website Traffic from USA",
+    "count": "8"
+  },
+  {
+    "category_name": "Parti.com Live Stream Views",
+    "count": "8"
+  },
+  {
+    "category_name": "Facebook Live Stream Views",
+    "count": "8"
+  },
+  {
+    "category_name": "♖ Website Traffic from India",
+    "count": "8"
+  },
+  {
+    "category_name": "Twitch Live Stream Auto Chat | Custom | Emoji",
+    "count": "8"
+  },
+  {
+    "category_name": "Tiktok Auto Likes | Future Posts",
+    "count": "8"
+  },
+  {
+    "category_name": "Steam Game Accounts | NEW!",
+    "count": "8"
+  },
+  {
+    "category_name": "🔵 Facebook Video/Reels Views | Good For Monetization | Exclusive |",
+    "count": "8"
+  },
+  {
+    "category_name": "Instagram Live Stream Services",
+    "count": "8"
+  },
+  {
+    "category_name": "♖SoundCloud",
+    "count": "8"
+  },
+  {
+    "category_name": "Youtube Short Views",
+    "count": "8"
+  },
+  {
+    "category_name": "🔵 Instagram Power Followers/Likes/Comments | Exclusive",
+    "count": "8"
+  },
+  {
+    "category_name": "🔵 Discord Account Sales | NEW!",
+    "count": "8"
+  },
+  {
+    "category_name": "Instagram Likes",
+    "count": "8"
+  },
+  {
+    "category_name": "Youtube Auto Likes",
+    "count": "8"
+  },
+  {
+    "category_name": "Instagram Random Comments",
+    "count": "8"
+  },
+  {
+    "category_name": "MoreThanLicence | Windows Licence Key | Office Licence Key | VPN | Antivirus NEW!",
+    "count": "8"
+  },
+  {
+    "category_name": "Instagram Indian Likes 🇮🇳",
+    "count": "8"
+  },
+  {
+    "category_name": "Facebook Page Likes | Country Targeted |",
+    "count": "8"
+  },
+  {
+    "category_name": "X/Twitter Gradual Tweet Views",
+    "count": "8"
+  },
+  {
+    "category_name": "YouTube Views",
+    "count": "8"
+  },
+  {
+    "category_name": "Tiktok Comments",
+    "count": "8"
+  },
+  {
+    "category_name": "YouTube Live Stream Views | With Views | Different Retention |",
+    "count": "8"
+  },
+  {
+    "category_name": "Spotify Plays/Save/Listeners",
+    "count": "7"
+  },
+  {
+    "category_name": "Telegram Views | Country Targeted |",
+    "count": "7"
+  },
+  {
+    "category_name": "Panda.TV",
+    "count": "7"
+  },
+  {
+    "category_name": "Mixch.TV",
+    "count": "7"
+  },
+  {
+    "category_name": "🔵 YouTube Real Live Stream Views | Exclusive |",
+    "count": "7"
+  },
+  {
+    "category_name": "LinkedIn | Exclusive",
+    "count": "7"
+  },
+  {
+    "category_name": "Reddit Views | Comment | Country Targeted |",
+    "count": "7"
+  },
+  {
+    "category_name": "Facebook Post Reactions",
+    "count": "7"
+  },
+  {
+    "category_name": "Telegram Comments &amp; Vote",
+    "count": "7"
+  },
+  {
+    "category_name": "🔵 X/Twitter Elite Services ( Best Seller, Stable)",
+    "count": "7"
+  },
+  {
+    "category_name": "🔵 Tiktok Account Sales | 2016-2025 Date Range Accounts | NEW!",
+    "count": "7"
+  },
+  {
+    "category_name": "MoreThanMail | Hotmail | Gmail | NEW!",
+    "count": "7"
+  },
+  {
+    "category_name": "Facebook Reels",
+    "count": "7"
+  },
+  {
+    "category_name": "🔵 X/Twitter Account Sales | 2016-2025 Date Range Accounts | NEW!",
+    "count": "7"
+  },
+  {
+    "category_name": "Facebook Post Reacts - 𝗖𝗵𝗲𝗮𝗽𝗲𝘀𝘁 💥",
+    "count": "7"
+  },
+  {
+    "category_name": "Instagram Power Comments",
+    "count": "7"
+  },
+  {
+    "category_name": "🔵 X/Twitter Trend Topic Services | Exclusive |",
+    "count": "7"
+  },
+  {
+    "category_name": "Facebook Post Reacts S1",
+    "count": "7"
+  },
+  {
+    "category_name": "Tiktok",
+    "count": "7"
+  },
+  {
+    "category_name": "YouTube Live Stream Custom Comment Services",
+    "count": "7"
+  },
+  {
+    "category_name": "Steam Random Game Key Drops | NEW!",
+    "count": "7"
+  },
+  {
+    "category_name": "Instagram Direct Message",
+    "count": "7"
+  },
+  {
+    "category_name": "🔵 Telegram Old Year Channel | Exclusive |",
+    "count": "6"
+  },
+  {
+    "category_name": "X/Twitter Space Listeners",
+    "count": "6"
+  },
+  {
+    "category_name": "Youtube Social Shares",
+    "count": "6"
+  },
+  {
+    "category_name": "🔵 Instagram Account Sales | 2010-2024 Date Range Accounts | NEW!",
+    "count": "6"
+  },
+  {
+    "category_name": "Google Map Services | Country Targeted | Local Guides Female Users | NEW! |",
+    "count": "6"
+  },
+  {
+    "category_name": "Tiktok Live Stream Views - Stable 🆕",
+    "count": "6"
+  },
+  {
+    "category_name": "BlueSky Services",
+    "count": "6"
+  },
+  {
+    "category_name": "♖ Twitch",
+    "count": "6"
+  },
+  {
+    "category_name": "🔵 YouTube RAV-GS™ Views | Language Targeted | Exclusive |",
+    "count": "6"
+  },
+  {
+    "category_name": "Github Services",
+    "count": "6"
+  },
+  {
+    "category_name": "Telegram Group Post Reply | Random | Country Targeted |",
+    "count": "6"
+  },
+  {
+    "category_name": "🔵 Facebook Special DripFeed Services | Exclusive",
+    "count": "6"
+  },
+  {
+    "category_name": "Telegram Post Reactions | For Private Channels | NEW! |",
+    "count": "6"
+  },
+  {
+    "category_name": "Twitch Live Stream Views | Country Targeted",
+    "count": "6"
+  },
+  {
+    "category_name": "Verification Services",
+    "count": "6"
+  },
+  {
+    "category_name": "Quora",
+    "count": "6"
+  },
+  {
+    "category_name": "🔵 Telegram Old Year Group | Exclusive |",
+    "count": "6"
+  },
+  {
+    "category_name": "Kick.com | Followers",
+    "count": "6"
+  },
+  {
+    "category_name": "🔵 Instagram Verified Followers | Exclusive",
+    "count": "6"
+  },
+  {
+    "category_name": "YouTube Live Stream Reactions",
+    "count": "6"
+  },
+  {
+    "category_name": "Youtube Live Stream Views | Real Time AI Chat | Country Targeted |",
+    "count": "6"
+  },
+  {
+    "category_name": "🔵 TikTok Views | Best For SEO | 100% Real | Exclusive |",
+    "count": "6"
+  },
+  {
+    "category_name": "Facebook Views | Video/Reel/IGTV/Story |",
+    "count": "5"
+  },
+  {
+    "category_name": "Tinder Accounts | Plus | Gold | Platinum | NEW!",
+    "count": "5"
+  },
+  {
+    "category_name": "MoreThanEdu Tools | Duolingo | Edu.PL | Midjourney | NEW!",
+    "count": "5"
+  },
+  {
+    "category_name": "🔵 Facebook Page Reviews | Exclusive |",
+    "count": "5"
+  },
+  {
+    "category_name": "🔵 Instagram Verified Likes | Exclusive",
+    "count": "5"
+  },
+  {
+    "category_name": "Linkedin Reaction",
+    "count": "5"
+  },
+  {
+    "category_name": "Audiomack",
+    "count": "5"
+  },
+  {
+    "category_name": "Telegram Premium Services",
+    "count": "5"
+  },
+  {
+    "category_name": "Telegram Channel/Group Members | Country Targeted |",
+    "count": "5"
+  },
+  {
+    "category_name": "🔵 Instagram Subscription Services | Exclusive |",
+    "count": "5"
+  },
+  {
+    "category_name": "🔵 Tiktok Special DripFeed Services | Exclusive",
+    "count": "5"
+  },
+  {
+    "category_name": "🔵 YouTube Native Adword Views | Exclusive |",
+    "count": "5"
+  },
+  {
+    "category_name": "Instagram Video Views",
+    "count": "5"
+  },
+  {
+    "category_name": "Instagram Comments | Country Targeted",
+    "count": "5"
+  },
+  {
+    "category_name": "TikTok Share &amp; Save Services",
+    "count": "5"
+  },
+  {
+    "category_name": "X/Twitter Followers | Country Targeted",
+    "count": "5"
+  },
+  {
+    "category_name": "🔵 Telegram Premium Members [For Search Optimization]",
+    "count": "5"
+  },
+  {
+    "category_name": "Shopee",
+    "count": "5"
+  },
+  {
+    "category_name": "Tiktok Followers",
+    "count": "5"
+  },
+  {
+    "category_name": "Threads Likes",
+    "count": "5"
+  },
+  {
+    "category_name": "Tiktok Live Stream Views/Likes",
+    "count": "5"
+  },
+  {
+    "category_name": "X/Twitter Likes",
+    "count": "5"
+  },
+  {
+    "category_name": "🔵 Instagram Special DripFeed Services | Exclusive",
+    "count": "5"
+  },
+  {
+    "category_name": "Facebook Page Likes + Followers",
+    "count": "5"
+  },
+  {
+    "category_name": "Facebook Post Shares",
+    "count": "5"
+  },
+  {
+    "category_name": "Youtube Views",
+    "count": "5"
+  },
+  {
+    "category_name": "Twitch Followers",
+    "count": "5"
+  },
+  {
+    "category_name": "YouTube Likes | Dislikes |",
+    "count": "5"
+  },
+  {
+    "category_name": "Instagram Likes [Refill]",
+    "count": "5"
+  },
+  {
+    "category_name": "Telegram Members [Refill]",
+    "count": "5"
+  },
+  {
+    "category_name": "Ok.ru Organic | Members | Likes | Friend Requests | NEW!",
+    "count": "5"
+  },
+  {
+    "category_name": "🔵 YouTube Ranking Views | Exclusive |",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 Bluesky %100 Real Services | Exclusive |",
+    "count": "4"
+  },
+  {
+    "category_name": "TikTok Interactions",
+    "count": "4"
+  },
+  {
+    "category_name": "YouTube Short Likes",
+    "count": "4"
+  },
+  {
+    "category_name": "TikTok Auto Comments | Future Posts",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 Facebook Growth Packages | GPT4 Powered | Exclusive |",
+    "count": "4"
+  },
+  {
+    "category_name": "Medium Services",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 Snapchat | Exclusive",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 Telegram Premium Members | Country Targeted |",
+    "count": "4"
+  },
+  {
+    "category_name": "LinkedIn | Page Followers | Profile Followers | Group Members",
+    "count": "4"
+  },
+  {
+    "category_name": "Youtube Comments",
+    "count": "4"
+  },
+  {
+    "category_name": "Truth Social Services",
+    "count": "4"
+  },
+  {
+    "category_name": "Square Services",
+    "count": "4"
+  },
+  {
+    "category_name": "♖ Kwai Services",
+    "count": "4"
+  },
+  {
+    "category_name": "Brawl Stars Random Accounts | NEW!",
+    "count": "4"
+  },
+  {
+    "category_name": "Snapchat Story Services",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 TikTok Growth Packages | GPT4 Powered | Exclusive |",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 Youtube Growth Packages | GPT4 Powered | Exclusive |",
+    "count": "4"
+  },
+  {
+    "category_name": "Tiktok Views",
+    "count": "4"
+  },
+  {
+    "category_name": "Mixcloud",
+    "count": "4"
+  },
+  {
+    "category_name": "Tiktok Monetizable Views [Non Drop] 🆕",
+    "count": "4"
+  },
+  {
+    "category_name": "Telegram Auto Post Views",
+    "count": "4"
+  },
+  {
+    "category_name": "♖ Pinterest",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 X/Twitter Growth Packages | GPT4 Powered | Exclusive |",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 Telegram Premium Stars/Subscription | Exclusive |",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 Github Account Sales | 2008-2025 Date Range Accounts | NEW!",
+    "count": "4"
+  },
+  {
+    "category_name": "SoundCloud",
+    "count": "4"
+  },
+  {
+    "category_name": "Twitter Likes/ Retweets",
+    "count": "4"
+  },
+  {
+    "category_name": "Boomplay Targeted Streams",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 Telegram Boost Channel | Exclusive |",
+    "count": "4"
+  },
+  {
+    "category_name": "Google Map Services | Country Targeted | Local Guides Mele Users | NEW! |",
+    "count": "4"
+  },
+  {
+    "category_name": "Instagram Auto Views",
+    "count": "4"
+  },
+  {
+    "category_name": "Telegram Reactions S2",
+    "count": "4"
+  },
+  {
+    "category_name": "Rutube Organic | Subscribers | Likes | Push to Top | NEW!",
+    "count": "4"
+  },
+  {
+    "category_name": "Google Map Services | Country Targeted | Local Guides | NEW! |",
+    "count": "4"
+  },
+  {
+    "category_name": "Instagram Custom Comments",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 Instagram Growth Packages | GPT4 Powered | Exclusive",
+    "count": "4"
+  },
+  {
+    "category_name": "MoreThanMusic | Spotify | Tidal | Epidemic Sound | NEW!",
+    "count": "4"
+  },
+  {
+    "category_name": "Instagram Reaches/Impressions",
+    "count": "4"
+  },
+  {
+    "category_name": "YouTube Views | Country Targeted |",
+    "count": "4"
+  },
+  {
+    "category_name": "Instagram VIP Likes💎",
+    "count": "4"
+  },
+  {
+    "category_name": "Instagram Auto Likes / Views / Comments",
+    "count": "4"
+  },
+  {
+    "category_name": "Snapchat Direct Message Services",
+    "count": "4"
+  },
+  {
+    "category_name": "🔵 TikTok Likes + Views | Gender Targeted | Exclusive |",
+    "count": "4"
+  },
+  {
+    "category_name": "MoreThanAI | ChatGPT | Midjourney | Gemini | Claude | NEW!",
+    "count": "4"
+  },
+  {
+    "category_name": "Instagram Reels",
+    "count": "4"
+  },
+  {
+    "category_name": "YouTube Adword Views",
+    "count": "4"
+  },
+  {
+    "category_name": "LinkedIn Reaches | Connection | Likes | Share | Comment",
+    "count": "3"
+  },
+  {
+    "category_name": "Dribbble Services",
+    "count": "3"
+  },
+  {
+    "category_name": "Reddit Followers | Subscribers |",
+    "count": "3"
+  },
+  {
+    "category_name": "Instagram Likes [ Targeted ]",
+    "count": "3"
+  },
+  {
+    "category_name": "Spotify Followers",
+    "count": "3"
+  },
+  {
+    "category_name": "Onlyfans Followers",
+    "count": "3"
+  },
+  {
+    "category_name": "Facebook Friend Requests | Membership Invitation |",
+    "count": "3"
+  },
+  {
+    "category_name": "Twitch Video/Clip Views",
+    "count": "3"
+  },
+  {
+    "category_name": "♖ Snapchat",
+    "count": "3"
+  },
+  {
+    "category_name": "Dzen Organic | Followers | Likes | Share | Commnet | NEW!",
+    "count": "3"
+  },
+  {
+    "category_name": "Onlyfans Likes",
+    "count": "3"
+  },
+  {
+    "category_name": "New Service Sale | Career | Tradingview | Turbobit |",
+    "count": "3"
+  },
+  {
+    "category_name": "X/Twitter Impressions | Bookmarks",
+    "count": "3"
+  },
+  {
+    "category_name": "Snapchat Likes",
+    "count": "3"
+  },
+  {
+    "category_name": "Instagram Followers [ No Refill ]",
+    "count": "3"
+  },
+  {
+    "category_name": "Instagram Story",
+    "count": "3"
+  },
+  {
+    "category_name": "🔵 Facebook Report | Exclusive |",
+    "count": "3"
+  },
+  {
+    "category_name": "Website SEO Packages ⭐",
+    "count": "3"
+  },
+  {
+    "category_name": "Kick.com | Video | Clip | Votes | Views",
+    "count": "3"
+  },
+  {
+    "category_name": "EA Play | NEW!",
+    "count": "3"
+  },
+  {
+    "category_name": "Boomplay",
+    "count": "3"
+  },
+  {
+    "category_name": "Clubhouse - Followers | Room Visitor",
+    "count": "3"
+  },
+  {
+    "category_name": "Instagram Mentions | NepoSMM Exclusive",
+    "count": "3"
+  },
+  {
+    "category_name": "Behance Services",
+    "count": "3"
+  },
+  {
+    "category_name": "Ubisoft | NEW!",
+    "count": "3"
+  },
+  {
+    "category_name": "YouTube High Retention Views | Country Targeted |",
+    "count": "3"
+  },
+  {
+    "category_name": "🔵 LinkedIn Account Sales | 2002-2025 Date Range Accounts | NEW!",
+    "count": "3"
+  },
+  {
+    "category_name": "🔵 Snapchat Account Sales | 2011-2025 Date Range Accounts | NEW!",
+    "count": "3"
+  },
+  {
+    "category_name": "Instagram Followers [Country Targeted]",
+    "count": "3"
+  },
+  {
+    "category_name": "Youtube Community",
+    "count": "3"
+  },
+  {
+    "category_name": "🔵 Reddit Account Sales | 2005-2025 Date Range Accounts | NEW!",
+    "count": "3"
+  },
+  {
+    "category_name": "🔵 Facebook Video Views | Exclusive |",
+    "count": "3"
+  },
+  {
+    "category_name": "X/Twitter Targeted Retweets",
+    "count": "3"
+  },
+  {
+    "category_name": "X/Twitter Retweets",
+    "count": "3"
+  },
+  {
+    "category_name": "Instagram Shares",
+    "count": "3"
+  },
+  {
+    "category_name": "Xbox Gamepass | NEW!",
+    "count": "3"
+  },
+  {
+    "category_name": "Facebook Bangladesh Services 🇧🇩",
+    "count": "3"
+  },
+  {
+    "category_name": "X/Twitter - Engagement Services",
+    "count": "3"
+  },
+  {
+    "category_name": "♖ Discord",
+    "count": "3"
+  },
+  {
+    "category_name": "Roblox Accounts | Blox Fruits | Gamepass Chance | Random | NEW!",
+    "count": "3"
+  },
+  {
+    "category_name": "🔵 Facebook Account Sales | 2007-2025 Date Range Accounts | NEW!",
+    "count": "3"
+  },
+  {
+    "category_name": "Linkedin | Turkish Services",
+    "count": "3"
+  },
+  {
+    "category_name": "Snapchat Followers",
+    "count": "3"
+  },
+  {
+    "category_name": "Youtube Adwords Views 🆕🔥",
+    "count": "3"
+  },
+  {
+    "category_name": "🔵 Spotify %100 Premium Mobile Plays | Royalties Eligible | NEW! |",
+    "count": "2"
+  },
+  {
+    "category_name": "Discord Members (Offline/Online)",
+    "count": "2"
+  },
+  {
+    "category_name": "Youtube Comment Likes",
+    "count": "2"
+  },
+  {
+    "category_name": "MoreThanProxy | IPv4 ISP Proxy | NEW!",
+    "count": "2"
+  },
+  {
+    "category_name": "🔵 YouTube Boost Service | Top Search Results Ranking 🔥",
+    "count": "2"
+  },
+  {
+    "category_name": "Facebook Indian Post Reacts 🇮🇳🆕",
+    "count": "2"
+  },
+  {
+    "category_name": "Spotify Monthly Listeners",
+    "count": "2"
+  },
+  {
+    "category_name": "Reddit Upvotes | Downvotes |",
+    "count": "2"
+  },
+  {
+    "category_name": "Deezer",
+    "count": "2"
+  },
+  {
+    "category_name": "Tumblr Services",
+    "count": "2"
+  },
+  {
+    "category_name": "X/Twitter NFT Exclusive Services (NEW!)",
+    "count": "2"
+  },
+  {
+    "category_name": "Instagram Saves",
+    "count": "2"
+  },
+  {
+    "category_name": "Line OpenChat Services",
+    "count": "2"
+  },
+  {
+    "category_name": "Instagram Live Video",
+    "count": "2"
+  },
+  {
+    "category_name": "🔵 Facebook Likes | Page/Post | Exclusive |",
+    "count": "2"
+  },
+  {
+    "category_name": "🔵 Facebook Real Followers | Page/Profile | Exclusive |",
+    "count": "2"
+  },
+  {
+    "category_name": "MoreThanSEO | Semrush | SEOBility | Ahrefs | NEW!",
+    "count": "2"
+  },
+  {
+    "category_name": "X/Twitter Poll Vote",
+    "count": "2"
+  },
+  {
+    "category_name": "YouTube Live Stream/Premiere",
+    "count": "2"
+  },
+  {
+    "category_name": "Youtube Shorts",
+    "count": "2"
+  },
+  {
+    "category_name": "Line Services",
+    "count": "2"
+  },
+  {
+    "category_name": "TikTok Comments | Comment Likes |",
+    "count": "2"
+  },
+  {
+    "category_name": "Threads Followers",
+    "count": "2"
+  },
+  {
+    "category_name": "YouTube Live Stream Likes",
+    "count": "2"
+  },
+  {
+    "category_name": "Apple Music Plays",
+    "count": "2"
+  },
+  {
+    "category_name": "🔵 Telegram Ads Views + Click Services",
+    "count": "2"
+  },
+  {
+    "category_name": "Telegram Members [Targeted]",
+    "count": "2"
+  },
+  {
+    "category_name": "🔵 Facebook Event | Exclusive |",
+    "count": "2"
+  },
+  {
+    "category_name": "♖ Mobile App Installs &amp; Reviews",
+    "count": "2"
+  },
+  {
+    "category_name": "🔵 Instagram Repost | Exclusive |",
+    "count": "2"
+  },
+  {
+    "category_name": "X/Twitter Targeted Likes",
+    "count": "2"
+  },
+  {
+    "category_name": "Onlyfans Comments",
+    "count": "2"
+  },
+  {
+    "category_name": "Youtube Subscribers",
+    "count": "2"
+  },
+  {
+    "category_name": "TikTok Live Stream Likes",
+    "count": "2"
+  },
+  {
+    "category_name": "TikTok Download Services",
+    "count": "2"
+  },
+  {
+    "category_name": "🔵 Telegram Bot Start + Activity | Exclusive |",
+    "count": "2"
+  },
+  {
+    "category_name": "Vimeo",
+    "count": "2"
+  },
+  {
+    "category_name": "Facebook Page Reviews",
+    "count": "2"
+  },
+  {
+    "category_name": "Facebook Story Views",
+    "count": "2"
+  },
+  {
+    "category_name": "YouTube Crypto &amp; NFT Likes",
+    "count": "2"
+  },
+  {
+    "category_name": "♖ SEO - Social Signals (Facebook &amp; Pinterest)",
+    "count": "2"
+  },
+  {
+    "category_name": "X/Twitter Comments",
+    "count": "2"
+  },
+  {
+    "category_name": "🔵 Discord Nitro Services",
+    "count": "1"
+  },
+  {
+    "category_name": "Sooplive Views",
+    "count": "1"
+  },
+  {
+    "category_name": "Bank Account Sale (PayPal - Stripe Account Sale)",
+    "count": "1"
+  },
+  {
+    "category_name": "Youtube Views [Targeted]",
+    "count": "1"
+  },
+  {
+    "category_name": "TikTok PK Battle Points",
+    "count": "1"
+  },
+  {
+    "category_name": "🔵 Instagram Exclusive Targeted Views | Exclusive",
+    "count": "1"
+  },
+  {
+    "category_name": "Instagram Followers [365 Days Refill]",
+    "count": "1"
+  },
+  {
+    "category_name": "Discord Message Reactions",
+    "count": "1"
+  },
+  {
+    "category_name": "Tiktok Services - 𝗨𝗽𝗱𝗮𝘁𝗲𝗱 ⭐f",
+    "count": "1"
+  },
+  {
+    "category_name": "♖ Tiktok Auto Views/Likes/Shares",
+    "count": "1"
+  },
+  {
+    "category_name": "TikTok Story Services",
+    "count": "1"
+  },
+  {
+    "category_name": "♖ Twitch Live Views",
+    "count": "1"
+  },
+  {
+    "category_name": "♖ Clubhouse",
+    "count": "1"
+  },
+  {
+    "category_name": "TikTok Repost Services",
+    "count": "1"
+  },
+  {
+    "category_name": "NepoSmm Best Services",
+    "count": "1"
+  },
+  {
+    "category_name": "Youtube Views [GEO - Targeted]",
+    "count": "1"
+  },
+  {
+    "category_name": "Youtube Views [No Refill]",
+    "count": "1"
+  },
+  {
+    "category_name": "Facebook Page Likes + Followers | Country Targeted |",
+    "count": "1"
+  },
+  {
+    "category_name": "YouTube Adword Views | Country Targeted |",
+    "count": "1"
+  },
+  {
+    "category_name": "Youtube Likes (Country Targeted)",
+    "count": "1"
+  },
+  {
+    "category_name": "Instagram Channel Members",
+    "count": "1"
+  },
+  {
+    "category_name": "Telegram Post Views [Targeted]",
+    "count": "1"
+  },
+  {
+    "category_name": "Snapchat Followers | Country Targeted",
+    "count": "1"
+  },
+  {
+    "category_name": "Youtube Watch Time [ Hours ] 🆕",
+    "count": "1"
+  },
+  {
+    "category_name": "♖ Dailymotion",
+    "count": "1"
+  },
+  {
+    "category_name": "Threads Repost",
+    "count": "1"
+  },
+  {
+    "category_name": "♖ Reddit",
+    "count": "1"
+  },
+  {
+    "category_name": "🔵 TikTok Coins | Exclusive |",
+    "count": "1"
+  },
+  {
+    "category_name": "Discord Cloning Servers",
+    "count": "1"
+  },
+  {
+    "category_name": "Instagram Comment Likes",
+    "count": "1"
+  },
+  {
+    "category_name": "Instagram Reels Services",
+    "count": "1"
+  },
+  {
+    "category_name": "🔵 YouTube Premium | NEW!",
+    "count": "1"
+  },
+  {
+    "category_name": "Spotify Plays",
+    "count": "1"
+  },
+  {
+    "category_name": "🔵 Discord Chat Members",
+    "count": "1"
+  },
+  {
+    "category_name": "YouTube Auto Views",
+    "count": "1"
+  },
+  {
+    "category_name": "Spotify Saves",
+    "count": "1"
+  },
+  {
+    "category_name": "Instagram Bulk Reels",
+    "count": "1"
+  }
+]

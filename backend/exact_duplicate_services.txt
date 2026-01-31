@@ -1,0 +1,16 @@
+--- Checking for Exact Duplicate Services (same name, category, and rate) ---
+Found 14 sets of exact duplicate services.
+Service: " Telegram Random Comments 💬 + View" | Cat: "Telegram Post Shares/Comments" | Rate: 548.07520000 | Count: 8 | IDs: 8320,8324,8326,8321,8500,8327,8323,8325 | Providers: 8,8,8,8,8,8,8,8
+Service: "---------------------------------" | Cat: "Facebook Comments" | Rate: 1598.40000000 | Count: 2 | IDs: 8471,8033 | Providers: 8,8
+Service: "---------------------------------" | Cat: "Instagram Random Comments" | Rate: 160000.00000000 | Count: 2 | IDs: 8454,7870 | Providers: 8,8
+Service: "🔵  YouTube Social Shares |  Iraq | Lifetime Guaranteed| 50 /Day | Max 10K | NEW! |" | Cat: "Youtube Social Shares | Country Targeted" | Rate: 2.57600000 | Count: 2 | IDs: 4734,4755 | Providers: 7,7
+Service: "🔵 Facebook Followers | Profile | 30 Day Refill | Speed 10-20K/Day | Max 5M | NEW!" | Cat: "Facebook Followers | Page/Profile |" | Rate: 1.40800000 | Count: 2 | IDs: 5749,5751 | Providers: 7,7
+Service: "🔵 TikTok Split Views | Latest 10 Videos | Lifetime Guaranteed ⌉ Speed 10-100K/Day | Max 10M |" | Cat: "🔵 TikTok Split Services | Exclusive |" | Rate: 0.03200000 | Count: 2 | IDs: 3997,3993 | Providers: 7,7
+Service: "🔵 YouTube Niche Likes | 𝗡𝗲𝘄𝘀 | 30 Day Refill | Speed: 20K/Daily  ⌊  Max 50K | NEW! |" | Cat: "🔵 YouTube Niche Likes | Exclusive |" | Rate: 3.24800000 | Count: 2 | IDs: 4385,4384 | Providers: 7,7
+Service: "🔵 🇨🇷 Spotify Plays [COSTA RICA] [Speed: 30-100K/Day] [Max: 1M] [Lifetime Guaranteed] [Drip-Feed ON]" | Cat: "Spotify Plays | Country Targeted" | Rate: 1.10400000 | Count: 2 | IDs: 5205,5190 | Providers: 7,7
+Service: "🔵🇨🇭 Spotify Podcast Listeners | Lifetime Guarantee | Non-Drop | Speed 30-100K/Day | Max 1M |" | Cat: "Spotify Podcast Plays | Country Targeted" | Rate: 0.94400000 | Count: 2 | IDs: 5598,5581 | Providers: 7,7
+Service: "🔵🇳🇴 Spotify Podcast Listeners | Lifetime Guarantee | Non-Drop | Speed 30-100K/Day | Max 1M |" | Cat: "Spotify Podcast Plays | Country Targeted" | Rate: 0.94400000 | Count: 2 | IDs: 5594,5580 | Providers: 7,7
+Service: "🟢 Twitch Viewers | %25 Userlist | With Views | 5 Min. Retention | 1 Day |" | Cat: "Twitch Viewers (% Userlist - With Views - 5 Min. Retention) ( Exclusive)" | Rate: 23.28000000 | Count: 2 | IDs: 6180,6182 | Providers: 7,7
+Service: "🟢 Twitch Viewers | %50 Userlist | With Views | 5 Min. Retention | 1 Day |" | Cat: "Twitch Viewers (% Userlist - With Views - 5 Min. Retention) ( Exclusive)" | Rate: 23.37600000 | Count: 2 | IDs: 6184,6188 | Providers: 7,7
+Service: "🟢Facebook Comments | Custom | Speed 200 Day | Start 0-6/Hours | Max 250 |" | Cat: "Facebook Share | Comment | Reviews |" | Rate: 156.00000000 | Count: 2 | IDs: 5858,5859 | Providers: 7,7
+Service: "🟢Facebook Comments | Random | Speed 200 Day | Start 0-6/Hours | Max 250 |" | Cat: "Facebook Share | Comment | Reviews |" | Rate: 104.00000000 | Count: 2 | IDs: 6453,5860 | Providers: 7,7
