@@ -1,0 +1,41 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: nepo-smm-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false # Should be set manually in Render dashboard for security
+      - key: REDIS_URL
+        fromService:
+          name: nepo-smm-redis
+          type: redis
+          property: connectionString
+      - key: FRONTEND_URL
+        value: https://neposmm.com
+      - key: PORT
+        value: 5000
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: 587
+      - key: SMTP_USER
+        value: fackaccsupraj01@gmail.com
+      - key: SMTP_PASS
+        value: xxYYzz@9866887714
+      - key: SMTP_FROM_NAME
+        value: "Nepo SMM"
+      - key: SMTP_FROM_EMAIL
+        value: fackaccsupraj01@gmail.com
+      - key: SMTP_SECURE
+        value: "false"
+
+  # Redis Instance
+  - type: redis
+    name: nepo-smm-redis
+    plan: free
+    ipAllowList: [] # Only allow internal connections
