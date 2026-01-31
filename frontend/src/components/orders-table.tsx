@@ -14,6 +14,7 @@ import { useCurrency } from "@/context/CurrencyContext"
 import type { Order } from "@/app/orders/page"
 import { toast } from "sonner"
 import { cn } from "@/lib/utils"
+import { API_URL } from "@/lib/api-config"
 
 interface OrdersTableProps {
   orders: Order[]
@@ -37,15 +38,13 @@ const statusLabels: Record<string, string> = {
 
 export function OrdersTable({ orders }: OrdersTableProps) {
   const { formatValue } = useCurrency()
-  const backendUrl = (process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000').replace(/\/$/, '');
-  const apiUrl = `${backendUrl}/api`;
   const [refreshingId, setRefreshingId] = useState<string | null>(null);
 
   const handleRefresh = async (id: string) => {
     setRefreshingId(id);
     try {
       const token = localStorage.getItem("nepo_token");
-      const res = await fetch(`${apiUrl}/orders/${id}/refresh`, {
+      const res = await fetch(`${API_URL}/orders/${id}/refresh`, {
         headers: { "Authorization": `Bearer ${token}` }
       });
       if (res.ok) {
@@ -64,7 +63,7 @@ export function OrdersTable({ orders }: OrdersTableProps) {
   const handleCancel = async (id: string) => {
     try {
       const token = localStorage.getItem("nepo_token");
-      const res = await fetch(`${apiUrl}/orders/${id}/cancel`, {
+      const res = await fetch(`${API_URL}/orders/${id}/cancel`, {
         method: 'PUT',
         headers: { "Authorization": `Bearer ${token}` }
       });
@@ -83,7 +82,7 @@ export function OrdersTable({ orders }: OrdersTableProps) {
   const handleRefill = async (id: string) => {
     try {
       const token = localStorage.getItem("nepo_token");
-      const res = await fetch(`${apiUrl}/orders/${id}/refill`, {
+      const res = await fetch(`${API_URL}/orders/${id}/refill`, {
         method: 'PUT',
         headers: { "Authorization": `Bearer ${token}` }
       });
@@ -105,7 +104,10 @@ export function OrdersTable({ orders }: OrdersTableProps) {
     const day = d.getDate().toString().padStart(2, '0');
     const month = d.toLocaleString('en-US', { month: 'short' });
     const year = d.getFullYear();
-    return `${day} ${month}, ${year}`;
+    const hours = d.getHours().toString().padStart(2, '0');
+    const minutes = d.getMinutes().toString().padStart(2, '0');
+    const seconds = d.getSeconds().toString().padStart(2, '0');
+    return `${day} ${month}, ${year} ${hours}:${minutes}:${seconds}`;
   };
 
   return (

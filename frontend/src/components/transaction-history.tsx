@@ -1,5 +1,6 @@
 "use client";
 
+import { API_URL } from "@/lib/api-config"
 import { useEffect, useState } from "react"
 import {
     Table,
@@ -11,8 +12,15 @@ import {
 } from "@/components/ui/table"
 import { Badge } from "@/components/ui/badge"
 import { format } from "date-fns"
-import { Loader2, CreditCard } from "lucide-react"
+import { Loader2, CreditCard, Eye } from "lucide-react"
 import { cn } from "@/lib/utils"
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+} from "@/components/ui/dialog"
 
 interface Transaction {
     id: number
@@ -26,15 +34,6 @@ interface Transaction {
     payment_method_currency?: string
 }
 
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-} from "@/components/ui/dialog"
-import { Eye } from "lucide-react"
-
 export function TransactionHistory() {
     const [transactions, setTransactions] = useState<Transaction[]>([])
     const [loading, setLoading] = useState(true)
@@ -44,12 +43,10 @@ export function TransactionHistory() {
     useEffect(() => {
         const fetchTransactions = async () => {
             try {
-                const backendUrl = (process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000').replace(/\/$/, '');
-                const apiUrl = `${backendUrl}/api`;
                 const token = localStorage.getItem("nepo_token")
                 if (!token) return
 
-                const response = await fetch(`${apiUrl}/users/transactions`, {
+                const response = await fetch(`${API_URL}/users/transactions`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

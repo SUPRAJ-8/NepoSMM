@@ -1,5 +1,6 @@
 "use client";
 
+import { API_URL } from "@/lib/api-config"
 import React, { createContext, useContext, useEffect, useState } from "react"
 
 interface ContactLinks {
@@ -26,11 +27,7 @@ export function ContactLinksProvider({ children }: { children: React.ReactNode }
     useEffect(() => {
         const fetchContactLinks = async () => {
             try {
-                // Determine the correct API base URL
-                const backendUrl = (process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000').replace(/\/$/, '');
-                const apiUrl = `${backendUrl}/api`;
-
-                const response = await fetch(`${apiUrl}/settings/public-contact-links`)
+                const response = await fetch(`${API_URL}/settings/public-contact-links`)
                 if (response.ok) {
                     const data = await response.json()
                     setContactLinks(data)

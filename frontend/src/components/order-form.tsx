@@ -22,9 +22,8 @@ import {
 } from "@/components/ui/select"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cn } from "@/lib/utils"
+import { API_URL, BACKEND_URL } from "@/lib/api-config"
 import { toast } from "sonner"
-
-const BACKEND_URL = (process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000').replace(/\/$/, '');
 
 interface Service {
   id: number;
@@ -649,7 +648,7 @@ export function OrderForm({
                     <div key={order.id} className="flex items-center justify-between p-3 rounded-xl bg-secondary/30 border border-border/50">
                       <div className="flex flex-col">
                         <div className="flex items-center gap-2">
-                          <span className="text-[10px] font-mono text-muted-foreground">#{9908 + Number(order.id)}</span>
+                          <span className="text-[10px] font-mono text-muted-foreground text-blue-400 font-bold">ORD-{9908 + Number(order.id)}</span>
                           <span className="text-xs font-bold text-foreground leading-tight">{order.service_name}</span>
                         </div>
                         <span className="text-[10px] text-muted-foreground">
@@ -658,7 +657,10 @@ export function OrderForm({
                             const day = d.getDate().toString().padStart(2, '0');
                             const month = d.toLocaleString('en-US', { month: 'short' });
                             const year = d.getFullYear();
-                            return `${day} ${month}, ${year}`;
+                            const hours = d.getHours().toString().padStart(2, '0');
+                            const minutes = d.getMinutes().toString().padStart(2, '0');
+                            const seconds = d.getSeconds().toString().padStart(2, '0');
+                            return `${day} ${month}, ${year} ${hours}:${minutes}:${seconds}`;
                           })()}
                         </span>
                       </div>

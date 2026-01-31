@@ -8,8 +8,8 @@ import { OrdersFilters } from "@/components/orders-filters"
 import { OrdersTable } from "@/components/orders-table"
 import { OrdersEmptyState } from "@/components/orders-empty-state"
 import { Loader2 } from "lucide-react"
-
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000';
+import { API_URL } from "@/lib/api-config"
+import { toast } from "sonner"
 
 export interface Order {
   id: string
@@ -29,22 +29,37 @@ export default function OrdersPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [statusFilter, setStatusFilter] = useState<string>("all")
   const [serviceFilter, setServiceFilter] = useState<string>("all")
+  const [username, setUsername] = useState("User")
 
   useEffect(() => {
+    const savedUser = localStorage.getItem("nepo_user")
+    if (savedUser) {
+      try {
+        const user = JSON.parse(savedUser)
+        setUsername(user.username || user.email || "User")
+      } catch (e) { }
+    }
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem("nepo_token")
         if (!token) return
 
-        const response = await fetch(`${BACKEND_URL}/api/orders`, {
+        const response = await fetch(`${API_URL}/orders`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         })
 
+        console.log("Fetch Orders Response Status:", response.status);
+
         if (response.ok) {
           const data = await response.json()
+          console.log("Fetched Orders Data:", data);
           setOrders(data)
+        } else {
+          const errorData = await response.json().catch(() => ({}));
+          console.error("Fetch Orders Error Data:", errorData);
+          toast.error(`Failed to fetch orders: ${response.statusText}`);
         }
       } catch (error) {
         console.error("Failed to fetch orders", error)
@@ -90,7 +105,7 @@ export default function OrdersPage() {
               <Loader2 className="h-8 w-8 animate-spin text-primary" />
             </div>
           ) : filteredOrders.length === 0 ? (
-            <OrdersEmptyState username="supraj-8" />
+            <OrdersEmptyState username={username} />
           ) : (
             <OrdersTable orders={filteredOrders} />
           )}

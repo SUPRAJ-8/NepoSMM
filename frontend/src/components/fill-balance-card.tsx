@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react"
-import { Bitcoin, CreditCard, ChevronDown, Check, Sparkles, Upload, Image, Loader2 } from "lucide-react"
+import { Bitcoin, CreditCard, ChevronDown, Check, Sparkles, Upload, Image, Loader2, Trash2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -16,13 +16,10 @@ import { cn } from "@/lib/utils"
 import { TransactionHistory } from "@/components/transaction-history"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
-
+import { API_URL, BACKEND_URL } from "@/lib/api-config"
 
 
 export function FillBalanceCard() {
-  const backendUrl = (process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000').replace(/\/$/, '');
-  const apiUrl = `${backendUrl}/api`;
-
   const [activeTab, setActiveTab] = useState<"add" | "history">("add")
   const [methods, setMethods] = useState<any[]>([])
   const [selectedMethod, setSelectedMethod] = useState<any>(null)
@@ -34,7 +31,7 @@ export function FillBalanceCard() {
   useEffect(() => {
     const fetchMethods = async () => {
       try {
-        const res = await fetch(`${apiUrl}/payment-methods`)
+        const res = await fetch(`${API_URL}/payment-methods`)
         if (res.ok) {
           const data = await res.json()
           const formatted = data.map((m: any) => ({
@@ -103,7 +100,7 @@ export function FillBalanceCard() {
       console.log("Submitting deposit request:", depositData)
       const token = localStorage.getItem("nepo_token")
 
-      const response = await fetch(`${apiUrl}/users/deposit-request`, {
+      const response = await fetch(`${API_URL}/users/deposit-request`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -315,7 +312,7 @@ export function FillBalanceCard() {
 
                               try {
                                 const token = localStorage.getItem("nepo_token");
-                                const response = await fetch(`${apiUrl}/upload`, {
+                                const response = await fetch(`${API_URL}/upload`, {
                                   method: "POST",
                                   headers: {
                                     "Authorization": `Bearer ${token}`
@@ -348,6 +345,20 @@ export function FillBalanceCard() {
                             </div>
                           ) : fieldValues[field.name] ? (
                             <div className="relative w-full h-[180px] p-2 flex flex-col items-center justify-center">
+                              <div
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setFieldValues(prev => {
+                                    const next = { ...prev };
+                                    delete next[field.name];
+                                    return next;
+                                  });
+                                }}
+                                className="absolute top-3 left-3 z-20 h-7 w-7 flex items-center justify-center bg-red-500 text-white rounded-full shadow-lg hover:bg-red-600 transition-colors cursor-pointer"
+                              >
+                                <Trash2 size={14} strokeWidth={2.5} />
+                              </div>
+
                               <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5 bg-emerald-500 text-white px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter shadow-lg">
                                 <Check size={10} strokeWidth={4} />
                                 Successful

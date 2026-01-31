@@ -27,8 +27,7 @@ import {
     useSortable
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-
-const BACKEND_URL = 'http://localhost:5000';
+import { API_URL } from "@/lib/api-config";
 
 function SortableCategoryRow({
     item,
@@ -236,7 +235,7 @@ export default function CategoriesPage() {
     const fetchCategories = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch(`${BACKEND_URL}/api/services/categories`);
+            const response = await fetch(`${API_URL}/services/categories`);
             if (response.ok) {
                 const data = await response.json();
                 // Basic initial sort if API doesn't guarantee it
@@ -334,7 +333,7 @@ export default function CategoriesPage() {
     const persistSortOrder = async (updatedCategories: any[]) => {
         try {
             await Promise.all(updatedCategories.map(cat =>
-                fetch(`${BACKEND_URL}/api/services/categories/sort`, {
+                fetch(`${API_URL}/services/categories/sort`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ category: cat.category, sort_order: cat.sort_order })
@@ -360,7 +359,7 @@ export default function CategoriesPage() {
 
         const newStatus = isActive ? 'active' : 'inactive';
         try {
-            await fetch(`${BACKEND_URL}/api/services/categories/toggle`, {
+            await fetch(`${API_URL}/services/categories/toggle`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ category, status: newStatus })
@@ -420,7 +419,7 @@ export default function CategoriesPage() {
 
         setIsRenaming(true);
         try {
-            const response = await fetch(`${BACKEND_URL}/api/services/categories/rename`, {
+            const response = await fetch(`${API_URL}/services/categories/rename`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ oldName: editingCategory.oldName, newName: editingCategory.newName })
@@ -445,7 +444,7 @@ export default function CategoriesPage() {
         }));
 
         try {
-            await fetch(`${BACKEND_URL}/api/services/categories/sort`, {
+            await fetch(`${API_URL}/services/categories/sort`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ category, sort_order: newOrder })

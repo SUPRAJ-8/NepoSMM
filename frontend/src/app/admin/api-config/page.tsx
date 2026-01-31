@@ -36,8 +36,7 @@ import {
 import React, { useState, useEffect } from "react";
 import { Switch } from "@/components/ui/switch";
 import { useCurrency } from "@/context/CurrencyContext";
-
-const BACKEND_URL = 'http://localhost:5000';
+import { API_URL } from "@/lib/api-config";
 
 export default function ApiConfigPage() {
     const { formatValue } = useCurrency();
@@ -52,7 +51,7 @@ export default function ApiConfigPage() {
     const fetchProviders = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch(`${BACKEND_URL}/api/providers`);
+            const response = await fetch(`${API_URL}/providers`);
             if (response.ok) {
                 const data = await response.json();
                 setProviders(data);
@@ -67,7 +66,7 @@ export default function ApiConfigPage() {
     const fetchServices = async () => {
         setIsServicesLoading(true);
         try {
-            const response = await fetch(`${BACKEND_URL}/api/services`);
+            const response = await fetch(`${API_URL}/services`);
             if (response.ok) {
                 const data = await response.json();
                 setServices(data);
@@ -89,13 +88,13 @@ export default function ApiConfigPage() {
         if (isSyncing) {
             const interval = setInterval(() => {
                 // We use a silent version of fetchProviders to avoid flickering the main loader
-                fetch(`${BACKEND_URL}/api/providers`)
+                fetch(`${API_URL}/providers`)
                     .then(res => res.json())
                     .then(data => setProviders(data))
                     .catch(err => console.error('Polling error:', err));
 
                 // Also silent refresh services to update counts
-                fetch(`${BACKEND_URL}/api/services`)
+                fetch(`${API_URL}/services`)
                     .then(res => res.json())
                     .then(data => setServices(data))
                     .catch(err => console.error('Polling services error:', err));
