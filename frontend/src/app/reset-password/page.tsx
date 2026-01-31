@@ -1,9 +1,6 @@
 "use client";
 
-import { API_URL } from '@/lib/api-config'
-
-
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { motion } from "framer-motion"
 import { Lock, Eye, EyeOff, ArrowRight, Sparkles, ShieldCheck, Zap } from "lucide-react"
@@ -12,8 +9,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { toast } from "sonner"
+import { API_URL } from '@/lib/api-config'
 
-export default function ResetPasswordPage() {
+function ResetPasswordContent() {
     const router = useRouter()
     const searchParams = useSearchParams()
     const token = searchParams.get("token")
@@ -46,7 +44,7 @@ export default function ResetPasswordPage() {
         setIsLoading(true)
 
         try {
-            const response = await fetch("${API_URL}/users/reset-password", {
+            const response = await fetch(`${API_URL} /users/reset - password`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -99,7 +97,7 @@ export default function ResetPasswordPage() {
                     >
                         <Lock className="h-8 w-8 text-white" />
                     </motion.div>
-                    <h1 className="text-3xl font-black text-white tracking-tight">SocialBoost</h1>
+                    <h1 className="text-3xl font-black text-white tracking-tight">NepoSMM</h1>
                     <p className="text-gray-400 font-medium">Reset Your Password</p>
                 </div>
 
@@ -187,5 +185,17 @@ export default function ResetPasswordPage() {
                 </div>
             </motion.div>
         </div>
+    )
+}
+
+export default function ResetPasswordPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-[#020617] flex items-center justify-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+            </div>
+        }>
+            <ResetPasswordContent />
+        </Suspense>
     )
 }

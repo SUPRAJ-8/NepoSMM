@@ -1,9 +1,6 @@
 "use client";
 
-import { API_URL } from '@/lib/api-config'
-
-
-import React, { useState } from "react"
+import React, { useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { motion } from "framer-motion"
 import { Shield, Lock, User, ArrowRight, Sparkles } from "lucide-react"
@@ -12,8 +9,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { toast } from "sonner"
+import { API_URL } from '@/lib/api-config'
 
-export default function AdminLoginPage() {
+function AdminLoginContent() {
     const router = useRouter()
     const searchParams = useSearchParams()
     const [isLoading, setIsLoading] = useState(false)
@@ -33,7 +31,7 @@ export default function AdminLoginPage() {
         setIsLoading(true)
 
         try {
-            const response = await fetch("${API_URL}/users/login", {
+            const response = await fetch(`${API_URL}/users/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -73,7 +71,6 @@ export default function AdminLoginPage() {
 
     return (
         <div className="min-h-screen w-full flex flex-col justify-center items-center bg-[#020617] relative p-4 sm:p-6 overflow-x-hidden font-sans">
-            {/* Premium Background Effects */}
             {/* Premium Background Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-600/10 blur-[150px] rounded-full" />
@@ -194,5 +191,17 @@ export default function AdminLoginPage() {
                 </motion.div>
             </motion.div>
         </div>
+    )
+}
+
+export default function AdminLoginPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-[#020617] flex items-center justify-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+            </div>
+        }>
+            <AdminLoginContent />
+        </Suspense>
     )
 }

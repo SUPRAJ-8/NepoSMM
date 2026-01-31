@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react"
+import React, { useState, Suspense } from "react"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
@@ -12,8 +12,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { toast } from "sonner"
 import { API_URL } from "@/lib/api-config"
 
-
-export default function LoginPage() {
+function LoginContent() {
     const router = useRouter()
     const searchParams = useSearchParams()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -442,5 +441,17 @@ export default function LoginPage() {
                 </div>
             </motion.div>
         </div>
+    )
+}
+
+export default function LoginPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-[#020617] flex items-center justify-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+            </div>
+        }>
+            <LoginContent />
+        </Suspense>
     )
 }
