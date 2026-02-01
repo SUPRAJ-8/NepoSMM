@@ -462,12 +462,12 @@ export function OrderForm({
                           )} />
 
                           {/* Name */}
-                          <span className="flex-1 text-sm text-foreground group-hover:text-primary pr-2 transition-colors leading-tight">
+                          <span className="flex-1 text-sm text-foreground group-hover:text-white pr-2 transition-colors leading-tight">
                             {service.name}
                           </span>
 
                           {/* Price */}
-                          <span className="shrink-0 text-xs font-mono text-muted-foreground group-hover:text-primary transition-colors">
+                          <span className="shrink-0 text-xs font-mono text-muted-foreground group-hover:text-white transition-colors">
                             ≈ {formatValue(service.rate)}
                           </span>
                         </div>
@@ -528,14 +528,14 @@ export function OrderForm({
                   </SelectTrigger>
                   <SelectContent>
                     {filteredServices.map((service) => (
-                      <SelectItem key={service.id} value={service.id.toString()}>
+                      <SelectItem key={service.id} value={service.id.toString()} className="group">
                         <div className="flex items-center gap-2">
                           {getPlatformIcon(service.name)}
                           <span className="shrink-0 bg-blue-500/10 text-blue-500 text-[10px] font-bold px-1.5 py-0.5 rounded min-w-[32px] text-center font-mono border border-blue-500/20 transition-colors">
                             {service.id}
                           </span>
                           <span className="flex-1 truncate">{service.name}</span>
-                          <span className="ml-auto text-muted-foreground whitespace-nowrap">{formatValue(service.rate)}</span>
+                          <span className="ml-auto text-muted-foreground group-focus:text-white whitespace-nowrap">{formatValue(service.rate)}</span>
                         </div>
                       </SelectItem>
                     ))}

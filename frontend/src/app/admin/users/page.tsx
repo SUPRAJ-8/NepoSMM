@@ -64,13 +64,17 @@ export default function UserManagementPage() {
         const fetchUsers = async () => {
             try {
                 const token = localStorage.getItem("nepo_admin_token");
+                console.log(`Fetching users from: ${API_URL}/users`);
                 const response = await fetch(`${API_URL}/users`, {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }
                 });
 
-                if (!response.ok) throw new Error("Failed to fetch users");
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Failed to fetch users: ${response.status} ${response.statusText} - ${errorText}`);
+                }
 
                 const data = await response.json();
 

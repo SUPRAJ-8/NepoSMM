@@ -219,6 +219,7 @@ export const performSync = async (providerId: number) => {
             .filter(s => !seenExternalIds.has(s.external_service_id))
             .map(s => s.id);
 
+        const deactivatedCount = externalIdsToDeactivate.length;
         if (externalIdsToDeactivate.length > 0) {
             await query('UPDATE services SET status = \'inactive\' WHERE id = ANY($1)', [externalIdsToDeactivate]);
         }
@@ -228,7 +229,14 @@ export const performSync = async (providerId: number) => {
             'UPDATE providers SET last_sync = CURRENT_TIMESTAMP, balance = $1, sync_status = \'completed\', sync_error = NULL WHERE id = $2',
             [balance, providerId]
         );
-        logger.info(`[BACKGROUND SYNC] Completed for provider ${providerId}. Added: ${addedCount}, Updated: ${updatedCount}`);
+        logger.info(`[BACKGROUND SYNC] Completed for provider ${providerId}. Added: ${addedCount}, Updated: ${updatedCount}, Deactivated: ${deactivatedCount}`);
+
+        return {
+            added: addedCount,
+            updated: updatedCount,
+            deactivated: deactivatedCount,
+            totalProcessing: externalServices.length
+        };
 
     } catch (error: any) {
         logger.error(`[BACKGROUND SYNC] Failed for provider ${providerId}:`, error);
@@ -375,11 +383,14 @@ export const syncProvider = async (req: Request, res: Response) => {
         }
 
         // Trigger background sync
+        // Perform synchronous sync for manual trigger to return stats
         const idStr = Array.isArray(id) ? id[0] : id;
-        performSync(parseInt(idStr));
+        const stats = await performSync(parseInt(idStr));
 
-
-        res.json({ message: 'Sync started in the background.' });
+        res.json({
+            message: 'Sync completed successfully.',
+            ...stats
+        });
     } catch (error) {
         logger.error('Error initiating sync:', error);
 

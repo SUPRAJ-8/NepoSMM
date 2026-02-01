@@ -221,7 +221,7 @@ function ProvidersTab({
         if (!deleteTarget) return;
         setIsDeleting(true);
         try {
-            const response = await fetch(`${BACKEND_URL}/api/providers/${deleteTarget.id}`, {
+            const response = await fetch(`${API_URL}/providers/${deleteTarget.id}`, {
                 method: 'DELETE'
             });
             if (response.ok) {
@@ -239,7 +239,7 @@ function ProvidersTab({
         if (!editTarget) return;
         setIsUpdating(true);
         try {
-            const response = await fetch(`${BACKEND_URL}/api/providers/${editTarget.id}`, {
+            const response = await fetch(`${API_URL}/providers/${editTarget.id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -268,7 +268,7 @@ function ProvidersTab({
         setProviders(prev => prev.map(p => p.id === id ? { ...p, status: newStatus } : p));
 
         try {
-            await fetch(`${BACKEND_URL}/api/providers/${id}/toggle`, {
+            await fetch(`${API_URL}/providers/${id}/toggle`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status: newStatus })
@@ -528,7 +528,7 @@ function ServiceCatalogTab({
         if (selectedIds.length === 0) return;
         setIsApplyingBulk(true);
         try {
-            const response = await fetch(`${BACKEND_URL}/api/services/bulk-margin`, {
+            const response = await fetch(`${API_URL}/services/bulk-margin`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ids: selectedIds, margin: bulkMargin })
@@ -684,7 +684,7 @@ function ServiceCatalogTab({
                                     onToggle={async () => {
                                         const newStatus = service.status === 'active' ? 'inactive' : 'active';
                                         try {
-                                            await fetch(`${BACKEND_URL}/api/services/${service.id}/toggle`, {
+                                            await fetch(`${API_URL}/services/${service.id}/toggle`, {
                                                 method: 'PATCH',
                                                 headers: { 'Content-Type': 'application/json' },
                                                 body: JSON.stringify({ status: newStatus })
@@ -1001,7 +1001,7 @@ function AddProviderModal({ open, onOpenChange, onSuccess }: { open: boolean, on
         setSuccess(false);
 
         try {
-            const response = await fetch(`${BACKEND_URL}/api/providers`, {
+            const response = await fetch(`${API_URL}/providers`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -1245,7 +1245,7 @@ function EditServiceModal({ open, onOpenChange, service, onSuccess }: { open: bo
             const fetchFullDetail = async () => {
                 setIsDetailLoading(true);
                 try {
-                    const response = await fetch(`${BACKEND_URL}/api/services/${service.id}`);
+                    const response = await fetch(`${API_URL}/services/${service.id}`);
                     if (response.ok) {
                         const fullService = await response.json();
                         setFormData({
@@ -1275,7 +1275,7 @@ function EditServiceModal({ open, onOpenChange, service, onSuccess }: { open: bo
         e.preventDefault();
         setIsLoading(true);
         try {
-            const response = await fetch(`${BACKEND_URL}/api/services/${service.id}`, {
+            const response = await fetch(`${API_URL}/services/${service.id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -1508,7 +1508,7 @@ function ProviderDetailView({ providerId, onBack, onSyncSuccess }: { providerId:
     const fetchProviderDetail = async () => {
         setIsLoading(true);
         try {
-            const response = await fetch(`${BACKEND_URL}/api/providers/${providerId}`);
+            const response = await fetch(`${API_URL}/providers/${providerId}`);
             if (response.ok) {
                 const data = await response.json();
                 setProvider(data);
@@ -1532,7 +1532,7 @@ function ProviderDetailView({ providerId, onBack, onSyncSuccess }: { providerId:
         setSyncError(null);
         setSyncStats(null);
         try {
-            const response = await fetch(`${BACKEND_URL}/api/providers/${providerId}/sync`, {
+            const response = await fetch(`${API_URL}/providers/${providerId}/sync`, {
                 method: 'POST'
             });
             const data = await response.json();
@@ -1560,7 +1560,7 @@ function ProviderDetailView({ providerId, onBack, onSyncSuccess }: { providerId:
         if (!confirm('Are you sure you want to delete this service? This cannot be undone.')) return;
 
         try {
-            const response = await fetch(`${BACKEND_URL}/api/services/${serviceId}`, {
+            const response = await fetch(`${API_URL}/services/${serviceId}`, {
                 method: 'DELETE'
             });
             if (response.ok) {

@@ -107,5 +107,23 @@ redis.ping().then(() => {
     }
 }).catch((err) => {
     logger.warn(`Redis connection failed. Background jobs and workers are disabled. Error: ${err.message}`);
-});
 
+    // Fallback: Use simple interval for Auto Sync if Redis is down
+    const TWO_HOURS_MS = 2 * 60 * 60 * 1000;
+    logger.info('[SCHEDULER] Redis unavailable. Using fallback setInterval for Auto Sync (every 2 hours).');
+
+    const runFallbackSync = async () => {
+        try {
+            logger.info('[FALLBACK SCHEDULER] Triggering Auto Sync...');
+            const { syncAllActiveProviders } = await import('./controllers/providerController');
+            await syncAllActiveProviders();
+        } catch (error) {
+            logger.error('[FALLBACK SCHEDULER] Auto Sync failed:', error);
+        }
+    };
+
+    // Run once immediately on startup to ensure it works
+    setTimeout(runFallbackSync, 10000); // 10s delay to let server settle
+
+    setInterval(runFallbackSync, TWO_HOURS_MS);
+});
