@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { Sidebar } from "@/components/dashboard/Sidebar";
 import { Header } from "@/components/header";
+import { WhatsAppFloatButton } from "@/components/whatsapp-float-button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -120,6 +121,7 @@ export default function ServicesPage() {
     return (
         <div className="min-h-screen bg-background">
             <Sidebar />
+            <WhatsAppFloatButton />
             <div className="lg:pl-64">
                 <Header />
                 <main className="p-4 lg:p-6 space-y-6">

@@ -9,6 +9,7 @@ import { WelcomeBanner } from "@/components/welcome-banner"
 import { StatsCards } from "@/components/stats-cards"
 import { CategorySelector } from "@/components/category-selector"
 import { OrderForm } from "@/components/order-form"
+import { WhatsAppFloatButton } from "@/components/whatsapp-float-button"
 
 function DashboardContent() {
     const searchParams = useSearchParams()
@@ -20,6 +21,7 @@ function DashboardContent() {
         <div className="min-h-screen bg-background">
             <WelcomeTour />
             <Sidebar />
+            <WhatsAppFloatButton />
             <div className="lg:pl-64">
                 <Header />
                 <main className="p-4 lg:p-6 space-y-6">
