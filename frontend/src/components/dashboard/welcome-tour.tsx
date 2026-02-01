@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useRouter } from "next/navigation"
 import { X } from "lucide-react"
@@ -109,24 +109,6 @@ export function WelcomeTour() {
         if (isCompleted === "true") {
             setIsVisible(false)
             return
-        }
-
-        // Only show for newly registered accounts (last 1 hour)
-        const savedUser = localStorage.getItem("nepo_user")
-        if (savedUser) {
-            try {
-                const user = JSON.parse(savedUser)
-                if (user.created_at) {
-                    const createdAt = new Date(user.created_at).getTime()
-                    const now = Date.now()
-                    const oneHour = 60 * 60 * 1000
-
-                    if (now - createdAt > oneHour) {
-                        setIsVisible(false)
-                        return
-                    }
-                }
-            } catch (e) { }
         }
 
         const savedStep = sessionStorage.getItem("nepo_tour_step")
@@ -367,9 +349,9 @@ export function WelcomeTour() {
                         </defs>
                         <motion.path
                             d={(() => {
-                                const startX = window.innerWidth / 2
+                                const startX = (typeof window !== 'undefined' ? window.innerWidth : 0) / 2
                                 // Adjust startY based on whether tooltip is at top or bottom
-                                const startY = adaptiveMobilePos === 'top' ? 280 : window.innerHeight - 380
+                                const startY = adaptiveMobilePos === 'top' ? 280 : (typeof window !== 'undefined' ? window.innerHeight : 0) - 380
 
                                 const endX = targetRect.left + targetRect.width / 2
                                 const isTargetAbove = targetRect.top < startY
@@ -390,8 +372,8 @@ export function WelcomeTour() {
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.3 }}
-                            cx={window.innerWidth / 2}
-                            cy={adaptiveMobilePos === 'top' ? 280 : window.innerHeight - 380}
+                            cx={(typeof window !== 'undefined' ? window.innerWidth : 0) / 2}
+                            cy={adaptiveMobilePos === 'top' ? 280 : (typeof window !== 'undefined' ? window.innerHeight : 0) - 380}
                             r="4"
                             fill="rgb(59, 130, 246)"
                         />
@@ -406,7 +388,7 @@ export function WelcomeTour() {
                             transition={{ delay: 0.8, duration: 0.4 }}
                             d={(() => {
                                 const endX = targetRect.left + targetRect.width / 2
-                                const startY = adaptiveMobilePos === 'top' ? 280 : window.innerHeight - 380
+                                const startY = adaptiveMobilePos === 'top' ? 280 : (typeof window !== 'undefined' ? window.innerHeight : 0) - 380
                                 const isTargetAbove = targetRect.top < startY
                                 const endY = isTargetAbove ? targetRect.bottom + 10 : targetRect.top - 10
                                 if (isTargetAbove) {

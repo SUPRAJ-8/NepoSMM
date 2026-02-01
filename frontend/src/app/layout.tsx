@@ -10,6 +10,7 @@ import './globals.css'
 
 import { ContactLinksProvider } from "@/contexts/ContactLinksContext"
 import { SessionManager } from "@/components/SessionManager"
+import { GoogleProvider } from "@/components/providers/GoogleProvider"
 
 const _inter = Inter({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -97,7 +98,9 @@ export default function RootLayout({
           <CurrencyProvider>
             <DashboardCurrencyProvider>
               <ContactLinksProvider>
-                {children}
+                <GoogleProvider>
+                  {children}
+                </GoogleProvider>
               </ContactLinksProvider>
             </DashboardCurrencyProvider>
           </CurrencyProvider>

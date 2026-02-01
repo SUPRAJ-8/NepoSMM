@@ -1,6 +1,6 @@
-console.log('--- RESTARTING NEPO SMM BACKEND ---');
-import express from 'express'; // Force reload
 import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express'; // Force reload
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -23,7 +23,6 @@ import { query } from './config/db';
 import redis from './config/redis';
 
 
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;

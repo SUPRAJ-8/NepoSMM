@@ -26,8 +26,12 @@ export const sendEmail = async (to: string, subject: string, text: string, html?
     }
 
     try {
+        const fromName = process.env.SMTP_FROM_NAME;
+        const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER || '';
+        const fromHeader = fromName ? `"${fromName}" <${fromEmail}>` : fromEmail;
+
         const info = await transporter.sendMail({
-            from: `"${process.env.SMTP_FROM_NAME || 'Nepo SMM'}" <${process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER}>`,
+            from: fromHeader,
             to,
             subject,
             text,

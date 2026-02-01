@@ -1,3 +1,5 @@
+const LOGO_URL = 'https://neposmm.com/logo.png';
+
 export const getSignUpEmailTemplate = (username: string, email: string) => {
     const primaryColor = '#8b5cf6'; // Violet 500
     const secondaryColor = '#6366f1'; // Indigo 500
@@ -25,12 +27,8 @@ export const getSignUpEmailTemplate = (username: string, email: string) => {
                         <!-- Logo & Header -->
                         <tr>
                             <td style="padding: 40px 40px 20px; text-align: center;">
-                                <div style="display: inline-block; background: linear-gradient(135deg, ${primaryColor}, ${secondaryColor}); padding: 12px; border-radius: 16px; margin-bottom: 24px;">
-                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" opacity="0.9"/>
-                                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-                                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-                                    </svg>
+                                <div style="margin-bottom: 24px;">
+                                    <img src="${LOGO_URL}" alt="NepoSMM Logo" width="60" height="60" style="display: inline-block; border-radius: 16px;">
                                 </div>
                                 <h1 style="margin: 0; color: ${textColor}; font-size: 32px; font-weight: 800; letter-spacing: -1px; line-height: 1.2;">Welcome to <a href="${process.env.FRONTEND_URL || 'https://neposmm.com'}" style="color: ${textColor}; text-decoration: none;">Nepo SMM</a>! 🎊</h1>
                                 <p style="margin: 8px 0 0; color: ${lightTextColor}; font-size: 16px; font-weight: 500;">Your account is ready to go.</p>
@@ -154,6 +152,9 @@ export const getPasswordResetTemplate = (resetLink: string) => {
                     <table role="presentation" style="max-width: 500px; width: 100%; background-color: ${cardBg}; border-radius: 32px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); border: 1px solid #f1f5f9;">
                         <tr>
                             <td style="padding: 40px; text-align: center;">
+                                <div style="margin-bottom: 24px;">
+                                    <img src="${LOGO_URL}" alt="NepoSMM Logo" width="50" height="50" style="display: inline-block;">
+                                </div>
                                 <div style="display: inline-block; background: #fef2f2; padding: 20px; border-radius: 20px; margin-bottom: 24px;">
                                     <span style="font-size: 32px;">🔐</span>
                                 </div>
@@ -272,6 +273,9 @@ export const getFundsAddedTemplate = (username: string, amount: string, newBalan
                     <table role="presentation" style="max-width: 500px; width: 100%; background-color: ${cardBg}; border-radius: 32px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); border: 1px solid #f1f5f9;">
                         <tr>
                             <td style="padding: 40px; text-align: center;">
+                                <div style="margin-bottom: 24px;">
+                                    <img src="${LOGO_URL}" alt="NepoSMM Logo" width="50" height="50" style="display: inline-block;">
+                                </div>
                                 <div style="display: inline-block; background: #ecfdf5; padding: 20px; border-radius: 20px; margin-bottom: 24px;">
                                     <span style="font-size: 32px;">💰</span>
                                 </div>
@@ -338,6 +342,9 @@ export const getTwoFactorOTPTemplate = (otp: string) => {
                     <table role="presentation" style="max-width: 500px; width: 100%; background-color: ${cardBg}; border-radius: 32px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); border: 1px solid #f1f5f9;">
                         <tr>
                             <td style="padding: 40px; text-align: center;">
+                                <div style="margin-bottom: 24px;">
+                                    <img src="${LOGO_URL}" alt="NepoSMM Logo" width="50" height="50" style="display: inline-block;">
+                                </div>
                                 <div style="display: inline-block; background: #eff6ff; padding: 20px; border-radius: 20px; margin-bottom: 24px;">
                                     <span style="font-size: 32px;">🛡️</span>
                                 </div>

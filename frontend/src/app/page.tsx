@@ -1302,7 +1302,7 @@ export default function LandingPage() {
                             <h4 className="text-white font-black mb-4 text-sm uppercase tracking-wider">Legal</h4>
                             <div className="flex flex-col gap-3">
                                 <Link href="/terms" className="text-gray-500 hover:text-white transition-colors text-sm font-medium">Terms</Link>
-                                <Link href="/terms" className="text-gray-500 hover:text-white transition-colors text-sm font-medium">Privacy</Link>
+                                <Link href="/privacy" className="text-gray-500 hover:text-white transition-colors text-sm font-medium">Privacy</Link>
                                 <Link href="/terms#refund" className="text-gray-500 hover:text-white transition-colors text-sm font-medium">Refund Policy</Link>
                             </div>
                         </div>

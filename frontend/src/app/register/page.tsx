@@ -39,7 +39,7 @@ export default function RegisterPage() {
         setIsLoading(true)
 
         try {
-            const response = await fetch("${API_URL}/users/register", {
+            const response = await fetch(`${API_URL}/users/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -58,10 +58,14 @@ export default function RegisterPage() {
                 throw new Error(data.error || "Registration failed")
             }
 
-            toast.success("Account created successfully!", {
-                description: "You can now sign in with your credentials.",
+            // Store user data and token for auto-login
+            localStorage.setItem("nepo_token", data.token)
+            localStorage.setItem("nepo_user", JSON.stringify(data.user))
+
+            toast.success("Welcome to NepoSMM!", {
+                description: "Your account has been created and you've been logged in.",
             })
-            router.push("/login")
+            router.push("/")
         } catch (error: any) {
             toast.error(error.message || "Something went wrong. Please try again.")
         } finally {
@@ -178,7 +182,7 @@ export default function RegisterPage() {
                             <div className="flex items-start space-x-2 pt-2">
                                 <Checkbox id="terms" className="mt-1 border-white/20 data-[state=checked]:bg-primary data-[state=checked]:border-primary" required />
                                 <Label htmlFor="terms" className="text-xs text-gray-400 leading-tight">
-                                    I agree to the <Link href="#" className="text-primary hover:underline">Terms of Service</Link> and <Link href="#" className="text-primary hover:underline">Privacy Policy</Link>
+                                    I agree to the <Link href="/terms" className="text-primary hover:underline">Terms of Service</Link> and <Link href="/privacy" className="text-primary hover:underline">Privacy Policy</Link>
                                 </Label>
                             </div>
 

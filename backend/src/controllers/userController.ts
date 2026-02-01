@@ -5,8 +5,11 @@ import { query } from '../config/db';
 import logger from '../utils/logger';
 import { AuthRequest } from '../middlewares/authMiddleware';
 import { sendEmail } from '../utils/mailer';
-import { getPasswordResetTemplate, getTwoFactorOTPTemplate } from '../utils/emailTemplates';
+import { getPasswordResetTemplate, getTwoFactorOTPTemplate, getSignUpEmailTemplate, getFundsAddedTemplate } from '../utils/emailTemplates';
 import crypto from 'crypto';
+import { OAuth2Client } from 'google-auth-library';
+
+const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const JWT_SECRET = process.env.JWT_SECRET || 'nepo-smm-secret-key-2025';
 
@@ -51,7 +54,39 @@ export const registerUser = async (req: Request, res: Response) => {
             'INSERT INTO users (username, email, password, role, referred_by) VALUES ($1, $2, $3, $4, $5) RETURNING id, username, email, role, created_at',
             [username, email, hashedPassword, 'user', referred_by]
         );
-        res.status(201).json(result.rows[0]);
+
+        // Send Welcome Email
+        try {
+            await sendEmail(
+                email,
+                'Welcome to Nepo SMM! 🚀',
+                `Hi ${username}, welcome to Nepo SMM. Your account has been created successfully.`,
+                getSignUpEmailTemplate(username, email)
+            );
+        } catch (emailErr) {
+            logger.error('Error sending welcome email:', emailErr);
+            // Don't fail registration if email fails
+        }
+
+        const user = result.rows[0];
+        const token = jwt.sign(
+            { id: user.id, email: user.email, role: user.role },
+            JWT_SECRET,
+            { expiresIn: '24h' }
+        );
+
+        res.status(201).json({
+            token,
+            user: {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                role: user.role,
+                balance: 0,
+                spent: 0,
+                created_at: user.created_at
+            }
+        });
     } catch (err: any) {
         logger.error('Error registering user:', err);
         if (err.code === '23505') {
@@ -67,7 +102,7 @@ export const registerUser = async (req: Request, res: Response) => {
 export const loginUser = async (req: Request, res: Response) => {
     const { email, password } = req.body; // 'email' can be email or username
     try {
-        const result = await query('SELECT * FROM users WHERE email = $1 OR username = $1', [email]);
+        const result = await query('SELECT * FROM users WHERE LOWER(email) = LOWER($1) OR LOWER(username) = LOWER($1)', [email]);
         if (result.rows.length === 0) {
             return res.status(401).json({ error: 'Invalid identifier or password' });
         }
@@ -322,6 +357,23 @@ export const approveTransaction = async (req: Request, res: Response) => {
         }
 
         await query('COMMIT');
+
+        // Send Funds Added Email
+        try {
+            const userFullRes = await query('SELECT username, email, balance FROM users WHERE id = $1', [tx.user_id]);
+            if (userFullRes.rows.length > 0) {
+                const user = userFullRes.rows[0];
+                await sendEmail(
+                    user.email,
+                    'Funds Added Successfully! 💰',
+                    `Hi ${user.username}, your deposit of $${tx.amount} has been approved. Your new balance is $${user.balance}.`,
+                    getFundsAddedTemplate(user.username, `$${tx.amount}`, `$${user.balance}`)
+                );
+            }
+        } catch (emailErr) {
+            logger.error('Error sending funds added email:', emailErr);
+        }
+
         res.json({ message: 'Transaction approved successfully' });
     } catch (err) {
         await query('ROLLBACK');
@@ -402,7 +454,7 @@ export const getProfile = async (req: Request, res: Response) => {
 export const forgotPassword = async (req: Request, res: Response) => {
     const { identifier } = req.body; // email or username
     try {
-        const result = await query('SELECT id, email, username FROM users WHERE email = $1 OR username = $1', [identifier]);
+        const result = await query('SELECT id, email, username FROM users WHERE LOWER(email) = LOWER($1) OR LOWER(username) = LOWER($1)', [identifier]);
 
         if (result.rows.length === 0) {
             // We return success even if user not found to prevent user enumeration
@@ -681,6 +733,84 @@ export const verify2FA = async (req: Request, res: Response) => {
         });
     } catch (err) {
         logger.error('Error verifying 2FA:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+export const googleLogin = async (req: Request, res: Response) => {
+    const { credential } = req.body;
+    try {
+        const ticket = await googleClient.verifyIdToken({
+            idToken: credential,
+            audience: process.env.GOOGLE_CLIENT_ID,
+        });
+        const payload = ticket.getPayload();
+        if (!payload) {
+            return res.status(400).json({ error: 'Invalid Google token' });
+        }
+
+        const { email, name, sub: googleId } = payload;
+
+        // Check if user exists
+        let userResult = await query('SELECT * FROM users WHERE email = $1', [email]);
+        let user;
+
+        if (userResult.rows.length === 0) {
+            // Create user if not exists
+            const username = (name || email?.split('@')[0] || 'user').toLowerCase().replace(/\s+/g, '') + Math.floor(Math.random() * 1000);
+            const hashedPassword = await bcrypt.hash(crypto.randomBytes(16).toString('hex'), 10); // Random password for social login
+
+            const newUser = await query(
+                'INSERT INTO users (username, email, password, role) VALUES ($1, $2, $3, $4) RETURNING id, username, email, role, created_at',
+                [username, email, hashedPassword, 'user']
+            );
+            user = newUser.rows[0];
+
+            // Send Welcome Email
+            try {
+                if (email) {
+                    await sendEmail(
+                        email,
+                        'Welcome to Nepo SMM! 🚀',
+                        `Hi ${username}, welcome to Nepo SMM via Google. Your account has been created successfully.`,
+                        getSignUpEmailTemplate(username, email)
+                    );
+                }
+            } catch (emailErr) {
+                logger.error('Error sending welcome email (Google):', emailErr);
+            }
+        } else {
+            user = userResult.rows[0];
+        }
+
+        // Generate token
+        const token = jwt.sign(
+            { id: user.id, email: user.email, role: user.role },
+            JWT_SECRET,
+            { expiresIn: '24h' }
+        );
+
+        // Fetch spent
+        const spentRes = await query(
+            `SELECT COALESCE(SUM(CASE WHEN status != 'canceled' THEN charge ELSE 0 END), 0) as spent 
+             FROM orders WHERE user_id = $1`,
+            [user.id]
+        );
+        const spent = Number(spentRes.rows[0]?.spent || 0);
+
+        res.json({
+            token,
+            user: {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                role: user.role,
+                balance: user.balance || 0,
+                spent: spent,
+                created_at: user.created_at
+            }
+        });
+    } catch (err) {
+        logger.error('Error in googleLogin:', err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
