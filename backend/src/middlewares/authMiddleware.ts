@@ -10,7 +10,7 @@ export interface AuthRequest extends Request {
     };
 }
 
-export const authenticate = (req: AuthRequest, res: Response, next: NextFunction) => {
+export const authenticate = async (req: AuthRequest, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization;
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
         return res.status(401).json({ error: 'Unauthorized: No token provided' });
@@ -19,6 +19,16 @@ export const authenticate = (req: AuthRequest, res: Response, next: NextFunction
     const token = authHeader.split(' ')[1];
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET || 'nepo-smm-secret-key-2025') as any;
+
+        // Use a dynamic import or require to avoid circular dependency if pool is imported here
+        // Actually pool is already imported in many files, should be fine.
+        const { query } = require('../config/db'); // Using require to be safe if types are tricky here
+        const userRes = await query('SELECT status FROM users WHERE id = $1', [decoded.id]);
+
+        if (userRes.rows.length === 0 || userRes.rows[0].status === 'banned') {
+            return res.status(403).json({ error: 'Access denied: Account is banned or suspended' });
+        }
+
         req.user = decoded;
         next();
     } catch (error) {

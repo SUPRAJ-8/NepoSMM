@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getUsers, registerUser, loginUser, googleLogin, addFunds, getUserTransactions, getAllTransactions, createDepositRequest, approveTransaction, rejectTransaction, deleteTransaction, getProfile, forgotPassword, resetPassword, refundTransaction, updateProfile, changePassword, toggle2FA, verify2FA } from '../controllers/userController';
+import { getUsers, registerUser, loginUser, googleLogin, addFunds, getUserTransactions, getAllTransactions, createDepositRequest, approveTransaction, rejectTransaction, deleteTransaction, getProfile, forgotPassword, resetPassword, refundTransaction, updateProfile, changePassword, toggle2FA, verify2FA, deleteUser, toggleUserStatus } from '../controllers/userController';
 import { validate } from '../middlewares/validateMiddleware';
 import { registerSchema, loginSchema, forgotPasswordSchema, resetPasswordSchema } from '../validations/userValidation';
 import { authenticate, authorize } from '../middlewares/authMiddleware';
@@ -32,5 +32,7 @@ router.post('/transactions/:id/reject', authorize(['admin']), rejectTransaction)
 router.post('/transactions/:id/refund', authorize(['admin']), refundTransaction);
 router.delete('/transactions/:id', authorize(['admin']), deleteTransaction);
 router.post('/:id/funds', addFunds);
+router.patch('/:id/status', toggleUserStatus);
+router.delete('/:id', deleteUser);
 
 export default router;

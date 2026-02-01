@@ -22,6 +22,7 @@ export const getUsers = async (req: Request, res: Response) => {
                 u.email, 
                 u.balance, 
                 u.role, 
+                u.status,
                 u.created_at,
                 COALESCE(SUM(CASE WHEN o.status != 'canceled' THEN o.charge ELSE 0 END), 0) as spent,
                 COUNT(o.id) as orders
@@ -108,6 +109,11 @@ export const loginUser = async (req: Request, res: Response) => {
         }
 
         const user = result.rows[0];
+
+        if (user.status === 'banned') {
+            return res.status(403).json({ error: 'Your account has been banned. Please contact support.' });
+        }
+
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(401).json({ error: 'Invalid email or password' });
@@ -416,6 +422,67 @@ export const deleteTransaction = async (req: Request, res: Response) => {
     }
 };
 
+export const deleteUser = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    try {
+        await query('BEGIN');
+
+        // 1. Handle referrals (Set referred_by to NULL for users referred by this user)
+        await query('UPDATE users SET referred_by = NULL WHERE referred_by = $1', [id]);
+
+        // 2. Delete affiliate logs
+        await query('DELETE FROM affiliate_logs WHERE referrer_id = $1 OR referred_user_id = $1', [id]);
+
+        // 3. Delete payout requests
+        await query('DELETE FROM payout_requests WHERE user_id = $1', [id]);
+
+        // 4. Delete tickets
+        await query('DELETE FROM tickets WHERE user_id = $1', [id]);
+
+        // 5. Delete transactions
+        await query('DELETE FROM transactions WHERE user_id = $1', [id]);
+
+        // 6. Delete orders
+        await query('DELETE FROM orders WHERE user_id = $1', [id]);
+
+        // 7. Finally delete the user
+        const result = await query('DELETE FROM users WHERE id = $1 RETURNING *', [id]);
+
+        if (result.rows.length === 0) {
+            await query('ROLLBACK');
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        await query('COMMIT');
+        res.json({ message: 'User and all associated data deleted successfully' });
+    } catch (err) {
+        await query('ROLLBACK');
+        logger.error('Error deleting user:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+export const toggleUserStatus = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const { status } = req.body; // 'active' or 'banned'
+
+    try {
+        const result = await query(
+            'UPDATE users SET status = $1 WHERE id = $2 RETURNING id, username, status',
+            [status, id]
+        );
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        res.json({ message: `User status updated to ${status}`, user: result.rows[0] });
+    } catch (err) {
+        logger.error('Error toggling user status:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
 export const getProfile = async (req: Request, res: Response) => {
     const authReq = req as AuthRequest;
     const userId = authReq.user?.id;
@@ -694,6 +761,10 @@ export const verify2FA = async (req: Request, res: Response) => {
 
         const user = result.rows[0];
 
+        if (user.status === 'banned') {
+            return res.status(403).json({ error: 'Your account has been banned. Please contact support.' });
+        }
+
         if (!user.otp_code || !user.otp_expiry || new Date() > new Date(user.otp_expiry)) {
             return res.status(401).json({ error: 'OTP expired or not requested' });
         }
@@ -780,6 +851,10 @@ export const googleLogin = async (req: Request, res: Response) => {
             }
         } else {
             user = userResult.rows[0];
+        }
+
+        if (user.status === 'banned') {
+            return res.status(403).json({ error: 'Your account has been banned. Please contact support.' });
         }
 
         // Generate token

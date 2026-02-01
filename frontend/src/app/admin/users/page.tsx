@@ -11,7 +11,7 @@ import {
     Wallet, Search, Filter, MoreVertical,
     Pencil, Banknote, Ban, UserX,
     ChevronLeft, ChevronRight,
-    ArrowUpRight, ShoppingBag, CheckCircle2, Database, X, ChevronDown
+    ArrowUpRight, ShoppingBag, CheckCircle2, Database, X, ChevronDown, Trash2
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -84,7 +84,7 @@ export default function UserManagementPage() {
                     username: u.username || u.email.split('@')[0],
                     email: u.email,
                     balance: parseFloat(u.balance) || 0,
-                    status: 'active', // Default for now
+                    status: u.status || 'active',
                     spent: parseFloat(u.spent) || 0,
                     orders: parseInt(u.orders) || 0,
                     joined: new Date(u.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }),
@@ -111,9 +111,12 @@ export default function UserManagementPage() {
 
     // Add Balance State
     const [balanceDialogOpen, setBalanceDialogOpen] = useState(false)
+    const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
     const [selectedUserForBalance, setSelectedUserForBalance] = useState<any>(null)
+    const [selectedUserForDelete, setSelectedUserForDelete] = useState<any>(null)
     const [balanceAmount, setBalanceAmount] = useState("")
     const [balanceLoading, setBalanceLoading] = useState(false)
+    const [deleteLoading, setDeleteLoading] = useState(false)
 
     const openBalanceDialog = (user: any) => {
         setSelectedUserForBalance(user)
@@ -156,6 +159,32 @@ export default function UserManagementPage() {
             toast.error("Failed to add funds")
         } finally {
             setBalanceLoading(false)
+        }
+    }
+
+    const handleDeleteUser = async () => {
+        if (!selectedUserForDelete) return
+
+        setDeleteLoading(true)
+        try {
+            const token = localStorage.getItem("nepo_admin_token")
+            const response = await fetch(`${API_URL}/users/${selectedUserForDelete.id}`, {
+                method: "DELETE",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            })
+
+            if (!response.ok) throw new Error("Failed to delete user")
+
+            setUsers(prev => prev.filter(u => u.id !== selectedUserForDelete.id))
+            toast.success(`User @${selectedUserForDelete.username} deleted successfully`)
+            setDeleteDialogOpen(false)
+        } catch (error) {
+            console.error("Error deleting user:", error)
+            toast.error("Failed to delete user")
+        } finally {
+            setDeleteLoading(false)
         }
     }
 
@@ -202,12 +231,33 @@ export default function UserManagementPage() {
         setSortBy("Latest Joined")
     }
 
-    const handleToggleStatus = (id: number) => {
-        setUsers((prev: any[]) => prev.map((u: any) =>
-            u.id === id ? { ...u, status: u.status === 'active' ? 'banned' : 'active' } : u
-        ))
+    const handleToggleStatus = async (id: number) => {
         const user = users.find((u: any) => u.id === id)
-        toast.success(`User @${user?.username} status updated successfully.`)
+        if (!user) return
+
+        const newStatus = user.status === 'active' ? 'banned' : 'active'
+        const token = localStorage.getItem("nepo_admin_token")
+
+        try {
+            const response = await fetch(`${API_URL}/users/${id}/status`, {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+                body: JSON.stringify({ status: newStatus })
+            })
+
+            if (!response.ok) throw new Error("Failed to update status")
+
+            setUsers((prev: any[]) => prev.map((u: any) =>
+                u.id === id ? { ...u, status: newStatus } : u
+            ))
+            toast.success(`User @${user.username} status updated to ${newStatus}`)
+        } catch (error) {
+            console.error("Error updating status:", error)
+            toast.error("Failed to update user status")
+        }
     }
 
 
@@ -354,7 +404,7 @@ export default function UserManagementPage() {
                                 </th>
                                 <th className="px-2 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] w-12 text-center">#</th>
                                 <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">User Identity</th>
-                                <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Balance</th>
+                                <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Available</th>
                                 <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Total Spent</th>
                                 <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Orders</th>
                                 <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Joined Date</th>
@@ -388,14 +438,14 @@ export default function UserManagementPage() {
                                             </div>
                                         </td>
                                         <td className="px-4 py-4">
-                                            {user.balance > 0 ? (
-                                                <div className="flex flex-col">
-                                                    <span className="text-sm font-black text-white">{formatValue(user.balance)}</span>
+                                            <div className="flex flex-col">
+                                                <span className="text-sm font-black text-white">{formatValue(user.balance)}</span>
+                                                {user.balance < 100 ? (
+                                                    <span className="text-[9px] font-black text-rose-500 uppercase tracking-widest mt-0.5 animate-pulse">Low</span>
+                                                ) : (
                                                     <span className="text-[9px] font-black text-emerald-400 uppercase tracking-widest mt-0.5">Available</span>
-                                                </div>
-                                            ) : (
-                                                <div className="h-10"></div>
-                                            )}
+                                                )}
+                                            </div>
                                         </td>
                                         <td className="px-4 py-4">
                                             <div className="flex flex-col">
@@ -501,6 +551,18 @@ export default function UserManagementPage() {
                                                             <span className="font-bold text-sm">Add Balance</span>
                                                         </DropdownMenuItem>
                                                         <DropdownMenuSeparator className="bg-white/5 my-2" />
+                                                        <DropdownMenuItem
+                                                            onClick={() => {
+                                                                setSelectedUserForDelete(user);
+                                                                setDeleteDialogOpen(true);
+                                                            }}
+                                                            className="rounded-xl focus:bg-rose-500 focus:text-white cursor-pointer group/item flex items-center gap-3 px-3 py-3 text-rose-400 focus:text-white transition-colors"
+                                                        >
+                                                            <div className="h-8 w-8 rounded-lg bg-rose-500/10 flex items-center justify-center border border-rose-500/20 group-focus/item:bg-white/20 transition-colors">
+                                                                <Trash2 size={14} />
+                                                            </div>
+                                                            <span className="font-bold text-sm">Delete Account</span>
+                                                        </DropdownMenuItem>
                                                         <DropdownMenuItem className="rounded-xl focus:bg-red-500 focus:text-white cursor-pointer group/item flex items-center gap-3 px-3 py-3 text-red-400 focus:text-white transition-colors">
                                                             <div className="h-8 w-8 rounded-lg bg-red-500/10 flex items-center justify-center border border-red-500/20 group-focus/item:bg-white/20 transition-colors">
                                                                 <UserX size={14} />
@@ -583,6 +645,30 @@ export default function UserManagementPage() {
                     </DialogFooter>
                 </DialogContent>
             </Dialog>
+
+            <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
+                <AlertDialogContent className="bg-[#0b1021] border-white/10 text-white rounded-[2rem] p-8 backdrop-blur-xl">
+                    <AlertDialogHeader>
+                        <AlertDialogTitle className="text-2xl font-black text-rose-500">Confirm Deletion</AlertDialogTitle>
+                        <AlertDialogDescription className="text-gray-400 text-base py-4 font-medium">
+                            Are you absolutely sure you want to delete <span className="text-white font-black whitespace-nowrap">@{selectedUserForDelete?.username}</span>?
+                            <br /><br />
+                            This action is permanent. All orders, transactions, and settings associated with this user will be purged from the system nodes immediately.
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter className="gap-3 mt-4">
+                        <AlertDialogCancel className="bg-white/5 border-white/5 text-white hover:bg-white/10 rounded-xl px-6 h-12 font-bold transition-all">
+                            Keep Entity
+                        </AlertDialogCancel>
+                        <AlertDialogAction
+                            onClick={handleDeleteUser}
+                            className="bg-rose-500 hover:bg-rose-600 text-white rounded-xl px-6 h-12 font-black shadow-lg shadow-rose-500/20 transition-all active:scale-[0.98]"
+                        >
+                            {deleteLoading ? "Purging..." : "Confirm Delete"}
+                        </AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
         </div >
     )
 }
