@@ -1,7 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Sign In',
+    title: 'Login',
+    description: 'Log in to your NepoSMM account to manage your social media growth campaigns and orders.',
 }
 
 export default function LoginLayout({

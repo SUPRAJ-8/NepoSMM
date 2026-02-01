@@ -41,7 +41,9 @@ const navItems: NavItem[] = [
     { icon: Package, label: "Services", href: "/services" },
     { icon: UserCheck, label: "Affiliates", href: "/affiliates" },
     { icon: MessageCircle, label: "Tickets", href: "/tickets" },
+    { icon: Shield, label: "Account", href: "/account" },
 ]
+
 export function Sidebar() {
     const { contactLinks } = useContactLinks()
     const [mobileOpen, setMobileOpen] = useState(false)

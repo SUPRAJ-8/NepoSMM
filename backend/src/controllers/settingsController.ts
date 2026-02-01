@@ -4,15 +4,16 @@ import pool from '../config/db';
 export const getPublicContactLinks = async (req: Request, res: Response) => {
     try {
         const result = await pool.query(
-            'SELECT * FROM settings WHERE key IN ($1, $2, $3, $4)',
-            ['whatsapp_number', 'tawk_token', 'telegram_username', 'affiliate_commission_percentage']
+            'SELECT * FROM settings WHERE key IN ($1, $2, $3, $4, $5)',
+            ['whatsapp_number', 'tawk_token', 'telegram_username', 'affiliate_commission_percentage', 'support_email']
         );
 
         const contactLinks: any = {
             whatsapp_number: '',
             tawk_token: '',
             telegram_username: '',
-            affiliate_commission_percentage: '2'
+            affiliate_commission_percentage: '2',
+            support_email: 'support@neposmm.com'
         };
 
         result.rows.forEach(row => {
@@ -29,14 +30,15 @@ export const getPublicContactLinks = async (req: Request, res: Response) => {
 export const getContactLinks = async (req: Request, res: Response) => {
     try {
         const result = await pool.query(
-            'SELECT * FROM settings WHERE key IN ($1, $2, $3)',
-            ['whatsapp_number', 'tawk_token', 'telegram_username']
+            'SELECT * FROM settings WHERE key IN ($1, $2, $3, $4)',
+            ['whatsapp_number', 'tawk_token', 'telegram_username', 'support_email']
         );
 
         const contactLinks: any = {
             whatsapp_number: '',
             tawk_token: '',
-            telegram_username: ''
+            telegram_username: '',
+            support_email: ''
         };
 
         result.rows.forEach(row => {
@@ -52,13 +54,14 @@ export const getContactLinks = async (req: Request, res: Response) => {
 
 export const updateContactLinks = async (req: Request, res: Response) => {
     try {
-        const { whatsapp_number, tawk_token, telegram_username } = req.body;
+        const { whatsapp_number, tawk_token, telegram_username, support_email } = req.body;
 
         // Update or insert each setting
         const settings = [
             { key: 'whatsapp_number', value: whatsapp_number || '' },
             { key: 'tawk_token', value: tawk_token || '' },
-            { key: 'telegram_username', value: telegram_username || '' }
+            { key: 'telegram_username', value: telegram_username || '' },
+            { key: 'support_email', value: support_email || '' }
         ];
 
         for (const setting of settings) {
@@ -75,7 +78,8 @@ export const updateContactLinks = async (req: Request, res: Response) => {
             message: 'Contact links updated successfully',
             whatsapp_number,
             tawk_token,
-            telegram_username
+            telegram_username,
+            support_email
         });
     } catch (error) {
         console.error('Error updating contact links:', error);

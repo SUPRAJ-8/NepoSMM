@@ -315,5 +315,65 @@ export const getFundsAddedTemplate = (username: string, amount: string, newBalan
     `;
 };
 
+export const getTwoFactorOTPTemplate = (otp: string) => {
+    const primaryColor = '#3b82f6'; // Blue 500
+    const textColor = '#1e293b';
+    const lightTextColor = '#64748b';
+    const bgColor = '#f8fafc';
+    const cardBg = '#ffffff';
+
+    return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Verification Code</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    </head>
+    <body style="margin: 0; padding: 0; background-color: ${bgColor}; font-family: 'Inter', sans-serif;">
+        <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: ${bgColor};">
+            <tr>
+                <td align="center" style="padding: 40px 20px;">
+                    <table role="presentation" style="max-width: 500px; width: 100%; background-color: ${cardBg}; border-radius: 32px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08); border: 1px solid #f1f5f9;">
+                        <tr>
+                            <td style="padding: 40px; text-align: center;">
+                                <div style="display: inline-block; background: #eff6ff; padding: 20px; border-radius: 20px; margin-bottom: 24px;">
+                                    <span style="font-size: 32px;">🛡️</span>
+                                </div>
+                                <h1 style="margin: 0; color: ${textColor}; font-size: 28px; font-weight: 800; letter-spacing: -0.5px;">Verification Code</h1>
+                                <p style="margin: 12px 0 0; color: ${lightTextColor}; font-size: 16px; line-height: 1.6; font-weight: 500;">
+                                    Please use the following code to complete your sign-in request.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0 40px 40px;">
+                                <div style="background: #f8fafc; border: 2px dashed #e2e8f0; border-radius: 20px; padding: 30px; text-align: center;">
+                                    <span style="font-family: 'Courier New', Courier, monospace; font-size: 42px; font-weight: 800; letter-spacing: 12px; color: ${primaryColor}; text-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);">
+                                        ${otp}
+                                    </span>
+                                </div>
+                                <p style="margin: 24px 0 0; color: #94a3b8; font-size: 13px; text-align: center; font-weight: 500;">
+                                    This code will expire in <span style="color: ${textColor}; font-weight: 700;">10 minutes</span>.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0 40px 40px; text-align: center; border-top: 1px solid #f1f5f9;">
+                                <p style="margin: 20px 0 0; color: #cbd5e1; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+                                    If you didn't request this code, please secure your account immediately.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+    </html>
+    `;
+};
+
 
 

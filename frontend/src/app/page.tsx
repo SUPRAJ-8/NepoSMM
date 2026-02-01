@@ -23,9 +23,11 @@ import {
 import { toast } from "sonner"
 import NewOrderPage from "./new-order/page"
 import { API_URL } from "@/lib/api-config"
+import { useContactLinks } from "@/contexts/ContactLinksContext"
 
 
 export default function LandingPage() {
+    const { contactLinks } = useContactLinks()
     const router = useRouter()
     const [showPassword, setShowPassword] = useState(false)
     const [user, setUser] = useState<any>(null)
@@ -35,6 +37,9 @@ export default function LandingPage() {
     const [isForgotMode, setIsForgotMode] = useState(false)
     const [forgotIdentifier, setForgotIdentifier] = useState("")
     const [isForgotLoading, setIsForgotLoading] = useState(false)
+    const [is2FAMode, setIs2FAMode] = useState(false)
+    const [otp, setOtp] = useState("")
+    const [tempUserId, setTempUserId] = useState<number | null>(null)
 
     const [isMounted, setIsMounted] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -110,6 +115,16 @@ export default function LandingPage() {
                 throw new Error(data.error || "Login failed")
             }
 
+            if (data.twoFactorRequired) {
+                setIs2FAMode(true)
+                setTempUserId(data.userId)
+                toast.info("2-Step Verification Required", {
+                    description: "An OTP has been sent to your registered email address.",
+                })
+                setIsLoading(false)
+                return
+            }
+
             localStorage.setItem("nepo_token", data.token)
             localStorage.setItem("nepo_user", JSON.stringify(data.user))
             setUser(data.user)
@@ -121,6 +136,44 @@ export default function LandingPage() {
             router.push("/")
         } catch (error: any) {
             toast.error(error.message || "Invalid credentials. Please try again.")
+        } finally {
+            setIsLoading(false)
+        }
+    }
+
+    const handleVerify2FA = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setIsLoading(true)
+
+        try {
+            const response = await fetch(`${API_URL}/users/verify-2fa`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    userId: tempUserId,
+                    otp,
+                }),
+            })
+
+            const data = await response.json()
+
+            if (!response.ok) {
+                throw new Error(data.error || "Verification failed")
+            }
+
+            localStorage.setItem("nepo_token", data.token)
+            localStorage.setItem("nepo_user", JSON.stringify(data.user))
+            setUser(data.user)
+
+            toast.success("Welcome back!", {
+                description: `Successfully signed in as ${data.user.username || data.user.email}.`,
+            })
+
+            router.push("/")
+        } catch (error: any) {
+            toast.error(error.message || "Invalid OTP. Please try again.")
         } finally {
             setIsLoading(false)
         }
@@ -165,7 +218,6 @@ export default function LandingPage() {
         setUser(null)
         toast.info("Signed out successfully")
     }
-
     if (!isMounted) return <div className="min-h-screen bg-[#020617]" />
 
     if (user) {
@@ -174,14 +226,99 @@ export default function LandingPage() {
 
     return (
         <div className="min-h-screen bg-[#020617] text-white selection:bg-emerald-500/30 overflow-x-hidden">
-            {/* Navbar */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "WebSite",
+                        "name": "NepoSMM",
+                        "url": "https://neposmm.com",
+                        "description": "Boost your social media presence with NepoSMM. High-quality Followers, Likes, Views, and Watch Time.",
+                        "potentialAction": {
+                            "@type": "SearchAction",
+                            "target": "https://neposmm.com/services?search={search_term_string}",
+                            "query-input": "required name=search_term_string"
+                        }
+                    })
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "NepoSMM",
+                        "url": "https://neposmm.com",
+                        "logo": "https://neposmm.com/logo.png",
+                        "contactPoint": {
+                            "@type": "ContactPoint",
+                            "telephone": "+977-9866887714",
+                            "contactType": "customer service",
+                            "availableLanguage": ["English", "Nepali"]
+                        }
+                    })
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": [
+                            {
+                                "@type": "Question",
+                                "name": "What is an SMM Panel?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "An SMM (Social Media Marketing) panel is an online platform where you can purchase social media services like followers, likes, views, and comments to boost your online presence effectively and affordably."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Is it safe to use NepoSMM services?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes, absolutely! We prioritize your account's safety. We use high-quality accounts and safe delivery methods that comply with social media platform guidelines to ensure your account remains secure."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "How can I deposit funds?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "We offer a wide range of payment methods including Credit/Debit Cards, Cryptocurrency, and various local Nepalese payment options like Khalti, eSewa, and IME Pay for your convenience."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "What happens if my followers drop?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Many of our 'Guaranteed' services come with a refill warranty. If you experience any drops within the guarantee period, simply use the refill button on your order page, and we'll restore the lost numbers for free."
+                                }
+                            },
+                            {
+                                "@type": "Question",
+                                "name": "Do you offer API support for resellers?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "Yes, we provide a robust and fully documented API that allows you to resell our services directly through your own panel or website. It's perfectly designed for scaling your own SMM business."
+                                }
+                            }
+                        ]
+                    })
+                }}
+            />
             {/* Navbar */}
             <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-black/20 backdrop-blur-xl">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative z-50">
                     <Link href="/" className="flex items-center gap-2.5 group z-50">
                         <img
                             src="/logo.png"
-                            alt="NepoSMM Logo"
+                            alt="NepoSMM - #1 SMM Panel in Nepal"
                             className="h-10 w-auto object-contain transition-transform group-hover:scale-110"
                         />
                         <span className="text-xl font-black tracking-tighter">NepoSMM</span>
@@ -248,68 +385,70 @@ export default function LandingPage() {
 
                 {/* Mobile Menu Overlay */}
                 <AnimatePresence>
-                    {isMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "100vh" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="fixed inset-0 top-0 left-0 w-full bg-[#020617] pt-24 px-6 xl:hidden z-40 overflow-y-auto"
-                        >
-                            <div className="flex flex-col gap-6">
-                                <div className="flex flex-col gap-4 border-b border-white/10 pb-6">
-                                    <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-gray-400 hover:text-white transition-colors">Home</Link>
-                                    <Link href="/terms" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-gray-400 hover:text-white transition-colors">Terms</Link>
-                                    <a
-                                        href="#features"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            setIsMenuOpen(false);
-                                            document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
-                                        }}
-                                        className="text-lg font-bold text-gray-400 hover:text-white transition-colors cursor-pointer"
-                                    >
-                                        About US
-                                    </a>
-                                    <a
-                                        href="#contact"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            setIsMenuOpen(false);
-                                            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                                        }}
-                                        className="text-lg font-bold text-gray-400 hover:text-white transition-colors cursor-pointer"
-                                    >
-                                        Contact US
-                                    </a>
-                                    <a
-                                        href="#faq"
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            setIsMenuOpen(false);
-                                            document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' });
-                                        }}
-                                        className="text-lg font-bold text-gray-400 hover:text-white transition-colors cursor-pointer"
-                                    >
-                                        FAQ
-                                    </a>
-                                </div>
+                    {
+                        isMenuOpen && (
+                            <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "100vh" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3, ease: "easeInOut" }}
+                                className="fixed inset-0 top-0 left-0 w-full bg-[#020617] pt-24 px-6 xl:hidden z-40 overflow-y-auto"
+                            >
+                                <div className="flex flex-col gap-6">
+                                    <div className="flex flex-col gap-4 border-b border-white/10 pb-6">
+                                        <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-gray-400 hover:text-white transition-colors">Home</Link>
+                                        <Link href="/terms" onClick={() => setIsMenuOpen(false)} className="text-lg font-bold text-gray-400 hover:text-white transition-colors">Terms</Link>
+                                        <a
+                                            href="#features"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setIsMenuOpen(false);
+                                                document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                            className="text-lg font-bold text-gray-400 hover:text-white transition-colors cursor-pointer"
+                                        >
+                                            About US
+                                        </a>
+                                        <a
+                                            href="#contact"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setIsMenuOpen(false);
+                                                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                            className="text-lg font-bold text-gray-400 hover:text-white transition-colors cursor-pointer"
+                                        >
+                                            Contact US
+                                        </a>
+                                        <a
+                                            href="#faq"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setIsMenuOpen(false);
+                                                document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                            className="text-lg font-bold text-gray-400 hover:text-white transition-colors cursor-pointer"
+                                        >
+                                            FAQ
+                                        </a>
+                                    </div>
 
-                                <div className="flex flex-col gap-4">
-                                    <Link href="/login" onClick={() => setIsMenuOpen(false)} className="w-full h-12 rounded-xl border border-white/10 flex items-center justify-center font-bold text-white hover:bg-white/5 transition-all">
-                                        Sign In
-                                    </Link>
-                                    <Link href="/register" onClick={() => setIsMenuOpen(false)} className="w-full">
-                                        <Button className="w-full h-12 rounded-xl bg-primary hover:bg-blue-400 text-white font-black shadow-lg shadow-primary/20">
-                                            Get Started
-                                        </Button>
-                                    </Link>
+                                    <div className="flex flex-col gap-4">
+                                        <Link href="/login" onClick={() => setIsMenuOpen(false)} className="w-full h-12 rounded-xl border border-white/10 flex items-center justify-center font-bold text-white hover:bg-white/5 transition-all">
+                                            Sign In
+                                        </Link>
+                                        <Link href="/register" onClick={() => setIsMenuOpen(false)} className="w-full">
+                                            <Button className="w-full h-12 rounded-xl bg-primary hover:bg-blue-400 text-white font-black shadow-lg shadow-primary/20">
+                                                Get Started
+                                            </Button>
+                                        </Link>
+                                    </div>
                                 </div>
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </nav>
+                            </motion.div>
+                        )
+                    }
+                </AnimatePresence >
+            </nav >
 
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
@@ -428,7 +567,73 @@ export default function LandingPage() {
                                     ) : (
                                         <>
                                             <AnimatePresence mode="wait">
-                                                {!isForgotMode ? (
+                                                {is2FAMode ? (
+                                                    <motion.div
+                                                        key="2fa"
+                                                        initial={{ opacity: 0, scale: 0.95 }}
+                                                        animate={{ opacity: 1, scale: 1 }}
+                                                        exit={{ opacity: 0, scale: 0.95 }}
+                                                        transition={{ duration: 0.3 }}
+                                                    >
+                                                        <div className="mb-8">
+                                                            <div className="h-14 w-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                                                                <ShieldCheck className="h-7 w-7 text-primary" />
+                                                            </div>
+                                                            <h2 className="text-3xl font-black text-white mb-2 tracking-tight">Security Check</h2>
+                                                            <p className="text-sm text-gray-400 font-medium">Please enter the 6-digit OTP sent to your email</p>
+                                                        </div>
+
+                                                        <form onSubmit={handleVerify2FA} className="space-y-6">
+                                                            <div className="space-y-2">
+                                                                <Label htmlFor="otp" className="text-gray-300 ml-1 font-bold text-xs uppercase tracking-wider">Verification Code</Label>
+                                                                <div className="relative group">
+                                                                    <ShieldCheck className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 group-focus-within:text-primary transition-colors" />
+                                                                    <Input
+                                                                        id="otp"
+                                                                        type="text"
+                                                                        inputMode="numeric"
+                                                                        autoComplete="one-time-code"
+                                                                        placeholder="000 000"
+                                                                        required
+                                                                        maxLength={6}
+                                                                        value={otp}
+                                                                        onChange={(e) => setOtp(e.target.value.replace(/[^0-9]/g, ''))}
+                                                                        className="bg-white/5 border-white/10 h-16 pl-12 rounded-2xl text-white placeholder:text-gray-600 focus-visible:ring-primary/50 focus-visible:border-primary/50 transition-all font-black text-2xl tracking-[0.5em] text-center"
+                                                                    />
+                                                                </div>
+                                                            </div>
+
+                                                            <Button
+                                                                type="submit"
+                                                                disabled={isLoading || otp.length < 6}
+                                                                className="w-full h-14 rounded-2xl bg-gradient-to-r from-primary to-blue-600 hover:from-blue-500 hover:to-blue-600 text-white font-black text-lg shadow-[0_10px_30px_rgba(37,99,235,0.3)] transition-all active:scale-[0.98] group"
+                                                            >
+                                                                {isLoading ? (
+                                                                    <div className="flex items-center gap-2">
+                                                                        <div className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                                                        <span>Verifying...</span>
+                                                                    </div>
+                                                                ) : (
+                                                                    <div className="flex items-center justify-center gap-2">
+                                                                        <span>Verify Code</span>
+                                                                        <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                                                                    </div>
+                                                                )}
+                                                            </Button>
+
+                                                            <button
+                                                                type="button"
+                                                                onClick={() => {
+                                                                    setIs2FAMode(false)
+                                                                    setOtp("")
+                                                                }}
+                                                                className="w-full text-center text-sm font-bold text-gray-400 hover:text-white transition-colors"
+                                                            >
+                                                                Try another account
+                                                            </button>
+                                                        </form>
+                                                    </motion.div>
+                                                ) : !isForgotMode ? (
                                                     <motion.div
                                                         key="login"
                                                         initial={{ opacity: 0, x: -20 }}
@@ -981,7 +1186,7 @@ export default function LandingPage() {
                                 <Mail className="h-8 w-8 text-primary" />
                             </div>
                             <h3 className="text-xl font-black mb-3">Contact US</h3>
-                            <p className="text-gray-400 font-medium">support@Neposmm.com</p>
+                            <p className="text-gray-400 font-medium">{contactLinks.support_email}</p>
                         </motion.div>
 
                         {/* Our Location */}
@@ -1106,8 +1311,8 @@ export default function LandingPage() {
                         <div>
                             <h4 className="text-white font-black mb-4 text-sm uppercase tracking-wider">Support</h4>
                             <div className="flex flex-col gap-3">
-                                <a href="https://wa.me/9779866887714" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors text-sm font-medium">WhatsApp</a>
-                                <a href="mailto:support@Neposmm.com" className="text-gray-500 hover:text-white transition-colors text-sm font-medium">Email Support</a>
+                                <a href={`https://wa.me/${contactLinks.whatsapp_number}`} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-white transition-colors text-sm font-medium">WhatsApp</a>
+                                <a href={`mailto:${contactLinks.support_email}`} className="text-gray-500 hover:text-white transition-colors text-sm font-medium">Email Support</a>
                             </div>
                         </div>
                     </div>

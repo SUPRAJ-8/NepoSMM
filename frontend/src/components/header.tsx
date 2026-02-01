@@ -43,7 +43,7 @@ export function Header({ title = "New Order", showBadge = true }: HeaderProps) {
         const token = localStorage.getItem("nepo_token");
         if (!token) return;
 
-        const response = await fetch("${API_URL}/users/profile", {
+        const response = await fetch(`${API_URL}/users/profile`, {
           headers: { "Authorization": `Bearer ${token}` }
         });
 
@@ -166,7 +166,7 @@ export function Header({ title = "New Order", showBadge = true }: HeaderProps) {
                     </Button>
                   </div>
 
-                  {/* Currency Header */}
+                  {/* Currency Header -- */}
                   <div className="px-3 py-2 mb-1">
                     <span className="text-[10px] font-black uppercase text-muted-foreground tracking-widest">Select Currency</span>
                   </div>
@@ -226,9 +226,9 @@ export function Header({ title = "New Order", showBadge = true }: HeaderProps) {
               <p className="text-xs font-bold truncate">{user?.username || "Guest User"}</p>
               <p className="text-[10px] text-muted-foreground truncate">{user?.email || "guest@example.com"}</p>
             </div>
-            <DropdownMenuItem className="rounded-lg cursor-pointer">Profile</DropdownMenuItem>
-            <DropdownMenuItem className="rounded-lg cursor-pointer">Settings</DropdownMenuItem>
-            <DropdownMenuItem className="rounded-lg cursor-pointer">Billing</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => router.push('/account')} className="rounded-lg cursor-pointer">Account Settings</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => router.push('/orders')} className="rounded-lg cursor-pointer">Order History</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => router.push('/tickets')} className="rounded-lg cursor-pointer">Support Tickets</DropdownMenuItem>
             <DropdownMenuItem
               onClick={handleLogout}
               className="text-destructive rounded-lg cursor-pointer"

@@ -16,15 +16,67 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'NepoSMM - Grow Your Social Media Instantly',
-    template: 'NepoSMM - %s',
+    default: 'NepoSMM - #1 Social Media Marketing (SMM) Panel in Nepal',
+    template: '%s | NepoSMM',
   },
-  description: 'Followers, Likes & Views for Instagram, TikTok & YouTube. The world\'s #1 SMM Panel for high-quality social media services.',
-  generator: 'v0.app',
+  description: 'Boost your social media presence with NepoSMM. High-quality Followers, Likes, Views, and Watch Time for Instagram, TikTok, YouTube, and Facebook. Instant delivery and 24/7 support.',
+  keywords: ['SMM Panel', 'Social Media Marketing', 'Followers', 'Likes', 'Views', 'Instagram Growth', 'TikTok Growth', 'YouTube Growth', 'Nepal SMM', 'Cheap SMM Panel', 'Best SMM Nepal'],
+  authors: [{ name: 'NepoSMM' }],
+  creator: 'NepoSMM',
+  publisher: 'NepoSMM',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://neposmm.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'NepoSMM - Grow Your Social Media Instantly',
+    description: 'The world\'s #1 SMM Panel for high-quality social media services. Followers, Likes & Views for all platforms.',
+    url: 'https://neposmm.com',
+    siteName: 'NepoSMM',
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'NepoSMM Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'NepoSMM - #1 Social Media Marketing Panel',
+    description: 'Boost your social media presence with NepoSMM. High-quality services for Instagram, TikTok, and more.',
+    images: ['/logo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  category: 'technology',
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',
   },
+}
+
+export const viewport = {
+  themeColor: '#020617',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({

@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
-import { Phone, MessageCircle, MessageSquare, Save } from "lucide-react"
+import { Phone, MessageCircle, MessageSquare, Save, Mail } from "lucide-react"
 
 export default function ContactLinksPage() {
     const [isLoading, setIsLoading] = useState(false)
@@ -17,7 +17,8 @@ export default function ContactLinksPage() {
     const [contactData, setContactData] = useState({
         whatsapp_number: "",
         tawk_token: "",
-        telegram_username: ""
+        telegram_username: "",
+        support_email: ""
     })
 
     useEffect(() => {
@@ -45,7 +46,8 @@ export default function ContactLinksPage() {
             setContactData({
                 whatsapp_number: data.whatsapp_number || "",
                 tawk_token: data.tawk_token || "",
-                telegram_username: data.telegram_username || ""
+                telegram_username: data.telegram_username || "",
+                support_email: data.support_email || ""
             })
         } catch (error: any) {
             console.error("Error fetching contact links:", error)
@@ -170,6 +172,36 @@ export default function ContactLinksPage() {
                     </CardContent>
                 </Card>
 
+                {/* Support Email */}
+                <Card>
+                    <CardHeader>
+                        <div className="flex items-center gap-3">
+                            <div className="h-10 w-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                                <Mail className="h-5 w-5 text-purple-500" />
+                            </div>
+                            <div>
+                                <CardTitle>Support Email</CardTitle>
+                                <CardDescription>Official customer support email</CardDescription>
+                            </div>
+                        </div>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="space-y-2">
+                            <Label htmlFor="support_email">Email Address</Label>
+                            <Input
+                                id="support_email"
+                                type="email"
+                                placeholder="e.g., support@neposmm.com"
+                                value={contactData.support_email}
+                                onChange={(e) => handleInputChange("support_email", e.target.value)}
+                            />
+                            <p className="text-xs text-muted-foreground">
+                                Used for public support links and contact info
+                            </p>
+                        </div>
+                    </CardContent>
+                </Card>
+
                 {/* Telegram */}
                 <Card>
                     <CardHeader>
@@ -261,6 +293,20 @@ export default function ContactLinksPage() {
                                     <p className="text-sm text-muted-foreground">
                                         Widget will be embedded on the site
                                     </p>
+                                </div>
+                            </div>
+                        )}
+                        {contactData.support_email && (
+                            <div className="flex items-center gap-3 p-3 rounded-lg bg-muted">
+                                <Mail className="h-5 w-5 text-purple-500" />
+                                <div>
+                                    <p className="font-medium">Support Email</p>
+                                    <a
+                                        href={`mailto:${contactData.support_email}`}
+                                        className="text-sm text-primary hover:underline"
+                                    >
+                                        {contactData.support_email}
+                                    </a>
                                 </div>
                             </div>
                         )}

@@ -5,7 +5,7 @@ import { query } from '../config/db';
 import logger from '../utils/logger';
 import { AuthRequest } from '../middlewares/authMiddleware';
 import { sendEmail } from '../utils/mailer';
-import { getPasswordResetTemplate } from '../utils/emailTemplates';
+import { getPasswordResetTemplate, getTwoFactorOTPTemplate } from '../utils/emailTemplates';
 import crypto from 'crypto';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'nepo-smm-secret-key-2025';
@@ -91,6 +91,22 @@ export const loginUser = async (req: Request, res: Response) => {
             JWT_SECRET,
             { expiresIn: '24h' }
         );
+
+        if (user.two_factor_enabled) {
+            const otp = Math.floor(100000 + Math.random() * 900000).toString();
+            const otpExpiry = new Date(Date.now() + 10 * 60 * 1000); // 10 mins
+
+            await query('UPDATE users SET otp_code = $1, otp_expiry = $2 WHERE id = $3', [otp, otpExpiry, user.id]);
+
+            await sendEmail(
+                user.email,
+                'Login OTP - Nepo SMM',
+                `Your login OTP is ${otp}. It expires in 10 minutes.`,
+                getTwoFactorOTPTemplate(otp)
+            );
+
+            return res.json({ twoFactorRequired: true, userId: user.id });
+        }
 
         res.json({
             token,
@@ -365,6 +381,7 @@ export const getProfile = async (req: Request, res: Response) => {
                 u.balance, 
                 u.role, 
                 u.created_at,
+                u.two_factor_enabled,
                 COALESCE(SUM(CASE WHEN o.status != 'canceled' THEN o.charge ELSE 0 END), 0) as spent
             FROM users u
             LEFT JOIN orders o ON u.id = o.user_id
@@ -523,6 +540,147 @@ export const refundTransaction = async (req: Request, res: Response) => {
     } catch (err) {
         await query('ROLLBACK');
         logger.error('Error refunding transaction:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+export const updateProfile = async (req: Request, res: Response) => {
+    const authReq = req as AuthRequest;
+    const userId = authReq.user?.id;
+    const { email } = req.body;
+
+    if (!userId) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    try {
+        // Check if email already exists
+        if (email) {
+            const emailCheck = await query('SELECT id FROM users WHERE email = $1 AND id != $2', [email, userId]);
+            if (emailCheck.rows.length > 0) {
+                return res.status(409).json({ error: 'Email already in use' });
+            }
+        }
+
+        const result = await query(
+            'UPDATE users SET email = COALESCE($1, email) WHERE id = $2 RETURNING id, username, email, balance, role, created_at',
+            [email, userId]
+        );
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        res.json({ message: 'Profile updated successfully', user: result.rows[0] });
+    } catch (err) {
+        logger.error('Error updating profile:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+export const changePassword = async (req: Request, res: Response) => {
+    const authReq = req as AuthRequest;
+    const userId = authReq.user?.id;
+    const { currentPassword, newPassword } = req.body;
+
+    if (!userId) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    try {
+        const userRes = await query('SELECT password FROM users WHERE id = $1', [userId]);
+        if (userRes.rows.length === 0) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        const isMatch = await bcrypt.compare(currentPassword, userRes.rows[0].password);
+        if (!isMatch) {
+            return res.status(401).json({ error: 'Incorrect current password' });
+        }
+
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+        await query('UPDATE users SET password = $1 WHERE id = $2', [hashedPassword, userId]);
+
+        res.json({ message: 'Password changed successfully' });
+    } catch (err) {
+        logger.error('Error changing password:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+export const toggle2FA = async (req: Request, res: Response) => {
+    const authReq = req as AuthRequest;
+    const userId = authReq.user?.id;
+    const { enabled } = req.body;
+
+    if (!userId) {
+        return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    try {
+        await query('UPDATE users SET two_factor_enabled = $1 WHERE id = $2', [enabled, userId]);
+        res.json({ message: `2FA ${enabled ? 'enabled' : 'disabled'} successfully`, two_factor_enabled: enabled });
+    } catch (err) {
+        logger.error('Error toggling 2FA:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+
+export const verify2FA = async (req: Request, res: Response) => {
+    const { userId, otp } = req.body;
+
+    if (!userId || !otp) {
+        return res.status(400).json({ error: 'Missing userId or OTP' });
+    }
+
+    try {
+        const result = await query('SELECT * FROM users WHERE id = $1', [userId]);
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        const user = result.rows[0];
+
+        if (!user.otp_code || !user.otp_expiry || new Date() > new Date(user.otp_expiry)) {
+            return res.status(401).json({ error: 'OTP expired or not requested' });
+        }
+
+        if (user.otp_code !== otp) {
+            return res.status(401).json({ error: 'Invalid OTP' });
+        }
+
+        // Clear OTP
+        await query('UPDATE users SET otp_code = NULL, otp_expiry = NULL WHERE id = $1', [user.id]);
+
+        // Same as login logic
+        const spentRes = await query(
+            `SELECT COALESCE(SUM(CASE WHEN status != 'canceled' THEN charge ELSE 0 END), 0) as spent 
+             FROM orders WHERE user_id = $1`,
+            [user.id]
+        );
+        const spent = Number(spentRes.rows[0]?.spent || 0);
+
+        const token = jwt.sign(
+            { id: user.id, email: user.email, role: user.role },
+            JWT_SECRET,
+            { expiresIn: '24h' }
+        );
+
+        res.json({
+            token,
+            user: {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                role: user.role,
+                balance: user.balance,
+                spent: spent,
+                created_at: user.created_at
+            }
+        });
+    } catch (err) {
+        logger.error('Error verifying 2FA:', err);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };

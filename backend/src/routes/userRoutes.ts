@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getUsers, registerUser, loginUser, addFunds, getUserTransactions, getAllTransactions, createDepositRequest, approveTransaction, rejectTransaction, deleteTransaction, getProfile, forgotPassword, resetPassword, refundTransaction } from '../controllers/userController';
+import { getUsers, registerUser, loginUser, addFunds, getUserTransactions, getAllTransactions, createDepositRequest, approveTransaction, rejectTransaction, deleteTransaction, getProfile, forgotPassword, resetPassword, refundTransaction, updateProfile, changePassword, toggle2FA, verify2FA } from '../controllers/userController';
 import { validate } from '../middlewares/validateMiddleware';
 import { registerSchema, loginSchema, forgotPasswordSchema, resetPasswordSchema } from '../validations/userValidation';
 import { authenticate, authorize } from '../middlewares/authMiddleware';
@@ -8,12 +8,16 @@ const router = Router();
 
 router.post('/register', validate(registerSchema), registerUser);
 router.post('/login', validate(loginSchema), loginUser);
+router.post('/verify-2fa', verify2FA);
 router.post('/forgot-password', validate(forgotPasswordSchema), forgotPassword);
 router.post('/reset-password', validate(resetPasswordSchema), resetPassword);
 
 // Authenticated routes
 router.use(authenticate);
 router.get('/profile', getProfile);
+router.put('/profile', updateProfile);
+router.post('/change-password', changePassword);
+router.post('/toggle-2fa', toggle2FA);
 router.get('/transactions', getUserTransactions);
 router.post('/deposit-request', createDepositRequest);
 

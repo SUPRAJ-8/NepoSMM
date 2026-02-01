@@ -7,6 +7,7 @@ interface ContactLinks {
     whatsapp_number: string
     tawk_token: string
     telegram_username: string
+    support_email: string
 }
 
 interface ContactLinksContextType {
@@ -20,7 +21,8 @@ export function ContactLinksProvider({ children }: { children: React.ReactNode }
     const [contactLinks, setContactLinks] = useState<ContactLinks>({
         whatsapp_number: "",
         tawk_token: "",
-        telegram_username: ""
+        telegram_username: "",
+        support_email: "support@neposmm.com"
     })
     const [isLoading, setIsLoading] = useState(true)
 
