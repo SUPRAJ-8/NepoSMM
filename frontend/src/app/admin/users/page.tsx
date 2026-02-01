@@ -64,7 +64,7 @@ export default function UserManagementPage() {
         const fetchUsers = async () => {
             try {
                 const token = localStorage.getItem("nepo_admin_token");
-                const response = await fetch("${API_URL}/users", {
+                const response = await fetch(`${API_URL}/users`, {
                     headers: {
                         "Authorization": `Bearer ${token}`
                     }

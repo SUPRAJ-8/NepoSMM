@@ -43,12 +43,12 @@ function DashboardContent() {
         try {
             const token = localStorage.getItem("nepo_admin_token");
             const [providersRes, usersRes, categoriesRes, servicesRes] = await Promise.all([
-                fetch('${API_URL}/providers'),
-                fetch('${API_URL}/users', {
+                fetch(`${API_URL}/providers`),
+                fetch(`${API_URL}/users`, {
                     headers: { "Authorization": `Bearer ${token}` }
                 }),
-                fetch('${API_URL}/services/categories'),
-                fetch('${API_URL}/services')
+                fetch(`${API_URL}/services/categories`),
+                fetch(`${API_URL}/services`)
             ]);
 
             if (providersRes.ok) {

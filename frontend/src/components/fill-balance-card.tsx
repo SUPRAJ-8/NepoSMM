@@ -266,7 +266,7 @@ export function FillBalanceCard() {
                     <img
                       src={selectedMethod.qr_code_url}
                       alt="Payment QR Code"
-                      className="bg-white p-2 rounded-lg max-w-[350px] h-auto"
+                      className="bg-white p-2 rounded-lg w-full max-w-[350px] h-auto object-contain"
                     />
                   </div>
                 )}

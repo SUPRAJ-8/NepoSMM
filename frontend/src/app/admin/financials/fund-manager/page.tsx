@@ -89,7 +89,7 @@ export default function FundManagerPage() {
     const fetchMethods = async () => {
         try {
             const token = localStorage.getItem("nepo_admin_token")
-            const response = await fetch("${API_URL}/payment-methods?all=true", {
+            const response = await fetch(`${API_URL}/payment-methods?all=true`, {
                 headers: { "Authorization": `Bearer ${token}` }
             })
             if (response.ok) {
@@ -180,7 +180,7 @@ export default function FundManagerPage() {
                     body: JSON.stringify(payload)
                 })
             } else {
-                response = await fetch("${API_URL}/payment-methods", {
+                response = await fetch(`${API_URL}/payment-methods`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -241,7 +241,7 @@ export default function FundManagerPage() {
 
         try {
             const token = localStorage.getItem("nepo_admin_token")
-            const response = await fetch("${API_URL}/upload", {
+            const response = await fetch(`${API_URL}/upload`, {
                 method: "POST",
                 headers: {
                     "Authorization": `Bearer ${token}`
@@ -275,7 +275,7 @@ export default function FundManagerPage() {
                 const token = localStorage.getItem("nepo_admin_token");
                 const orders = newMethods.map((m, idx) => ({ id: m.id, sort_order: idx + 1 }));
 
-                await fetch("${API_URL}/payment-methods/reorder", {
+                await fetch(`${API_URL}/payment-methods/reorder`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

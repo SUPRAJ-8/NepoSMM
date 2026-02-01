@@ -3,8 +3,8 @@ const getBackendUrl = () => {
     if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
         return 'http://localhost:5000';
     }
-    // Otherwise use the environment variable or fallback to localhost
-    return (process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:5000').replace(/\/$/, '');
+    // Otherwise use the environment variable or fallback to production API
+    return (process.env.NEXT_PUBLIC_BACKEND_URL || 'https://api.neposmm.com').replace(/\/$/, '');
 };
 
 export const BACKEND_URL = getBackendUrl();

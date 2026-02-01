@@ -55,7 +55,7 @@ function AdminSupportContent() {
     const fetchAllTickets = async () => {
         try {
             const token = localStorage.getItem("nepo_admin_token")
-            const response = await fetch("${API_URL}/tickets/admin/all", {
+            const response = await fetch(`${API_URL}/tickets/admin/all`, {
                 headers: { "Authorization": `Bearer ${token}` }
             })
             if (response.ok) {

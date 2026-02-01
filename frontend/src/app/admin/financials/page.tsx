@@ -95,8 +95,8 @@ export default function FinancialsPage() {
                 const headers = { "Authorization": `Bearer ${token}` };
 
                 const [usersRes, transactionsRes] = await Promise.all([
-                    fetch("${API_URL}/users", { headers }),
-                    fetch("${API_URL}/users/all-transactions", { headers })
+                    fetch(`${API_URL}/users`, { headers }),
+                    fetch(`${API_URL}/users/all-transactions`, { headers })
                 ]);
 
                 if (usersRes.ok) {

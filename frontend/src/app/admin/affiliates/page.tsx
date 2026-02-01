@@ -110,7 +110,7 @@ export default function AffiliateManagerPage() {
     const fetchSettings = async () => {
         try {
             const token = localStorage.getItem("nepo_admin_token");
-            const response = await fetch("${API_URL}/settings/affiliate", {
+            const response = await fetch(`${API_URL}/settings/affiliate`, {
                 headers: { "Authorization": `Bearer ${token}` }
             });
             if (response.ok) {
@@ -126,7 +126,7 @@ export default function AffiliateManagerPage() {
         setIsSavingSettings(true);
         try {
             const token = localStorage.getItem("nepo_admin_token");
-            const response = await fetch("${API_URL}/settings/affiliate", {
+            const response = await fetch(`${API_URL}/settings/affiliate`, {
                 method: "PUT",
                 headers: {
                     "Authorization": `Bearer ${token}`,
@@ -155,9 +155,9 @@ export default function AffiliateManagerPage() {
             const headers = { "Authorization": `Bearer ${token}` };
 
             const [statsRes, payoutsRes, logsRes] = await Promise.all([
-                fetch("${API_URL}/affiliates/stats", { headers }),
-                fetch("${API_URL}/affiliates/payouts", { headers }),
-                fetch("${API_URL}/affiliates/logs", { headers })
+                fetch(`${API_URL}/affiliates/stats`, { headers }),
+                fetch(`${API_URL}/affiliates/payouts`, { headers }),
+                fetch(`${API_URL}/affiliates/logs`, { headers })
             ]);
 
             if (statsRes.ok) setStats(await statsRes.json());
