@@ -72,6 +72,9 @@ export const metadata: Metadata = {
     icon: '/logo.png',
     apple: '/logo.png',
   },
+  verification: {
+    google: '6XW8KvRpl50rpJVhunIGln7X60OwHUQBvNBMM6vHegI',
+  },
 }
 
 export const viewport = {
