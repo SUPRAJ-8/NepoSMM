@@ -2,6 +2,7 @@
 
 import { useEffect } from "react"
 import { useRouter, useParams } from "next/navigation"
+import { API_URL } from '@/lib/api-config';
 
 export default function ReferralPage() {
     const router = useRouter()
@@ -9,15 +10,30 @@ export default function ReferralPage() {
     const code = params?.code as string
 
     useEffect(() => {
-        if (code) {
-            // Store in localStorage for persistence
-            localStorage.setItem("referral_code", code)
+        const recordAndRedirect = async () => {
+            if (code) {
+                // Store in localStorage for persistence
+                localStorage.setItem("referral_code", code)
 
-            // Redirect to landing page (keep the code saved in localStorage)
-            router.replace('/')
-        } else {
-            router.replace('/')
-        }
+                // Record visit
+                try {
+                    await fetch(`${API_URL}/affiliates/visit`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ code })
+                    });
+                } catch (e) {
+                    console.error("Failed to record visit", e);
+                }
+
+                // Redirect to landing page
+                router.replace('/')
+            } else {
+                router.replace('/')
+            }
+        };
+
+        recordAndRedirect();
     }, [code, router])
 
     return (

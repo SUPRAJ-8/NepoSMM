@@ -9,7 +9,8 @@ export const getAffiliateStats = async (req: Request, res: Response) => {
                 (SELECT COALESCE(SUM(amount), 0) FROM payout_requests WHERE status = 'pending') as total_pending_payouts,
                 (SELECT COUNT(*) FROM payout_requests WHERE status = 'pending') as pending_requests_count,
                 (SELECT COALESCE(SUM(amount), 0) FROM payout_requests WHERE status = 'completed') as total_paid,
-                (SELECT COUNT(DISTINCT id) FROM users WHERE id IN (SELECT referred_by FROM users WHERE referred_by IS NOT NULL)) as active_partners
+                (SELECT COUNT(DISTINCT id) FROM users WHERE id IN (SELECT referred_by FROM users WHERE referred_by IS NOT NULL)) as active_partners,
+                (SELECT SUM(referral_visits) FROM users) as total_visits
         `);
 
         res.json(stats.rows[0]);
@@ -57,7 +58,7 @@ export const updatePayoutStatus = async (req: Request, res: Response) => {
             [status, reason || null, id]
         );
 
-        // If status changed TO rejected FROM something else, refund balance
+        // If status changed TO rejected FROM something else, refund balance (adding back to affiliate_balance)
         if (status === 'rejected' && oldStatus !== 'rejected') {
             await pool.query(
                 'UPDATE users SET affiliate_balance = affiliate_balance + $1 WHERE id = $2',
@@ -65,7 +66,10 @@ export const updatePayoutStatus = async (req: Request, res: Response) => {
             );
         }
 
-        // If status was rejected and changed BACK to pending/approved, re-deduct (optional but good for consistency)
+        // If status changed TO approved FROM something else, NO refund needed (money stays deducted).
+        // If status changed TO completed FROM something else, NO refund needed.
+
+        // If status was rejected and changed BACK to pending/approved/completed, re-deduct
         if (oldStatus === 'rejected' && status !== 'rejected') {
             await pool.query(
                 'UPDATE users SET affiliate_balance = affiliate_balance - $1 WHERE id = $2',
@@ -144,6 +148,7 @@ export const getUserAffiliateStats = async (req: Request, res: Response) => {
         const result = await pool.query(`
             SELECT 
                 affiliate_balance as unpaid_earnings,
+                referral_visits as total_visits,
                 (SELECT COUNT(*) FROM users WHERE referred_by = $1) as total_referrals,
                 (SELECT COALESCE(SUM(commission_earned), 0) FROM affiliate_logs WHERE referrer_id = $1) as total_earnings,
                 (SELECT COUNT(*) FROM affiliate_logs WHERE referrer_id = $1) as conversions,
@@ -159,6 +164,43 @@ export const getUserAffiliateStats = async (req: Request, res: Response) => {
         res.json(result.rows[0]);
     } catch (error) {
         console.error('getUserAffiliateStats error:', error);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+export const recordVisit = async (req: Request, res: Response) => {
+    const { code } = req.body;
+
+    if (!code) {
+        return res.status(400).json({ message: 'Referral code is required' });
+    }
+
+    try {
+        // Try to increment by username first, then ID if it looks like a UUID or ID
+        // Assuming code is username for now based on URL format
+
+        let result = await pool.query(
+            'UPDATE users SET referral_visits = referral_visits + 1 WHERE username = $1 RETURNING id',
+            [code]
+        );
+
+        if (result.rowCount === 0) {
+            // If code is numeric or uuid, try finding by ID
+            if (!isNaN(Number(code))) {
+                result = await pool.query(
+                    'UPDATE users SET referral_visits = referral_visits + 1 WHERE id = $1 RETURNING id',
+                    [code]
+                );
+            }
+        }
+
+        if (result.rowCount === 0) {
+            return res.status(404).json({ message: 'Referrer not found' });
+        }
+
+        res.json({ message: 'Visit recorded' });
+    } catch (error) {
+        console.error('recordVisit error:', error);
         res.status(500).json({ message: 'Internal server error' });
     }
 };

@@ -33,14 +33,14 @@ const fetchFromProvider = async (api_url: string, api_key: string, body: any) =>
 export const createOrder = async (req: Request, res: Response) => {
     const authReq = req as AuthRequest;
     const userId = authReq.user?.id;
-    const { serviceId, link, quantity } = req.body;
+    const { serviceId, link, quantity, comments } = req.body;
 
     if (!userId) {
         return res.status(401).json({ error: 'Unauthorized' });
     }
 
     try {
-        console.log('Incoming order request:', { userId, serviceId, link, quantity });
+        console.log('Incoming order request:', { userId, serviceId, link, quantity, comments });
 
         // 1. Parallel fetch for Service Details and User Balance (Speed Optimization)
         const [serviceRes, userRes] = await Promise.all([
@@ -99,12 +99,18 @@ export const createOrder = async (req: Request, res: Response) => {
         (async () => {
             try {
                 console.log(`Background processing for order #${order.id}...`);
-                const providerResponse = await fetchFromProvider(service.api_url, service.api_key, {
+                const providerPayload: any = {
                     action: 'add',
                     service: service.external_service_id,
                     link: link,
                     quantity: quantity
-                });
+                };
+
+                if (comments) {
+                    providerPayload.comments = comments;
+                }
+
+                const providerResponse = await fetchFromProvider(service.api_url, service.api_key, providerPayload);
 
                 if (providerResponse && providerResponse.order) {
                     await query('UPDATE orders SET external_order_id = $1, status = $2 WHERE id = $3',

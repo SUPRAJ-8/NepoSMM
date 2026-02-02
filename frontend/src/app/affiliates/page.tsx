@@ -38,7 +38,8 @@ function AffiliatesContent() {
         total_referrals: 0,
         total_earnings: 0,
         conversions: 0,
-        paid_referrals: 0
+        paid_referrals: 0,
+        total_visits: 0
     })
 
     useEffect(() => {
@@ -64,7 +65,7 @@ function AffiliatesContent() {
                     .catch(err => console.error("Error fetching affiliate stats", err))
 
                 // Fetch public settings for commission rate
-                fetch("${API_URL}/settings/public-contact-links")
+                fetch(`${API_URL}/settings/public-contact-links`)
                     .then(res => res.json())
                     .then(data => {
                         if (data && data.affiliate_commission_percentage) {
@@ -93,7 +94,7 @@ function AffiliatesContent() {
 
         try {
             const token = localStorage.getItem("nepo_token")
-            const response = await fetch("${API_URL}/affiliates/request", {
+            const response = await fetch(`${API_URL}/affiliates/request`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -195,7 +196,8 @@ function AffiliatesContent() {
                                         {[
                                             { label: "Total Earnings", value: formatValue(stats.total_earnings), icon: Wallet, color: "text-primary" },
                                             { label: "Unpaid Earnings", value: formatValue(unpaidEarnings), icon: Wallet, color: "text-orange-500" },
-                                            { label: "Conversion Rate", value: `${stats.total_referrals > 0 ? ((stats.conversions / stats.total_referrals) * 100).toFixed(2) : '0.00'}%`, icon: TrendingUp, color: "text-emerald-500" },
+                                            { label: "Conversion Rate", value: `${stats.total_visits > 0 ? ((stats.paid_referrals / stats.total_visits) * 100).toFixed(2) : '0.00'}%`, icon: TrendingUp, color: "text-emerald-500" },
+                                            { label: "Total Visits", value: stats.total_visits?.toString() || "0", icon: ExternalLink, color: "text-pink-500" },
                                             { label: "Paid Referrals", value: stats.paid_referrals.toString(), icon: UserCheck, color: "text-blue-500" },
                                             { label: "Total Referrals", value: stats.total_referrals.toString(), icon: Eye, color: "text-purple-500" },
                                         ].map((stat, idx) => (

@@ -5,12 +5,16 @@ import {
     updatePayoutStatus,
     getReferralLogs,
     createPayoutRequest,
-    getUserAffiliateStats
+    getUserAffiliateStats,
+    recordVisit
 } from '../controllers/affiliateController';
 
 import { authenticate, authorize } from '../middlewares/authMiddleware';
 
 const router = express.Router();
+
+// Public
+router.post('/visit', recordVisit);
 
 // Admin Only
 router.get('/stats', authenticate, authorize(['admin']), getAffiliateStats);

@@ -166,24 +166,14 @@ export default function AffiliateManagerPage() {
             if (payoutsData && payoutsData.length > 0) {
                 setPayouts(payoutsData);
             } else {
-                setPayouts([
-                    { id: 1, user_id: 101, username: "john_doe", email: "john@example.com", amount: "1200", affiliate_balance: "1540", status: "pending", payment_method_info: "eSewa: 9800000000", created_at: new Date().toISOString() },
-                    { id: 2, user_id: 102, username: "sarah_smith", email: "sarah@gmail.com", amount: "500", affiliate_balance: "0", status: "completed", payment_method_info: "Bank: Nabil Bank (00123...)", created_at: new Date(Date.now() - 86400000).toISOString() },
-                    { id: 3, user_id: 103, username: "nepal_influencer", email: "info@nepal.com", amount: "2500", affiliate_balance: "3200", status: "rejected", payment_method_info: "Khalti: 9841000000", rejection_reason: "Minimum payout for Khalti is 3000.", created_at: new Date(Date.now() - 172800000).toISOString() },
-                    { id: 4, user_id: 104, username: "bikash_rai", email: "bikash@rai.com", amount: "3000", affiliate_balance: "4200", status: "pending", payment_method_info: "eSewa: 9845012345", created_at: new Date(Date.now() - 3600000).toISOString() },
-                    { id: 5, user_id: 105, username: "maya_shrestha", email: "maya@maya.com", amount: "850", affiliate_balance: "1100", status: "pending", payment_method_info: "Khalti: 9812345678", created_at: new Date(Date.now() - 7200000).toISOString() }
-                ]);
+                setPayouts([]);
             }
 
             const logsData = await logsRes.json();
             if (logsData && logsData.length > 0) {
                 setLogs(logsData);
             } else {
-                setLogs([
-                    { id: 1, referrer_name: "john_doe", referred_name: "new_user_1", deposit_amount: "5000", commission_earned: "100", created_at: new Date().toISOString() },
-                    { id: 2, referrer_name: "admin", referred_name: "test_client", deposit_amount: "2000", commission_earned: "40", created_at: new Date(Date.now() - 3600000).toISOString() },
-                    { id: 3, referrer_name: "sarah_smith", referred_name: "influencer_buddy", deposit_amount: "10000", commission_earned: "200", created_at: new Date(Date.now() - 7200000).toISOString() }
-                ]);
+                setLogs([]);
             }
 
         } catch (error) {
@@ -212,19 +202,7 @@ export default function AffiliateManagerPage() {
         setIsDetailsOpen(true);
         setSelectedRequest(request);
 
-        // Check for mock user IDs (101-105) FIRST to avoid unnecessary fetch wait
-        if ([101, 102, 103, 104, 105].includes(request.user_id)) {
-            const mockStatsMap: Record<number, any> = {
-                101: { unpaid_earnings: "1540", total_referrals: "12", total_earnings: "4500", conversions: "5", paid_referrals: "3" },
-                102: { unpaid_earnings: "0", total_referrals: "8", total_earnings: "2100", conversions: "2", paid_referrals: "2" },
-                103: { unpaid_earnings: "3200", total_referrals: "25", total_earnings: "8900", conversions: "10", paid_referrals: "6" },
-                104: { unpaid_earnings: "4200", total_referrals: "18", total_earnings: "10500", conversions: "7", paid_referrals: "4" },
-                105: { unpaid_earnings: "1100", total_referrals: "10", total_earnings: "3200", conversions: "3", paid_referrals: "1" }
-            };
-            setSelectedUserStats(mockStatsMap[request.user_id]);
-            setDetailsLoading(false);
-            return;
-        }
+
 
         try {
             const token = localStorage.getItem("nepo_admin_token");
@@ -252,15 +230,7 @@ export default function AffiliateManagerPage() {
             return;
         }
 
-        // Mock data support for IDs 1, 2, 3, 4, 5
-        if ([1, 2, 3, 4, 5].includes(id)) {
-            toast.success(`Payout ${status} successfully (Mock)`);
-            setPayouts(prev => prev.map(p =>
-                p.id === id ? { ...p, status, rejection_reason: reason || p.rejection_reason } : p
-            ));
-            setIsRejectDialogOpen(false);
-            return;
-        }
+
 
         try {
             const token = localStorage.getItem("nepo_admin_token");

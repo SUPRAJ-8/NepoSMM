@@ -90,6 +90,7 @@ export function OrderForm({
   const [selectedService, setSelectedService] = useState<Service | null>(null)
   const [quantity, setQuantity] = useState<number | "">("")
   const [link, setLink] = useState("")
+  const [comments, setComments] = useState("")
   const [isLoading, setIsLoading] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [recentOrders, setRecentOrders] = useState<any[]>([])
@@ -144,7 +145,7 @@ export function OrderForm({
         return;
       }
 
-      console.log('Placing order:', { serviceId: selectedService.id, link, quantity });
+      console.log('Placing order:', { serviceId: selectedService.id, link, quantity, comments });
       const response = await fetch(`${BACKEND_URL}/api/orders`, {
         method: 'POST',
         headers: {
@@ -154,7 +155,8 @@ export function OrderForm({
         body: JSON.stringify({
           serviceId: selectedService.id,
           link,
-          quantity: Number(quantity)
+          quantity: Number(quantity),
+          comments
         })
       });
 
@@ -171,6 +173,7 @@ export function OrderForm({
 
       setLink("");
       setQuantity("");
+      setComments("");
 
       // Refresh recent orders globally within component
       fetchRecentOrders();
@@ -578,8 +581,16 @@ export function OrderForm({
                   <Input
                     type="number"
                     value={quantity}
-                    onChange={(e) => setQuantity(e.target.value === "" ? "" : Number(e.target.value))}
-                    className="pl-12 bg-input border-border h-14 text-base rounded-xl"
+                    onChange={(e) => {
+                      if (!selectedService?.name.toLowerCase().includes("custom comment")) {
+                        setQuantity(e.target.value === "" ? "" : Number(e.target.value));
+                      }
+                    }}
+                    readOnly={selectedService?.name.toLowerCase().includes("custom comment")}
+                    className={cn(
+                      "pl-12 bg-input border-border h-14 text-base rounded-xl",
+                      selectedService?.name.toLowerCase().includes("custom comment") && "opacity-70 cursor-not-allowed"
+                    )}
                     placeholder=""
                   />
                 </div>
@@ -588,6 +599,38 @@ export function OrderForm({
                     Min: {selectedService?.min?.toLocaleString() ?? 0} — Max: {selectedService?.max?.toLocaleString() ?? 0}
                   </span>
                 </div>
+              </div>
+
+              {/* Custom Comments Textarea */}
+              {selectedService?.name.toLowerCase().includes("custom comment") && (
+                <div className="space-y-2">
+                  <Label className="text-sm font-medium">Comments (1 per line)</Label>
+                  <textarea
+                    className="flex min-h-[120px] w-full rounded-xl border border-border bg-input px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    placeholder="Enter your custom comments here..."
+                    onChange={(e) => {
+                      setComments(e.target.value);
+                      const lines = e.target.value.split('\n').filter(line => line.trim() !== '').length;
+                      setQuantity(lines);
+                    }}
+                  />
+                </div>
+              )}
+
+              {/* Average Time */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-1.5">
+                  <Label className="text-sm font-medium">Average time</Label>
+                  <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                </div>
+                <div className="w-full bg-input/50 border border-border h-12 text-sm rounded-xl px-4 flex items-center text-muted-foreground font-medium">
+                  {selectedService?.average_time || "Not available"}
+                </div>
+              </div>
+
+              {/* Note Alert */}
+              <div className="rounded-xl bg-purple-600 p-4 text-white font-medium text-sm">
+                Note: Read Description Of Service Before Placing Order.
               </div>
 
               {/* Total Charge */}
