@@ -18,7 +18,9 @@ import { toast } from "sonner"
 export default function RegisterPage() {
     const router = useRouter()
     const { searchParams } = new URL(typeof window !== 'undefined' ? window.location.href : 'http://localhost');
-    const referralToken = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get("ref") : null;
+    const referralToken = typeof window !== 'undefined'
+        ? (new URLSearchParams(window.location.search).get("ref") || localStorage.getItem("referral_code"))
+        : null;
 
     const [isLoading, setIsLoading] = useState(false)
     const [formData, setFormData] = useState({
