@@ -441,7 +441,7 @@ export function OrderForm({
                       searchResults.map((service) => (
                         <div
                           key={service.id}
-                          className="flex items-center gap-3 p-3 hover:bg-accent cursor-pointer border-b border-border/50 last:border-0 transition-colors group"
+                          className="flex items-center gap-3 p-4 hover:bg-primary hover:text-white cursor-pointer border-b border-border/50 last:border-0 transition-all group"
                           onClick={() => {
                             setSelectedCategory(service.category)
                             setSelectedService(service)
@@ -450,7 +450,7 @@ export function OrderForm({
                           }}
                         >
                           {/* ID badge */}
-                          <span className="shrink-0 bg-blue-500/10 text-blue-500 text-[10px] font-bold px-1.5 py-0.5 rounded min-w-[35px] text-center font-mono border border-blue-500/20 group-hover:bg-blue-500/20 transition-colors">
+                          <span className="shrink-0 bg-blue-500/10 text-blue-500 text-[10px] font-bold px-1.5 py-0.5 rounded min-w-[35px] text-center font-mono border border-blue-500/20 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                             {service.id}
                           </span>
 
@@ -499,7 +499,7 @@ export function OrderForm({
                   <SelectTrigger id="tour-new-order-category" className="w-full bg-input border-border h-14 text-base rounded-xl px-4">
                     <SelectValue placeholder={isLoading ? "Loading categories..." : (categories.length === 0 ? "No active categories found" : "Select category")} />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent position="popper" sideOffset={8} className="w-[var(--radix-select-trigger-width)] min-w-[280px] max-h-[400px] overflow-y-auto shadow-2xl rounded-2xl border-border/50">
                     {sortedCategories.map((cat) => {
                       const verifiedCount = categoryCountMap.get(cat.category) || 0;
                       return (
@@ -529,16 +529,22 @@ export function OrderForm({
                   <SelectTrigger id="tour-new-order-service" className="w-full bg-input border-border h-14 text-base rounded-xl px-4">
                     <SelectValue placeholder={isLoading ? "Loading services..." : (filteredServices.length === 0 ? "No verified services available" : "Select service")} />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent position="popper" sideOffset={8} className="w-[var(--radix-select-trigger-width)] max-md:w-[calc(100vw-32px)] min-w-[320px] max-h-[400px] overflow-y-auto shadow-2xl rounded-2xl border-border/50 z-[100]">
                     {filteredServices.map((service) => (
-                      <SelectItem key={service.id} value={service.id.toString()} className="group">
-                        <div className="flex items-center gap-2">
-                          {getPlatformIcon(service.name)}
-                          <span className="shrink-0 bg-blue-500/10 text-blue-500 text-[10px] font-bold px-1.5 py-0.5 rounded min-w-[32px] text-center font-mono border border-blue-500/20 transition-colors">
+                      <SelectItem key={service.id} value={service.id.toString()} className="group py-3 px-4 transition-all">
+                        <div className="flex items-center gap-3 w-full pr-4">
+                          <div className="shrink-0">
+                            {getPlatformIcon(service.name)}
+                          </div>
+                          <span className="shrink-0 bg-blue-500/10 text-blue-500 text-[10px] font-bold px-1.5 py-0.5 rounded min-w-[32px] text-center font-mono border border-blue-500/20 group-focus:bg-blue-600 group-focus:text-white transition-colors">
                             {service.id}
                           </span>
-                          <span className="flex-1 truncate">{service.name}</span>
-                          <span className="ml-auto text-muted-foreground group-focus:text-white whitespace-nowrap">{formatValue(service.rate)}</span>
+                          <span className="flex-1 text-sm font-medium group-focus:text-white line-clamp-2 leading-tight">
+                            {service.name}
+                          </span>
+                          <span className="shrink-0 text-[11px] font-mono font-bold text-muted-foreground group-focus:text-white/90">
+                            {formatValue(service.rate)}
+                          </span>
                         </div>
                       </SelectItem>
                     ))}
@@ -645,6 +651,9 @@ export function OrderForm({
 
               {/* Action Buttons */}
               <div className="grid grid-cols-2 gap-3">
+                <Button className="bg-emerald-500 hover:bg-emerald-600 text-white border-0 font-bold h-12 rounded-xl transition-colors" asChild>
+                  <Link href="/add-funds">Add Funds</Link>
+                </Button>
                 <Button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
@@ -667,9 +676,6 @@ export function OrderForm({
                       <span>Submit Order</span>
                     </div>
                   )}
-                </Button>
-                <Button className="bg-emerald-500 hover:bg-emerald-600 text-white border-0 font-bold h-12 rounded-xl transition-colors" asChild>
-                  <Link href="/add-funds">Add Funds</Link>
                 </Button>
               </div>
             </>

@@ -18,11 +18,11 @@ function DashboardContent() {
     const [selectedCategory, setSelectedCategory] = useState("all")
 
     return (
-        <div className="min-h-screen bg-background">
+        <div className="min-h-screen bg-background text-foreground font-sans flex relative">
             <WelcomeTour />
             <Sidebar />
             <WhatsAppFloatButton />
-            <div className="lg:pl-64">
+            <div className="flex-1 lg:ml-64 flex flex-col min-w-0 transition-all duration-200">
                 <Header />
                 <main className="p-4 lg:p-6 space-y-6">
                     <WelcomeBanner />

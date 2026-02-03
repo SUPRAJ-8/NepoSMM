@@ -11,6 +11,7 @@ import './globals.css'
 import { ContactLinksProvider } from "@/contexts/ContactLinksContext"
 import { SessionManager } from "@/components/SessionManager"
 import { GoogleProvider } from "@/components/providers/GoogleProvider"
+import { LoginBonusPopup } from "@/components/login-bonus-popup"
 
 const _inter = Inter({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -102,6 +103,7 @@ export default function RootLayout({
             <DashboardCurrencyProvider>
               <ContactLinksProvider>
                 <GoogleProvider>
+                  <LoginBonusPopup />
                   {children}
                 </GoogleProvider>
               </ContactLinksProvider>
