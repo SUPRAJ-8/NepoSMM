@@ -813,18 +813,36 @@ export const verify2FA = async (req: Request, res: Response) => {
     }
 };
 export const googleLogin = async (req: Request, res: Response) => {
-    const { credential } = req.body;
+    const { credential, access_token } = req.body;
     try {
-        const ticket = await googleClient.verifyIdToken({
-            idToken: credential,
-            audience: process.env.GOOGLE_CLIENT_ID,
-        });
-        const payload = ticket.getPayload();
-        if (!payload) {
-            return res.status(400).json({ error: 'Invalid Google token' });
-        }
+        let email, name, googleId;
 
-        const { email, name, sub: googleId } = payload;
+        if (access_token) {
+            // Handle custom button access token
+            const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+                headers: { 'Authorization': `Bearer ${access_token}` }
+            });
+            const data = await response.json();
+            if (!response.ok) {
+                return res.status(400).json({ error: 'Failed to fetch user info from Google' });
+            }
+            email = data.email;
+            name = data.name;
+            googleId = data.sub;
+        } else {
+            // Handle standard button ID token
+            const ticket = await googleClient.verifyIdToken({
+                idToken: credential,
+                audience: process.env.GOOGLE_CLIENT_ID,
+            });
+            const payload = ticket.getPayload();
+            if (!payload) {
+                return res.status(400).json({ error: 'Invalid Google token' });
+            }
+            email = payload.email;
+            name = payload.name;
+            googleId = payload.sub;
+        }
 
         // Check if user exists
         let userResult = await query('SELECT * FROM users WHERE email = $1', [email]);

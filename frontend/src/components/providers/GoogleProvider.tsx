@@ -3,15 +3,13 @@
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 export function GoogleProvider({ children }: { children: React.ReactNode }) {
-    const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
-    console.log("Google Client ID loaded:", clientId ? "MATCH" : "MISSING");
+    const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "";
+    const isReady = clientId && clientId !== "your_google_client_id_here";
 
-    if (!clientId || clientId === "your_google_client_id_here") {
-        return <>{children}</>;
-    }
+    console.log("Google Client ID status:", isReady ? "READY" : "MISSING/DEFAULT");
 
     return (
-        <GoogleOAuthProvider clientId={clientId}>
+        <GoogleOAuthProvider clientId={isReady ? clientId : "dummy-id"}>
             {children}
         </GoogleOAuthProvider>
     );
