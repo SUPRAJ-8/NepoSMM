@@ -18,11 +18,11 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'NepoSMM - #1 Social Media Marketing (SMM) Panel in Nepal',
-    template: '%s | NepoSMM',
+    default: 'NepoSMM - #1 Best SMM Panel Nepal | Social Media Marketing',
+    template: '%s | NepoSMM Panel',
   },
-  description: 'Boost your social media presence with NepoSMM. High-quality Followers, Likes, Views, and Watch Time for Instagram, TikTok, YouTube, and Facebook. Instant delivery and 24/7 support.',
-  keywords: ['SMM Panel', 'Social Media Marketing', 'Followers', 'Likes', 'Views', 'Instagram Growth', 'TikTok Growth', 'YouTube Growth', 'Nepal SMM', 'Cheap SMM Panel', 'Best SMM Nepal'],
+  description: 'Boost your digital presence with NepoSMM, the best and cheapest SMM panel in Nepal. High-quality Followers, Likes, Views, and Watch Time for all social platforms.',
+  keywords: ['NepoSMM', 'Nepo SMM', 'SMM Panel Nepal', 'Best SMM Nepal', 'Cheap SMM Panel', 'Social Media Marketing Nepal', 'Followers Nepal', 'TikTok Likes Nepal'],
   authors: [{ name: 'NepoSMM' }],
   creator: 'NepoSMM',
   publisher: 'NepoSMM',
@@ -73,6 +73,7 @@ export const metadata: Metadata = {
     icon: '/logo.png',
     apple: '/logo.png',
   },
+  manifest: '/manifest.json',
   verification: {
     google: '6XW8KvRpl50rpJVhunIGln7X60OwHUQBvNBMM6vHegI',
   },

@@ -310,6 +310,14 @@ export default function LandingPage() {
                             },
                             {
                                 "@type": "Question",
+                                "name": "Which is the best SMM panel in Nepal?",
+                                "acceptedAnswer": {
+                                    "@type": "Answer",
+                                    "text": "NepoSMM is widely recognized as the #1 and most reliable SMM panel in Nepal, offering the cheapest rates and instant delivery for all social media services."
+                                }
+                            },
+                            {
+                                "@type": "Question",
                                 "name": "Is it safe to use NepoSMM services?",
                                 "acceptedAnswer": {
                                     "@type": "Answer",
@@ -509,7 +517,7 @@ export default function LandingPage() {
                                 transition={{ delay: 0.1 }}
                                 className="text-5xl lg:text-7xl xl:text-8xl font-black tracking-tight mb-8 leading-[0.9]"
                             >
-                                Grow Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Social Media</span> Instantly
+                                Grow Higher With <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">NepoSMM</span> Instantly
                             </motion.h1>
 
                             <motion.p

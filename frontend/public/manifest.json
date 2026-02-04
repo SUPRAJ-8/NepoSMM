@@ -1,0 +1,21 @@
+{
+    "name": "NepoSMM Panel",
+    "short_name": "NepoSMM",
+    "description": "The world's #1 Best SMM Panel for high-quality social media services.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#020617",
+    "theme_color": "#2563eb",
+    "icons": [
+        {
+            "src": "/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
