@@ -23,6 +23,7 @@ export const getUsers = async (req: Request, res: Response) => {
                 u.balance, 
                 u.role, 
                 u.status,
+                u.whatsapp,
                 u.created_at,
                 COALESCE(SUM(CASE WHEN o.status != 'canceled' THEN o.charge ELSE 0 END), 0) as spent,
                 COUNT(o.id) as orders
@@ -38,7 +39,7 @@ export const getUsers = async (req: Request, res: Response) => {
 };
 
 export const registerUser = async (req: Request, res: Response) => {
-    const { username, email, password, referralToken } = req.body;
+    const { username, email, password, referralToken, whatsapp } = req.body;
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -52,8 +53,8 @@ export const registerUser = async (req: Request, res: Response) => {
         }
 
         const result = await query(
-            'INSERT INTO users (username, email, password, role, referred_by) VALUES ($1, $2, $3, $4, $5) RETURNING id, username, email, role, created_at',
-            [username, email, hashedPassword, 'user', referred_by]
+            'INSERT INTO users (username, email, password, role, referred_by, whatsapp) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, username, email, role, whatsapp, created_at',
+            [username, email, hashedPassword, 'user', referred_by, whatsapp]
         );
 
         // Send Welcome Email
@@ -83,6 +84,7 @@ export const registerUser = async (req: Request, res: Response) => {
                 username: user.username,
                 email: user.email,
                 role: user.role,
+                whatsapp: user.whatsapp,
                 balance: 0,
                 spent: 0,
                 created_at: user.created_at
@@ -156,6 +158,7 @@ export const loginUser = async (req: Request, res: Response) => {
                 username: user.username,
                 email: user.email,
                 role: user.role,
+                whatsapp: user.whatsapp,
                 balance: user.balance,
                 spent: spent,
                 created_at: user.created_at
@@ -499,6 +502,7 @@ export const getProfile = async (req: Request, res: Response) => {
                 u.email, 
                 u.balance, 
                 u.role, 
+                u.whatsapp,
                 u.created_at,
                 u.two_factor_enabled,
                 COALESCE(SUM(CASE WHEN o.status != 'canceled' THEN o.charge ELSE 0 END), 0) as spent
@@ -666,7 +670,7 @@ export const refundTransaction = async (req: Request, res: Response) => {
 export const updateProfile = async (req: Request, res: Response) => {
     const authReq = req as AuthRequest;
     const userId = authReq.user?.id;
-    const { email } = req.body;
+    const { email, whatsapp } = req.body;
 
     if (!userId) {
         return res.status(401).json({ error: 'Unauthorized' });
@@ -682,8 +686,8 @@ export const updateProfile = async (req: Request, res: Response) => {
         }
 
         const result = await query(
-            'UPDATE users SET email = COALESCE($1, email) WHERE id = $2 RETURNING id, username, email, balance, role, created_at',
-            [email, userId]
+            'UPDATE users SET email = COALESCE($1, email), whatsapp = COALESCE($2, whatsapp) WHERE id = $3 RETURNING id, username, email, whatsapp, balance, role, created_at',
+            [email, whatsapp, userId]
         );
 
         if (result.rows.length === 0) {
@@ -797,6 +801,7 @@ export const verify2FA = async (req: Request, res: Response) => {
                 username: user.username,
                 email: user.email,
                 role: user.role,
+                whatsapp: user.whatsapp,
                 balance: user.balance,
                 spent: spent,
                 created_at: user.created_at
@@ -879,6 +884,7 @@ export const googleLogin = async (req: Request, res: Response) => {
                 username: user.username,
                 email: user.email,
                 role: user.role,
+                whatsapp: user.whatsapp,
                 balance: user.balance || 0,
                 spent: spent,
                 created_at: user.created_at

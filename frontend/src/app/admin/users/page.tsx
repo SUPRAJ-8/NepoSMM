@@ -83,6 +83,7 @@ export default function UserManagementPage() {
                     id: u.id,
                     username: u.username || u.email.split('@')[0],
                     email: u.email,
+                    whatsapp: u.whatsapp,
                     balance: parseFloat(u.balance) || 0,
                     status: u.status || 'active',
                     spent: parseFloat(u.spent) || 0,
@@ -404,6 +405,7 @@ export default function UserManagementPage() {
                                 </th>
                                 <th className="px-2 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] w-12 text-center">#</th>
                                 <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">User Identity</th>
+                                <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Contact</th>
                                 <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Available</th>
                                 <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Total Spent</th>
                                 <th className="px-4 py-2.5 text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Orders</th>
@@ -435,6 +437,12 @@ export default function UserManagementPage() {
                                                     <span className="text-sm font-black text-white group-hover:text-purple-400 transition-colors uppercase tracking-tight">@{user.username}</span>
                                                     <span className="text-xs font-bold text-gray-500 lowercase">{user.email}</span>
                                                 </div>
+                                            </div>
+                                        </td>
+                                        <td className="px-4 py-4">
+                                            <div className="flex flex-col gap-0.5">
+                                                <span className="text-sm font-black text-white whitespace-nowrap">{user.whatsapp || "Not Given"}</span>
+                                                <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-widest mt-0.5">WhatsApp</span>
                                             </div>
                                         </td>
                                         <td className="px-4 py-4">
@@ -577,7 +585,7 @@ export default function UserManagementPage() {
                                 ))
                             ) : (
                                 <tr>
-                                    <td colSpan={10} className="py-24">
+                                    <td colSpan={11} className="py-24">
                                         <div className="flex flex-col items-center justify-center space-y-4">
                                             <div className="p-6 rounded-full bg-white/5 border border-white/5 text-gray-600 animate-pulse">
                                                 <Database size={48} />

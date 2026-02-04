@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import {
     Dialog,
     DialogContent,
@@ -17,9 +17,13 @@ import { useContactLinks } from "@/contexts/ContactLinksContext";
 export function LoginBonusPopup() {
     const [isOpen, setIsOpen] = useState(false);
     const router = useRouter();
+    const pathname = usePathname();
     const { contactLinks } = useContactLinks();
 
     useEffect(() => {
+        // Only show on the main dashboard (root page)
+        if (pathname !== "/") return;
+
         // Check if user is logged in
         const token = localStorage.getItem("nepo_token");
         if (!token) return;

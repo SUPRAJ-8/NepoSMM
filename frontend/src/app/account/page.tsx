@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
 import { toast } from "sonner"
-import { User, Mail, Lock, Shield, CreditCard, Calendar, CheckCircle2, AlertCircle } from "lucide-react"
+import { User, Mail, Lock, Shield, CreditCard, Calendar, CheckCircle2, AlertCircle, Phone } from "lucide-react"
 import { motion } from "framer-motion"
 import { API_URL } from "@/lib/api-config"
 import { useCurrency } from "@/context/CurrencyContext"
@@ -25,6 +25,8 @@ export default function AccountPage() {
 
     // Profile form
     const [email, setEmail] = useState("")
+    const [whatsapp, setWhatsapp] = useState("")
+    const [isUpdatingProfile, setIsUpdatingProfile] = useState(false)
 
     // Password form
     const [currentPassword, setCurrentPassword] = useState("")
@@ -37,8 +39,41 @@ export default function AccountPage() {
             const parsedUser = JSON.parse(savedUser)
             setUser(parsedUser)
             setEmail(parsedUser.email || "")
+            setWhatsapp(parsedUser.whatsapp || "")
         }
     }, [])
+
+    const handleUpdateProfile = async (e: React.FormEvent) => {
+        e.preventDefault()
+        setIsUpdatingProfile(true)
+
+        try {
+            const token = localStorage.getItem("nepo_token")
+            const response = await fetch(`${API_URL}/users/profile`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+                body: JSON.stringify({ whatsapp })
+            })
+
+            const data = await response.json()
+
+            if (!response.ok) {
+                throw new Error(data.error || "Failed to update profile")
+            }
+
+            const updatedUser = { ...user, whatsapp: data.user.whatsapp }
+            localStorage.setItem("nepo_user", JSON.stringify(updatedUser))
+            setUser(updatedUser)
+            toast.success("Profile updated successfully")
+        } catch (error: any) {
+            toast.error(error.message)
+        } finally {
+            setIsUpdatingProfile(false)
+        }
+    }
 
 
     const handleChangePassword = async (e: React.FormEvent) => {
@@ -219,10 +254,10 @@ export default function AccountPage() {
                                 <Card className="border-border/50 rounded-[2.5rem] overflow-hidden shadow-xl shadow-black/5 bg-card/30 backdrop-blur-md border">
                                     <CardHeader className="p-8 pb-4">
                                         <CardTitle className="text-2xl font-black">Profile Information</CardTitle>
-                                        <CardDescription className="text-base font-medium">Your account details (username and email) are locked and cannot be changed.</CardDescription>
+                                        <CardDescription className="text-base font-medium">Update your contact information below.</CardDescription>
                                     </CardHeader>
                                     <CardContent className="p-8 pt-4">
-                                        <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
+                                        <form onSubmit={handleUpdateProfile} className="space-y-6">
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="space-y-2">
                                                     <Label className="text-xs font-black uppercase tracking-widest text-muted-foreground ml-1">Username</Label>
@@ -247,6 +282,32 @@ export default function AccountPage() {
                                                         />
                                                     </div>
                                                 </div>
+                                            </div>
+
+                                            <div className="space-y-2">
+                                                <Label className="text-xs font-black uppercase tracking-widest text-muted-foreground ml-1">WhatsApp Number</Label>
+                                                <div className="relative group">
+                                                    <Phone className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                                                    <Input
+                                                        id="whatsapp"
+                                                        type="tel"
+                                                        placeholder="+977 9800000000"
+                                                        required
+                                                        value={whatsapp}
+                                                        onChange={(e) => setWhatsapp(e.target.value)}
+                                                        className="h-14 pl-12 bg-background/50 border-border/50 rounded-2xl font-bold focus:ring-primary/20 transition-all"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div className="flex justify-end pt-2">
+                                                <Button
+                                                    type="submit"
+                                                    disabled={isUpdatingProfile || whatsapp === user.whatsapp}
+                                                    className="h-12 px-8 rounded-xl bg-primary hover:bg-primary/90 text-white font-black shadow-lg shadow-primary/20 transition-all active:scale-95"
+                                                >
+                                                    {isUpdatingProfile ? "Updating..." : "Save Changes"}
+                                                </Button>
                                             </div>
                                         </form>
                                     </CardContent>
