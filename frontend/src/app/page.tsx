@@ -264,9 +264,10 @@ export default function LandingPage() {
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "WebSite",
-                        "name": "NepoSMM",
+                        "name": "Nepo SMM",
+                        "alternateName": ["NepoSMM", "Nepal SMM Panel", "SMM Nepal"],
                         "url": "https://neposmm.com",
-                        "description": "Boost your social media presence with NepoSMM. High-quality Followers, Likes, Views, and Watch Time.",
+                        "description": "The #1 Best and Cheapest SMM Panel in Nepal for Instagram, TikTok, and YouTube growth.",
                         "potentialAction": {
                             "@type": "SearchAction",
                             "target": "https://neposmm.com/services?search={search_term_string}",
@@ -281,9 +282,19 @@ export default function LandingPage() {
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Organization",
-                        "name": "NepoSMM",
+                        "name": "Nepo SMM",
                         "url": "https://neposmm.com",
-                        "logo": "https://neposmm.com/logo.png",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://neposmm.com/logo.png",
+                            "width": "512",
+                            "height": "512"
+                        },
+                        "sameAs": [
+                            "https://www.facebook.com/neposmm",
+                            "https://www.instagram.com/neposmm",
+                            "https://www.tiktok.com/@neposmm"
+                        ],
                         "contactPoint": {
                             "@type": "ContactPoint",
                             "telephone": "+977-9866887714",

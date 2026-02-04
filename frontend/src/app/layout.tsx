@@ -33,13 +33,13 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://neposmm.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://neposmm.com',
   },
   openGraph: {
-    title: 'NepoSMM - Grow Your Social Media Instantly',
-    description: 'The world\'s #1 SMM Panel for high-quality social media services. Followers, Likes & Views for all platforms.',
+    title: 'Nepo SMM - #1 Best SMM Panel in Nepal',
+    description: 'Grow your social media with Nepo SMM. High-quality followers, likes, and views for Instagram, TikTok, and YouTube in Nepal.',
     url: 'https://neposmm.com',
-    siteName: 'NepoSMM',
+    siteName: 'Nepo SMM',
     images: [
       {
         url: '/logo.png',
@@ -70,8 +70,14 @@ export const metadata: Metadata = {
   },
   category: 'technology',
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/logo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/logo.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/logo.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   manifest: '/manifest.json',
   verification: {
