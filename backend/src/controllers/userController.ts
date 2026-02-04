@@ -818,17 +818,24 @@ export const googleLogin = async (req: Request, res: Response) => {
         let email, name, googleId;
 
         if (access_token) {
-            // Handle custom button access token
+            // Handle custom button access token using standard fetch
             const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
                 headers: { 'Authorization': `Bearer ${access_token}` }
             });
-            const data = await response.json();
+
             if (!response.ok) {
-                return res.status(400).json({ error: 'Failed to fetch user info from Google' });
+                const errorData = await response.json();
+                throw new Error(`Google API error: ${errorData.error_description || errorData.error || response.statusText}`);
             }
+
+            const data = await response.json();
             email = data.email;
             name = data.name;
             googleId = data.sub;
+
+            if (!email) {
+                throw new Error('Google account must have an email address associated with it.');
+            }
         } else {
             // Handle standard button ID token
             const ticket = await googleClient.verifyIdToken({
@@ -854,8 +861,8 @@ export const googleLogin = async (req: Request, res: Response) => {
             const hashedPassword = await bcrypt.hash(crypto.randomBytes(16).toString('hex'), 10); // Random password for social login
 
             const newUser = await query(
-                'INSERT INTO users (username, email, password, role) VALUES ($1, $2, $3, $4) RETURNING id, username, email, role, created_at',
-                [username, email, hashedPassword, 'user']
+                'INSERT INTO users (username, email, password, role, referred_by, whatsapp, status) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id, username, email, role, whatsapp, status, created_at',
+                [username, email, hashedPassword, 'user', null, null, 'active']
             );
             user = newUser.rows[0];
 
@@ -908,8 +915,12 @@ export const googleLogin = async (req: Request, res: Response) => {
                 created_at: user.created_at
             }
         });
-    } catch (err) {
+    } catch (err: any) {
         logger.error('Error in googleLogin:', err);
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({
+            error: 'Internal Server Error',
+            details: err.message,
+            stack: process.env.NODE_ENV === 'development' ? err.stack : undefined
+        });
     }
 };
