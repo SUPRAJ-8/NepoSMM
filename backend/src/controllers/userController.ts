@@ -8,6 +8,7 @@ import { sendEmail } from '../utils/mailer';
 import { getPasswordResetTemplate, getTwoFactorOTPTemplate, getSignUpEmailTemplate, getFundsAddedTemplate } from '../utils/emailTemplates';
 import crypto from 'crypto';
 import { OAuth2Client } from 'google-auth-library';
+import { sendTelegramNotification } from '../utils/telegram';
 
 const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
@@ -69,6 +70,15 @@ export const registerUser = async (req: Request, res: Response) => {
             logger.error('Error sending welcome email:', emailErr);
             // Don't fail registration if email fails
         }
+
+        // Send Telegram Notification to Admin
+        await sendTelegramNotification(
+            `👤 <b>New User Registered</b>\n\n` +
+            `▫️ <b>Username:</b> ${username}\n` +
+            `▫️ <b>Email:</b> ${email}\n` +
+            `▫️ <b>WhatsApp:</b> ${whatsapp || 'N/A'}\n` +
+            `▫️ <b>Referrer ID:</b> ${referred_by || 'None'}`
+        );
 
         const user = result.rows[0];
         const token = jwt.sign(
@@ -246,6 +256,19 @@ export const createDepositRequest = async (req: Request, res: Response) => {
             'INSERT INTO transactions (user_id, amount, type, description, status, payment_method_id, metadata) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
             [userId, amount, 'deposit', `Deposit via ${methodName}`, 'pending', methodId, JSON.stringify({ ...fields, methodName })]
         );
+
+        // Send Telegram Notification
+        const userRes = await query('SELECT username FROM users WHERE id = $1', [userId]);
+        const username = userRes.rows[0]?.username || 'Unknown';
+
+        await sendTelegramNotification(
+            `💰 <b>New Fund Request</b>\n\n` +
+            `▫️ <b>User:</b> ${username}\n` +
+            `▫️ <b>Method:</b> ${methodName}\n` +
+            `▫️ <b>Amount:</b> $${amount}\n` +
+            `▫️ <b>Status:</b> Pending Approval`
+        );
+
         res.status(201).json(result.rows[0]);
     } catch (err) {
         logger.error('Error creating deposit request:', err);

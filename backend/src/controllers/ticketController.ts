@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { query } from '../config/db';
 import logger from '../utils/logger';
 import { AuthRequest } from '../middlewares/authMiddleware';
+import { sendTelegramNotification } from '../utils/telegram';
 
 export const createTicket = async (req: Request, res: Response) => {
     const authReq = req as AuthRequest;
@@ -33,6 +34,19 @@ export const createTicket = async (req: Request, res: Response) => {
         );
 
         await query('COMMIT');
+
+        // Send Telegram Notification
+        const userRes = await query('SELECT username FROM users WHERE id = $1', [userId]);
+        const username = userRes.rows[0]?.username || 'Unknown';
+
+        await sendTelegramNotification(
+            `🎫 <b>New Ticket Opened</b>\n\n` +
+            `▫️ <b>Ticket ID:</b> #${ticket.id}\n` +
+            `▫️ <b>User:</b> ${username}\n` +
+            `▫️ <b>Subject:</b> ${subject}\n` +
+            `▫️ <b>Category:</b> ${category || 'general'}\n` +
+            `▫️ <b>Message:</b> ${message}`
+        );
 
         res.status(201).json({
             message: 'Ticket created successfully',
@@ -150,6 +164,20 @@ export const addMessage = async (req: Request, res: Response) => {
         );
 
         await query('COMMIT');
+
+        // Send Telegram Notification if User replied
+        if (!isAdmin) {
+            const userRes = await query('SELECT username FROM users WHERE id = $1', [userId]);
+            const username = userRes.rows[0]?.username || 'Unknown';
+
+            await sendTelegramNotification(
+                `💬 <b>New Ticket Reply</b>\n\n` +
+                `▫️ <b>Ticket ID:</b> #${ticketId}\n` +
+                `▫️ <b>User:</b> ${username}\n` +
+                `▫️ <b>Message:</b> ${message}`
+            );
+        }
+
 
         res.status(201).json({ message: 'Message added successfully' });
     } catch (err) {

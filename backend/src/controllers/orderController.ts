@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { query } from '../config/db';
 import logger from '../utils/logger';
 import { AuthRequest } from '../middlewares/authMiddleware';
+import { sendTelegramNotification } from '../utils/telegram';
 
 const fetchFromProvider = async (api_url: string, api_key: string, body: any) => {
     try {
@@ -88,6 +89,20 @@ export const createOrder = async (req: Request, res: Response) => {
         );
 
         await query('COMMIT');
+
+        // Send Telegram Notification to Admin
+        const userFullRes = await query('SELECT username FROM users WHERE id = $1', [userId]);
+        const username = userFullRes.rows[0]?.username || 'Unknown';
+
+        await sendTelegramNotification(
+            `🛒 <b>New Order Placed</b>\n\n` +
+            `▫️ <b>Order ID:</b> #${order.id}\n` +
+            `▫️ <b>User:</b> ${username}\n` +
+            `▫️ <b>Service:</b> ${service.name}\n` +
+            `▫️ <b>Quantity:</b> ${quantity}\n` +
+            `▫️ <b>Charge:</b> $${charge.toFixed(4)}\n` +
+            `▫️ <b>Link:</b> ${link}`
+        );
 
         // 6. Respond immediately to the user (Super Fast Response)
         res.status(201).json({
