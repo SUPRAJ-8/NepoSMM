@@ -264,10 +264,10 @@ export default function LandingPage() {
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "WebSite",
-                        "name": "Nepo SMM",
+                        "name": "NepoSMM",
                         "alternateName": ["NepoSMM", "Nepal SMM Panel", "SMM Nepal"],
                         "url": "https://neposmm.com",
-                        "description": "The #1 Best and Cheapest SMM Panel in Nepal for Instagram, TikTok, and YouTube growth.",
+                        "description": "Boost your social media presence with NepoSMM. High-quality Followers, Likes, Views, and Watch Time for Instagram, TikTok, YouTube, and Facebook.",
                         "potentialAction": {
                             "@type": "SearchAction",
                             "target": "https://neposmm.com/services?search={search_term_string}",
@@ -282,7 +282,7 @@ export default function LandingPage() {
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "Organization",
-                        "name": "Nepo SMM",
+                        "name": "NepoSMM",
                         "url": "https://neposmm.com",
                         "logo": {
                             "@type": "ImageObject",

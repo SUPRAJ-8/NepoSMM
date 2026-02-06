@@ -18,14 +18,15 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'NepoSMM - #1 Best SMM Panel Nepal | Social Media Marketing',
+    default: 'NepoSMM - #1 Social Media Marketing (SMM) Panel in Nepal',
     template: '%s | NepoSMM Panel',
   },
-  description: 'Boost your digital presence with NepoSMM, the best and cheapest SMM panel in Nepal. High-quality Followers, Likes, Views, and Watch Time for all social platforms.',
+  description: 'Boost your social media presence with NepoSMM. High-quality Followers, Likes, Views, and Watch Time for Instagram, TikTok, YouTube, and Facebook.',
   keywords: ['NepoSMM', 'Nepo SMM', 'SMM Panel Nepal', 'Best SMM Nepal', 'Cheap SMM Panel', 'Social Media Marketing Nepal', 'Followers Nepal', 'TikTok Likes Nepal'],
   authors: [{ name: 'NepoSMM' }],
   creator: 'NepoSMM',
   publisher: 'NepoSMM',
+  applicationName: 'NepoSMM',
   formatDetection: {
     email: false,
     address: false,
@@ -36,8 +37,8 @@ export const metadata: Metadata = {
     canonical: 'https://neposmm.com',
   },
   openGraph: {
-    title: 'Nepo SMM - #1 Best SMM Panel in Nepal',
-    description: 'Grow your social media with Nepo SMM. High-quality followers, likes, and views for Instagram, TikTok, and YouTube in Nepal.',
+    title: 'NepoSMM - #1 Social Media Marketing (SMM) Panel in Nepal',
+    description: 'Boost your social media presence with NepoSMM. High-quality Followers, Likes, Views, and Watch Time for Instagram, TikTok, YouTube, and Facebook.',
     url: 'https://neposmm.com',
     siteName: 'Nepo SMM',
     images: [
@@ -71,7 +72,6 @@ export const metadata: Metadata = {
   category: 'technology',
   icons: {
     icon: [
-      { url: '/favicon.ico' },
       { url: '/logo.png', sizes: '32x32', type: 'image/png' },
       { url: '/logo.png', sizes: '192x192', type: 'image/png' },
     ],
